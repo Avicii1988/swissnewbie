@@ -35,6 +35,6 @@ nav a[href="#"][href] { }
 
 /* Voucher click badges + live visitor */
 .vc-badge{display:block;font-size:0.6rem;color:rgba(110,232,154,0.7);margin-top:3px;letter-spacing:0.02em;}
-.live-visitors-bar{display:flex;align-items:center;gap:8px;font-size:0.76rem;color:var(--ink);padding:6px 5vw;background:var(--warm);border-bottom:1px solid var(--border);font-weight:500;}
+.live-visitors-bar{display:flex;align-items:center;justify-content:center;gap:8px;font-size:0.76rem;color:var(--ink);padding:7px 5vw;background:#EDEDED;border-bottom:1px solid #DADADA;font-weight:500;}
 .lv-dot{width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 0 2px rgba(208,2,27,0.2);animation:lv-pulse 2s infinite;}
 @keyframes lv-pulse{0%,100%{box-shadow:0 0 0 2px rgba(208,2,27,0.2);}50%{box-shadow:0 0 0 5px rgba(208,2,27,0.06);}}
