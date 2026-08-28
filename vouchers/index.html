@@ -161,6 +161,19 @@ document.addEventListener('click',function(e){
   }
   if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',addBadges);}else{addBadges();}
 })();
+
+/* Editor's Pick */
+(function(){
+  function applyEP(){
+    document.querySelectorAll('.pt-name,.pv-name').forEach(function(el){
+      if(!el.textContent.includes('⭐')||el.querySelector('.ep-badge'))return;
+      el.innerHTML=el.innerHTML.replace(/\s*⭐\s*/g,'')+'<span class="ep-badge">⭐ Our Pick</span>';
+      var row=el.closest('tr,.pv-item,.cost-card');
+      if(row)row.classList.add('ep-row');
+    });
+  }
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',applyEP);}else{applyEP();}
+})();
 </script>
 </body>
 </html>
