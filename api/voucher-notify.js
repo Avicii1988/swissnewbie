@@ -34,8 +34,8 @@ export default async function handler(req, res) {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        from: 'SwissNewbie <onboarding@resend.dev>',
-        to: ['j.m.feusi@gmail.com'],
+        from: 'SwissNewbie <noreply@swissnewbie.ch>',
+        to: ['jan.feusi@gmx.ch'],
         subject: `🏷️ ${code} clicked on SwissNewbie`,
         html
       })
