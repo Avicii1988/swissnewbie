@@ -1171,7 +1171,6 @@ function downloadArticle(articleId) {
     /* Background email notification */
     try{fetch('/api/voucher-notify',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({code:code,page:location.href,ts:new Date().toISOString(),ua:navigator.userAgent.slice(0,120)})}).catch(function(){});}catch(e){}
   }
-  }
   document.addEventListener('click',function(e){
     var el=e.target.closest('[data-voucher-id]');
     if(!el){var lnk=e.target.closest('.vg-link,.vg-actions a');if(lnk){var card=lnk.closest('.vg-card');if(card){el=card.querySelector('[data-voucher-id]');if(!el){var nm=card.querySelector('.vg-name');if(nm)trackClick(nm.textContent.trim().replace(/\s+/g,'-').slice(0,20));return;}}}}
