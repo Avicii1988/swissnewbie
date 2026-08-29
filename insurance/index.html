@@ -142,7 +142,7 @@ nav a.active{color:var(--white)!important;border-bottom:2px solid var(--red-ligh
 <header>
   <a href="/" class="logo"><span class="logo-cow">🐄</span>Swiss<span>Newbie</span></a>
   <nav>
-    <div class="nav-dd-wrap"><span class="nav-dd-trigger" onclick="this.closest(\'.nav-dd-wrap\').classList.toggle(\'open\')">Guides &amp; Articles <span class="dd-arrow">▼</span></span>
+    <div class="nav-dd-wrap"><span class="nav-dd-trigger" onclick="this.closest(\'.nav-dd-wrap\').classList.toggle(\'open\');event.stopPropagation()">Guides &amp; Articles <span class="dd-arrow">▼</span></span>
       <div class="nav-dropdown">
         <a href="/health-insurance/">🏥 Health Insurance</a>
         <a href="/finance/">💰 Finance &amp; Banking</a>
@@ -225,13 +225,13 @@ document.addEventListener('click',function(e){
   var KEY='sn_voucher_clicks';
   function getC(){try{return JSON.parse(localStorage.getItem(KEY)||'{}');}catch(e){return{};}}
   document.addEventListener('click',function(e){
-    var el=e.target.closest('[data-voucher-id]');if(!el)return;
+    var el=e.target.closest('[data-voucher-id]');
+    if(!el){var lnk=e.target.closest('.vg-link,.vg-actions a');if(lnk){var card=lnk.closest('.vg-card');if(card){el=card.querySelector('[data-voucher-id]');if(!el){var nm=card.querySelector('.vg-name');if(nm){try{fetch('/api/voucher-notify',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({code:nm.textContent.trim().replace(/\s+/g,'-').slice(0,20),page:location.href,ts:new Date().toISOString(),ua:navigator.userAgent.slice(0,120)})}).catch(function(){});}catch(er){}return;}}}}
+    if(!el)return;
     var code=el.getAttribute('data-voucher-id'),today=new Date().toISOString().slice(0,10);
     var d=getC();if(!d[today])d[today]={};d[today][code]=(d[today][code]||0)+1;
     try{localStorage.setItem(KEY,JSON.stringify(d));}catch(e){}
-    var b=el.querySelector('.vc-badge');
-    if(!b){b=document.createElement('span');b.className='vc-badge';el.appendChild(b);}
-    b.textContent=(d[today][code])+' click'+((d[today][code])!==1?'s':'')+' today';
+    try{fetch('/api/voucher-notify',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({code:code,page:location.href,ts:new Date().toISOString(),ua:navigator.userAgent.slice(0,120)})}).catch(function(){});}catch(er){}
   },true);
 })();</script></body>
 </html>
