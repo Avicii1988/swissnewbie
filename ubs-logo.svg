@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 88" role="img" aria-label="UBS">
+  <!-- Three crossed keys (UBS emblem) -->
+  <g transform="translate(44,44)">
+    <!-- Key 1 (pointing up) -->
+    <g>
+      <ellipse cx="0" cy="-22" rx="8" ry="10" fill="none" stroke="#111" stroke-width="3.5"/>
+      <circle cx="0" cy="-22" r="3.5" fill="#111"/>
+      <line x1="0" y1="-12" x2="0" y2="20" stroke="#111" stroke-width="4" stroke-linecap="round"/>
+      <line x1="0" y1="12" x2="-7" y2="12" stroke="#111" stroke-width="3.5" stroke-linecap="round"/>
+      <line x1="0" y1="18" x2="-7" y2="18" stroke="#111" stroke-width="3.5" stroke-linecap="round"/>
+    </g>
+    <!-- Key 2 (120°) -->
+    <g transform="rotate(120)">
+      <ellipse cx="0" cy="-22" rx="8" ry="10" fill="none" stroke="#111" stroke-width="3.5"/>
+      <circle cx="0" cy="-22" r="3.5" fill="#111"/>
+      <line x1="0" y1="-12" x2="0" y2="20" stroke="#111" stroke-width="4" stroke-linecap="round"/>
+      <line x1="0" y1="12" x2="-7" y2="12" stroke="#111" stroke-width="3.5" stroke-linecap="round"/>
+      <line x1="0" y1="18" x2="-7" y2="18" stroke="#111" stroke-width="3.5" stroke-linecap="round"/>
+    </g>
+    <!-- Key 3 (-120°) -->
+    <g transform="rotate(-120)">
+      <ellipse cx="0" cy="-22" rx="8" ry="10" fill="none" stroke="#111" stroke-width="3.5"/>
+      <circle cx="0" cy="-22" r="3.5" fill="#111"/>
+      <line x1="0" y1="-12" x2="0" y2="20" stroke="#111" stroke-width="4" stroke-linecap="round"/>
+      <line x1="0" y1="12" x2="-7" y2="12" stroke="#111" stroke-width="3.5" stroke-linecap="round"/>
+      <line x1="0" y1="18" x2="-7" y2="18" stroke="#111" stroke-width="3.5" stroke-linecap="round"/>
+    </g>
+  </g>
+  <text x="100" y="57" font-family="Georgia,'Times New Roman',serif" font-weight="900" font-size="42" fill="#E2001A" letter-spacing="3">UBS</text>
+</svg>
