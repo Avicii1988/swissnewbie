@@ -142,6 +142,8 @@ nav a.active{color:var(--white)!important;border-bottom:2px solid var(--red-ligh
 <header>
   <a href="/" class="logo"><span class="logo-cow">🐄</span>Swiss<span>Newbie</span></a>
   <nav>
+    <a href="/vouchers/">Voucher Codes</a>
+    <a href="/">Checklist</a>
     <div class="nav-dd-wrap"><span class="nav-dd-trigger" onclick="this.closest('.nav-dd-wrap').classList.toggle('open');event.stopPropagation()">Guides &amp; Articles <span class="dd-arrow">▼</span></span>
       <div class="nav-dropdown">
         <a href="/health-insurance/">🏥 Health Insurance</a>
@@ -153,8 +155,7 @@ nav a.active{color:var(--white)!important;border-bottom:2px solid var(--red-ligh
         <a href="/vouchers/">🏷️ Voucher Codes</a>
       </div>
     </div>
-    <a href="/">Checklist</a>
-    <a href="/vouchers/">Voucher Codes</a>
+    <a href="/">Community Blog &amp; FAQ</a>
   </nav>
   <div class="nav-right">
     <button class="hamburger" onclick="var d=document.getElementById('mobileNav');d.classList.toggle('open');document.body.style.overflow=d.classList.contains('open')?'hidden':'';" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -226,12 +227,13 @@ document.addEventListener('click',function(e){
   function getC(){try{return JSON.parse(localStorage.getItem(KEY)||'{}');}catch(e){return{};}}
   document.addEventListener('click',function(e){
     var el=e.target.closest('[data-voucher-id]');
-    if(!el){var lnk=e.target.closest('.vg-link,.vg-actions a');if(lnk){var card=lnk.closest('.vg-card');if(card){el=card.querySelector('[data-voucher-id]');if(!el){var nm=card.querySelector('.vg-name');if(nm){try{fetch('/api/voucher-notify',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({code:nm.textContent.trim().replace(/\s+/g,'-').slice(0,20),page:location.href,ts:new Date().toISOString(),ua:navigator.userAgent.slice(0,120)})}).catch(function(){});}catch(er){}return;}}}}
+    if(!el){var lnk=e.target.closest('.vg-link,.vg-actions a');if(lnk){var card=lnk.closest('.vg-card');if(card){el=card.querySelector('[data-voucher-id]');if(!el){var nm=card.querySelector('.vg-name');if(nm){try{fetch('/api/voucher-notify',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({code:nm.textContent.trim().replace(/\s+/g,'-').slice(0,20),page:location.href,ts:new Date().toISOString(),ua:navigator.userAgent.slice(0,120)})}).catch(function(){});}catch(er){}try{window.va&&window.va('event',{name:'voucher_click',data:{code:nm.textContent.trim().replace(/\s+/g,'-').slice(0,20),page:location.pathname}});}catch(e){}return;}}}}
     if(!el)return;
     var code=el.getAttribute('data-voucher-id'),today=new Date().toISOString().slice(0,10);
     var d=getC();if(!d[today])d[today]={};d[today][code]=(d[today][code]||0)+1;
     try{localStorage.setItem(KEY,JSON.stringify(d));}catch(e){}
     try{fetch('/api/voucher-notify',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({code:code,page:location.href,ts:new Date().toISOString(),ua:navigator.userAgent.slice(0,120)})}).catch(function(){});}catch(er){}
+    try{window.va&&window.va('event',{name:'voucher_click',data:{code:code,page:location.pathname}});}catch(e){}
   },true);
 })();</script></body>
 </html>
