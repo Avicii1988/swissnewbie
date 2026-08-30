@@ -39,11 +39,11 @@ nav a[href="#"][href] { }
 .lv-dot{width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 0 2px rgba(208,2,27,0.2);animation:lv-pulse 2s infinite;}
 @keyframes lv-pulse{0%,100%{box-shadow:0 0 0 2px rgba(208,2,27,0.2);}50%{box-shadow:0 0 0 5px rgba(208,2,27,0.06);}}
 
-/* === EARLY VOUCHER CTA === */
-.topic-early-cta{background:linear-gradient(135deg,#1A1A1A 0%,#2D2D2D 100%);border-radius:12px;padding:20px 24px;margin:0 0 32px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
-.tec-text{color:#fff;}
-.tec-title{font-family:'Fraunces',serif;font-size:1rem;font-weight:700;margin-bottom:3px;}
-.tec-sub{font-size:0.8rem;color:rgba(247,245,240,0.65);}
-.tec-btn{background:var(--red);color:#fff;border-radius:7px;padding:10px 20px;font-weight:600;font-size:0.84rem;text-decoration:none;white-space:nowrap;transition:background 0.2s;flex-shrink:0;}
+/* === VOUCHER CTAs IN ARTICLES === */
+.topic-early-cta,.topic-end-cta{border-left:3px solid var(--red);background:var(--warm);border-radius:0 8px 8px 0;padding:16px 20px;margin:0 0 32px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+.topic-end-cta{margin:32px 0 0;}
+.tec-text{flex:1;min-width:0;}
+.tec-title{font-size:0.92rem;font-weight:700;color:var(--ink);margin-bottom:2px;}
+.tec-sub{font-size:0.78rem;color:var(--muted);}
+.tec-btn{background:var(--red);color:#fff;border-radius:6px;padding:8px 16px;font-weight:600;font-size:0.8rem;text-decoration:none;white-space:nowrap;transition:background 0.2s;flex-shrink:0;}
 .tec-btn:hover{background:#b50018;}
-.topic-end-cta{background:linear-gradient(135deg,#1A1A1A 0%,#2D2D2D 100%);border-radius:12px;padding:20px 24px;margin:32px 0 0;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
