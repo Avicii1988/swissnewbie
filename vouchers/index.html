@@ -199,27 +199,21 @@ document.addEventListener('click',function(e){
   },true);
 })();
 
-/* Community counter — real localStorage tracking */
+/* Community counter — shared across all visitors via /api/community-stats */
 (function(){
-  var PV_KEY='sn_page_views';
-  var SAV_KEY='sn_total_saved';
-  function getNum(k){try{return parseInt(localStorage.getItem(k)||'0',10)||0;}catch(e){return 0;}}
-  function setNum(k,v){try{localStorage.setItem(k,String(v));}catch(e){}}
-  var views=getNum(PV_KEY)+1;
-  setNum(PV_KEY,views);
   var vEl=document.getElementById('communityVisitors');
   var sEl=document.getElementById('communitySavings');
-  if(vEl)vEl.textContent=views>=1000?(Math.floor(views/100)/10).toFixed(1).replace('.0','')+'k':String(views);
-  function updateSavings(){
-    var saved=getNum(SAV_KEY);
-    if(sEl)sEl.textContent=saved>0?'CHF '+saved.toLocaleString('de-CH'):'CHF 0';
+  function fmt(n){return n>=1000?(Math.floor(n/100)/10).toFixed(1).replace('.0','')+'k':String(n);}
+  function display(d){
+    if(vEl)vEl.textContent=fmt(d.views||0);
+    if(sEl)sEl.textContent=(d.saved||0)>0?'CHF '+(d.saved).toLocaleString('de-CH'):'CHF 0';
   }
-  updateSavings();
+  fetch('/api/community-stats',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'pageview'})})
+    .then(function(r){return r.json();}).then(display).catch(function(){if(vEl)vEl.textContent='0';if(sEl)sEl.textContent='CHF 0';});
   window._snTrackSaving=function(chf){
     if(!chf)return;
-    var saved=getNum(SAV_KEY)+chf;
-    setNum(SAV_KEY,saved);
-    updateSavings();
+    fetch('/api/community-stats',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'saving',amount:chf})})
+      .then(function(r){return r.json();}).then(display).catch(function(){});
   };
 })();
 </script><script>
