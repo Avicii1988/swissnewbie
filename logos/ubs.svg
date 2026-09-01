@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 90" background="white">
+  <rect width="240" height="90" fill="white"/>
+  <!-- Crossed keys symbol (simplified) -->
+  <g transform="translate(14,8)">
+    <!-- Key shafts crossing -->
+    <line x1="37" y1="5" x2="37" y2="72" stroke="#1A1A1A" stroke-width="5" stroke-linecap="round"/>
+    <line x1="5" y1="37" x2="72" y2="37" stroke="#1A1A1A" stroke-width="5" stroke-linecap="round"/>
+    <!-- Diagonal keys -->
+    <line x1="15" y1="15" x2="59" y2="59" stroke="#1A1A1A" stroke-width="5" stroke-linecap="round"/>
+    <line x1="59" y1="15" x2="15" y2="59" stroke="#1A1A1A" stroke-width="5" stroke-linecap="round"/>
+    <!-- Key bows (circles at ends) -->
+    <circle cx="37" cy="10" r="8" fill="none" stroke="#1A1A1A" stroke-width="5"/>
+    <circle cx="37" cy="67" r="8" fill="none" stroke="#1A1A1A" stroke-width="5"/>
+    <circle cx="10" cy="37" r="8" fill="none" stroke="#1A1A1A" stroke-width="5"/>
+    <circle cx="64" cy="37" r="8" fill="none" stroke="#1A1A1A" stroke-width="5"/>
+    <circle cx="18" cy="18" r="6" fill="none" stroke="#1A1A1A" stroke-width="4"/>
+    <circle cx="56" cy="18" r="6" fill="none" stroke="#1A1A1A" stroke-width="4"/>
+    <circle cx="18" cy="56" r="6" fill="none" stroke="#1A1A1A" stroke-width="4"/>
+    <circle cx="56" cy="56" r="6" fill="none" stroke="#1A1A1A" stroke-width="4"/>
+    <!-- Center -->
+    <circle cx="37" cy="37" r="5" fill="#1A1A1A"/>
+  </g>
+  <!-- UBS text -->
+  <text x="156" y="62" font-family="Arial Black,Arial,sans-serif" font-size="52" font-weight="900" fill="#CC0000" text-anchor="middle">UBS</text>
+</svg>
