@@ -11,7 +11,7 @@
 .badge-vouchers{background:rgba(208,2,27,0.1);color:#C00015;}
 .vg-logo,.vs-logo{box-shadow:0 1px 5px rgba(0,0,0,0.18);}
 .vg-logo span,.vs-logo span{font-size:0.72rem!important;font-weight:700!important;color:#333!important;text-align:center;padding:2px 4px;line-height:1.2;}
-@media (max-width:600px){.vg-logo{width:88px;height:50px;}.vs-logo{width:88px;height:46px;}.vg-top{gap:14px;}.voucher-strip .vs-brand{flex-direction:row;align-items:center;}}
+@media (max-width:600px){.vg-logo{width:88px;height:50px;}.vs-logo{width:88px;height:46px;}.vg-top{gap:14px;}.voucher-strip .vs-brand{flex-direction:row;align-items:center;}.topic-body{overflow-x:hidden;}.vg-card{max-width:100%;overflow:hidden;}.vg-actions{flex-wrap:wrap;}.voucher-strip{flex-wrap:wrap;}.vs-left{width:100%;min-width:0;}.vs-actions{width:100%;}}
 
 /* === Standalone topic page overrides === */
 body.standalone { overflow: unset !important; }
