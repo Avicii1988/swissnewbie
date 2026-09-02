@@ -849,18 +849,29 @@ function downloadArticle(articleId) {
     }
     setTimeout(() => target.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
   }
+  function _scrollToAcc(el) {
+    var navEl = document.querySelector('nav');
+    var navH = navEl ? navEl.offsetHeight : 64;
+    var top = el.getBoundingClientRect().top + window.scrollY - navH - 12;
+    window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+  }
   function toggleAcc(id) {
     var items = document.querySelectorAll('.acc-item');
     var target = document.getElementById('acc-' + id);
     var isOpen = target.classList.contains('open');
     items.forEach(function(item) { item.classList.remove('open'); });
-    if (!isOpen) { target.classList.add('open'); }
+    if (!isOpen) {
+      target.classList.add('open');
+      setTimeout(function() { _scrollToAcc(target); }, 50);
+    }
   }
 
   function openAccordion(id) {
+    document.querySelectorAll('.acc-item').forEach(function(item) { item.classList.remove('open'); });
     var item = document.getElementById('acc-' + id);
+    if (!item) return;
     item.classList.add('open');
-    setTimeout(function() { item.scrollIntoView({behavior:'smooth', block:'start'}); }, 50);
+    setTimeout(function() { _scrollToAcc(item); }, 50);
   }
 
 
