@@ -860,8 +860,8 @@ function downloadArticle(articleId) {
     setTimeout(() => target.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
   }
   function _scrollToAcc(el) {
-    var navEl = document.querySelector('nav');
-    var navH = navEl ? navEl.offsetHeight : 64;
+    var headerEl = document.querySelector('header');
+    var navH = headerEl ? headerEl.offsetHeight : 64;
     var top = el.getBoundingClientRect().top + window.scrollY - navH - 12;
     window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
   }
