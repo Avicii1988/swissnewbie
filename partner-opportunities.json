@@ -1,0 +1,145 @@
+{
+  "_schema": "swissnewbie-partner-opportunities/v1",
+  "_note": "Disabled placeholders for future partner categories. Each must remain disabled until ALL required fields are completed. Do not render active CTAs for any entry here.",
+  "_lastUpdated": "2026-09-19",
+
+  "opportunities": [
+
+    {
+      "id": "international-moving-quotes",
+      "category": "arrival-logistics",
+      "title": "International Moving Quotes",
+      "status": "disabled",
+      "description": "Comparison service or lead gen for international removals to Switzerland.",
+      "segment": "newcomer",
+      "requiredBeforeEnable": {
+        "writtenTerms": false,
+        "visitorBenefit": false,
+        "geography": "International → Switzerland (EU + non-EU)",
+        "dataRecipient": null,
+        "disclosure": null,
+        "benefitSourceUrl": null,
+        "verifiedDate": null
+      },
+      "notes": "Must name receiving company before any form submission. GDPR/nDSG data flow doc required."
+    },
+
+    {
+      "id": "rental-deposit-comparison",
+      "category": "housing",
+      "title": "Rental Deposit Comparison",
+      "status": "disabled",
+      "description": "Swiss rental deposit guarantee services (e.g. Swiss Caution, Firstcaution, Swisscaution) — comparison or referral.",
+      "segment": "newcomer",
+      "requiredBeforeEnable": {
+        "writtenTerms": false,
+        "visitorBenefit": false,
+        "geography": "Switzerland",
+        "dataRecipient": null,
+        "disclosure": null,
+        "benefitSourceUrl": null,
+        "verifiedDate": null
+      }
+    },
+
+    {
+      "id": "adult-language-courses",
+      "category": "integration",
+      "title": "Adult Language Courses",
+      "status": "disabled",
+      "description": "Swiss German / French / Italian language schools or online courses for expats.",
+      "segment": "newcomer",
+      "requiredBeforeEnable": {
+        "writtenTerms": false,
+        "visitorBenefit": false,
+        "geography": "Switzerland (canton-specific or online)",
+        "dataRecipient": null,
+        "disclosure": null,
+        "benefitSourceUrl": null,
+        "verifiedDate": null
+      }
+    },
+
+    {
+      "id": "arrival-esim",
+      "category": "connectivity",
+      "title": "Arrival eSIM",
+      "status": "disabled",
+      "description": "Temporary eSIM for new arrivals to Switzerland before getting a permanent plan.",
+      "segment": "newcomer",
+      "requiredBeforeEnable": {
+        "writtenTerms": false,
+        "visitorBenefit": false,
+        "geography": "Switzerland",
+        "dataRecipient": null,
+        "disclosure": null,
+        "benefitSourceUrl": null,
+        "verifiedDate": null
+      }
+    },
+
+    {
+      "id": "neutral-health-insurance-comparison",
+      "category": "health-insurance",
+      "title": "Neutral Health Insurance Comparison",
+      "status": "disabled",
+      "description": "Neutral comparison tool beyond Priminfo (official) and Comparis (commercial). E.g. Bonus.ch, Moneyland.",
+      "segment": "newcomer",
+      "requiredBeforeEnable": {
+        "writtenTerms": false,
+        "visitorBenefit": false,
+        "geography": "Switzerland (all cantons)",
+        "dataRecipient": null,
+        "disclosure": null,
+        "benefitSourceUrl": null,
+        "verifiedDate": null
+      },
+      "notes": "Priminfo (priminfo.admin.ch) remains the neutral benchmark and must stay prominent above any commercial comparison referral."
+    },
+
+    {
+      "id": "canton-tax-filing-support",
+      "category": "tax",
+      "title": "Canton Tax Filing Support",
+      "status": "disabled",
+      "description": "Tax filing software or advisor referral for expats — e.g. Taxc, Taxfish, or canton-specific tools.",
+      "segment": "resident",
+      "requiredBeforeEnable": {
+        "writtenTerms": false,
+        "visitorBenefit": false,
+        "geography": "Switzerland (canton-specific)",
+        "dataRecipient": null,
+        "disclosure": null,
+        "benefitSourceUrl": null,
+        "verifiedDate": null
+      }
+    },
+
+    {
+      "id": "household-setup",
+      "category": "housing",
+      "title": "Household Setup",
+      "status": "disabled",
+      "description": "Furniture, appliances, or household setup services for new arrivals.",
+      "segment": "newcomer",
+      "requiredBeforeEnable": {
+        "writtenTerms": false,
+        "visitorBenefit": false,
+        "geography": "Switzerland",
+        "dataRecipient": null,
+        "disclosure": null,
+        "benefitSourceUrl": null,
+        "verifiedDate": null
+      }
+    }
+
+  ],
+
+  "excludedCategories": [
+    "foreign energy-switching",
+    "loans",
+    "crypto",
+    "gambling",
+    "generic coupon feeds"
+  ]
+}

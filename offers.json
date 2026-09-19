@@ -1,0 +1,692 @@
+{
+  "_schema": "swissnewbie-offers/v1",
+  "_lastUpdated": "2026-09-19",
+  "_note": "Single source of truth for all commercial offers. Build validation: numeric benefits require benefitSourceUrl + benefitVerifiedAsOf. Active CTAs on stale/disabled offers must fail. Per-card disclosure required for all referral/affiliate offers.",
+
+  "offers": [
+
+    {
+      "id": "neon-banking",
+      "provider": "Neon",
+      "category": "banking",
+      "segments": ["newcomer", "resident"],
+      "claimStatus": "unknown",
+      "benefitType": "referral_bonus",
+      "benefitText": {
+        "en": "Check the current neon welcome offer",
+        "de": "Aktuelles neon Willkommensangebot prüfen",
+        "fr": "Vérifier l'offre de bienvenue neon actuelle"
+      },
+      "benefitVerifiedAsOf": null,
+      "benefitSourceUrl": null,
+      "_benefitNote": "Old CHF 10 / 'you and I both get CHF 10' model ended 15 Jan 2024. No current numeric offer documented. Code CFSH8W may still be active but benefit is unconfirmed. Verify via neon referral dashboard before displaying a number.",
+      "referrerReward": {
+        "text": "Unconfirmed — check neon dashboard",
+        "verifiedAsOf": null
+      },
+      "visitorBenefit": {
+        "text": "Unconfirmed — check neon referral terms",
+        "verifiedAsOf": null
+      },
+      "activationConditions": "New neon customers only. Open account via referral link/code.",
+      "minimumTerm": null,
+      "code": "CFSH8W",
+      "providerUrl": {
+        "en": "http://onelink.to/neon",
+        "de": "http://onelink.to/neon",
+        "fr": "http://onelink.to/neon"
+      },
+      "ctaText": {
+        "en": "Open neon account →",
+        "de": "Neon-Konto eröffnen →",
+        "fr": "Ouvrir un compte neon →"
+      },
+      "commercialRelationship": "referral",
+      "disclosure": {
+        "en": "Referral link — SwissNewbie may receive a reward after activation.",
+        "de": "Empfehlungslink — SwissNewbie erhält möglicherweise eine Vergütung nach Aktivierung.",
+        "fr": "Lien de parrainage — SwissNewbie peut recevoir une récompense après activation."
+      },
+      "analyticsOfferId": "neon-banking-referral",
+      "placements": ["finance", "vouchers", "homepage-overlay-finance"],
+      "lastReviewed": "2026-09-19"
+    },
+
+    {
+      "id": "sunrise-mobile-family",
+      "provider": "Sunrise",
+      "category": "telecom-mobile",
+      "segments": ["newcomer", "resident"],
+      "claimStatus": "conditional",
+      "benefitType": "discount_percent",
+      "benefitText": {
+        "en": "50% Family Benefit on additional Swiss Connect mobile subscriptions",
+        "de": "50% Family Benefit auf zusätzliche Swiss Connect Mobilabos",
+        "fr": "50% Family Benefit sur les abonnements mobiles Swiss Connect supplémentaires"
+      },
+      "benefitVerifiedAsOf": "2026-09-19",
+      "benefitSourceUrl": "https://aklam.io/7SAazrKj",
+      "_benefitNote": "50% applies ONLY to additional/new Swiss Connect mobile subscriptions under bundle/same-bill conditions. Not guaranteed across all mobile or internet plans. Referral customers may receive preferential prices and a product-dependent one-off invoice credit — final benefit shown by Sunrise.",
+      "referrerReward": {
+        "text": "Product-dependent invoice credit — final amount shown by Sunrise",
+        "verifiedAsOf": "2026-09-19"
+      },
+      "visitorBenefit": {
+        "text": "Preferential pricing + one-off invoice credit depending on product; 50% only on qualifying additional Swiss Connect mobile under Family Benefit conditions",
+        "verifiedAsOf": "2026-09-19"
+      },
+      "activationConditions": "Family Benefit: bundle or same-bill required; qualifying additional subscription only. Exclusions apply. Final benefit confirmed by Sunrise.",
+      "minimumTerm": "Check current plan terms at Sunrise",
+      "providerUrl": {
+        "en": "https://aklam.io/7SAazrKj",
+        "de": "https://aklam.io/7SAazrKj",
+        "fr": "https://aklam.io/7SAazrKj"
+      },
+      "ctaText": {
+        "en": "Check my Sunrise deal →",
+        "de": "Mein Sunrise-Angebot prüfen →",
+        "fr": "Voir mon offre Sunrise →"
+      },
+      "commercialRelationship": "referral",
+      "disclosure": {
+        "en": "Referral link — SwissNewbie may receive a reward after activation. Final benefit shown by Sunrise.",
+        "de": "Empfehlungslink — SwissNewbie erhält möglicherweise eine Vergütung nach Aktivierung. Endgültiger Vorteil wird von Sunrise angezeigt.",
+        "fr": "Lien de parrainage — SwissNewbie peut recevoir une récompense après activation. Avantage final indiqué par Sunrise."
+      },
+      "analyticsOfferId": "sunrise-mobile-family-referral",
+      "placements": ["mobile-internet", "vouchers", "homepage-overlay-mobile"],
+      "lastReviewed": "2026-09-19"
+    },
+
+    {
+      "id": "sunrise-internet",
+      "provider": "Sunrise",
+      "category": "telecom-internet",
+      "segments": ["newcomer", "resident"],
+      "claimStatus": "conditional",
+      "benefitType": "credit_variable",
+      "benefitText": {
+        "en": "Referral pricing on home internet — benefit shown by Sunrise",
+        "de": "Empfehlungspreise für Heim-Internet — Vorteil wird von Sunrise angezeigt",
+        "fr": "Tarif de parrainage pour internet à domicile — avantage indiqué par Sunrise"
+      },
+      "benefitVerifiedAsOf": "2026-09-19",
+      "benefitSourceUrl": "https://aklam.io/7SAazrKj",
+      "_benefitNote": "Internet product: referral may give preferential price and one-off invoice credit. The 50% Family Benefit does NOT apply to home internet — it's mobile-only for qualifying Swiss Connect subscriptions.",
+      "referrerReward": {
+        "text": "Product-dependent — final amount shown by Sunrise",
+        "verifiedAsOf": "2026-09-19"
+      },
+      "visitorBenefit": {
+        "text": "Preferential referral pricing; one-off invoice credit shown at checkout",
+        "verifiedAsOf": "2026-09-19"
+      },
+      "activationConditions": "New Sunrise home internet customer via referral link. Terms shown by Sunrise.",
+      "minimumTerm": "Check current plan terms at Sunrise",
+      "providerUrl": {
+        "en": "https://aklam.io/7SAazrKj",
+        "de": "https://aklam.io/7SAazrKj",
+        "fr": "https://aklam.io/7SAazrKj"
+      },
+      "ctaText": {
+        "en": "Check my Sunrise deal →",
+        "de": "Mein Sunrise-Angebot prüfen →",
+        "fr": "Voir mon offre Sunrise →"
+      },
+      "commercialRelationship": "referral",
+      "disclosure": {
+        "en": "Referral link — SwissNewbie may receive a reward after activation. Final benefit shown by Sunrise.",
+        "de": "Empfehlungslink — SwissNewbie erhält möglicherweise eine Vergütung nach Aktivierung. Endgültiger Vorteil wird von Sunrise angezeigt.",
+        "fr": "Lien de parrainage — SwissNewbie peut recevoir une récompense après activation. Avantage final indiqué par Sunrise."
+      },
+      "analyticsOfferId": "sunrise-internet-referral",
+      "placements": ["mobile-internet", "vouchers"],
+      "lastReviewed": "2026-09-19"
+    },
+
+    {
+      "id": "yallo-mobile",
+      "provider": "yallo",
+      "category": "telecom-mobile",
+      "segments": ["newcomer", "resident"],
+      "claimStatus": "conditional",
+      "benefitType": "cash_credit",
+      "benefitText": {
+        "en": "Up to CHF 100 — amount depends on plan and successful online activation",
+        "de": "Bis zu CHF 100 — Betrag abhängig vom Tarif und erfolgreicher Online-Aktivierung",
+        "fr": "Jusqu'à CHF 100 — montant selon le forfait et l'activation en ligne réussie"
+      },
+      "benefitVerifiedAsOf": "2026-09-19",
+      "benefitSourceUrl": "https://aklam.io/5xD8wiqf",
+      "_benefitNote": "yallo referral pays up to CHF 100 depending on product selected. Mobile up to CHF 50, internet up to CHF 100. Amount depends on product and successful online activation through the link. Plan terms and activation fees apply. Remove blanket 'no long-term contract'.",
+      "referrerReward": {
+        "text": "Benefit shown by provider at activation",
+        "verifiedAsOf": "2026-09-19"
+      },
+      "visitorBenefit": {
+        "text": "Up to CHF 100 — mobile CHF 50, internet CHF 100. Amount depends on product and successful online activation.",
+        "verifiedAsOf": "2026-09-19"
+      },
+      "activationConditions": "Online activation via referral link required. Amount depends on selected plan. Activation fee and plan minimum term apply per selected product.",
+      "minimumTerm": "Shown per plan at checkout",
+      "providerUrl": {
+        "en": "https://aklam.io/5xD8wiqf",
+        "de": "https://aklam.io/5xD8wiqf",
+        "fr": "https://aklam.io/5xD8wiqf"
+      },
+      "ctaText": {
+        "en": "Get up to CHF 100 with yallo →",
+        "de": "Bis zu CHF 100 mit yallo →",
+        "fr": "Jusqu'à CHF 100 avec yallo →"
+      },
+      "commercialRelationship": "referral",
+      "disclosure": {
+        "en": "Referral link — SwissNewbie may receive a reward after activation.",
+        "de": "Empfehlungslink — SwissNewbie erhält möglicherweise eine Vergütung nach Aktivierung.",
+        "fr": "Lien de parrainage — SwissNewbie peut recevoir une récompense après activation."
+      },
+      "analyticsOfferId": "yallo-mobile-referral",
+      "placements": ["mobile-internet", "vouchers", "homepage-overlay-mobile"],
+      "lastReviewed": "2026-09-19"
+    },
+
+    {
+      "id": "yallo-internet",
+      "provider": "yallo",
+      "category": "telecom-internet",
+      "segments": ["newcomer", "resident"],
+      "claimStatus": "conditional",
+      "benefitType": "cash_credit",
+      "benefitText": {
+        "en": "Up to CHF 100 — amount depends on plan and successful online activation",
+        "de": "Bis zu CHF 100 — Betrag abhängig vom Tarif und erfolgreicher Online-Aktivierung",
+        "fr": "Jusqu'à CHF 100 — montant selon le forfait et l'activation en ligne réussie"
+      },
+      "benefitVerifiedAsOf": "2026-09-19",
+      "benefitSourceUrl": "https://aklam.io/5xD8wiqf",
+      "referrerReward": {
+        "text": "Benefit shown by provider at activation",
+        "verifiedAsOf": "2026-09-19"
+      },
+      "visitorBenefit": {
+        "text": "CHF 100 for home internet activation; amount depends on successful online activation.",
+        "verifiedAsOf": "2026-09-19"
+      },
+      "activationConditions": "Online activation via referral link required. Activation fee and plan minimum term apply per selected product.",
+      "minimumTerm": "Shown per plan at checkout",
+      "providerUrl": {
+        "en": "https://aklam.io/5xD8wiqf",
+        "de": "https://aklam.io/5xD8wiqf",
+        "fr": "https://aklam.io/5xD8wiqf"
+      },
+      "ctaText": {
+        "en": "Get CHF 100 with yallo →",
+        "de": "CHF 100 mit yallo →",
+        "fr": "CHF 100 avec yallo →"
+      },
+      "commercialRelationship": "referral",
+      "disclosure": {
+        "en": "Referral link — SwissNewbie may receive a reward after activation.",
+        "de": "Empfehlungslink — SwissNewbie erhält möglicherweise eine Vergütung nach Aktivierung.",
+        "fr": "Lien de parrainage — SwissNewbie peut recevoir une récompense après activation."
+      },
+      "analyticsOfferId": "yallo-internet-referral",
+      "placements": ["mobile-internet", "vouchers"],
+      "lastReviewed": "2026-09-19"
+    },
+
+    {
+      "id": "wise-transfer",
+      "provider": "Wise",
+      "category": "fx-transfer",
+      "segments": ["newcomer", "resident"],
+      "claimStatus": "conditional",
+      "benefitType": "fee_waiver",
+      "benefitText": {
+        "en": "Save the Wise fee on your first eligible transfer — exact amount shown by Wise",
+        "de": "Wise-Gebühr bei deiner ersten berechtigten Überweisung sparen — genauen Betrag zeigt Wise",
+        "fr": "Économisez les frais Wise sur votre premier virement éligible — montant exact indiqué par Wise"
+      },
+      "benefitVerifiedAsOf": "2026-09-19",
+      "benefitSourceUrl": "https://wise.com/invite/dic/9b1ccfe",
+      "_benefitNote": "Old 'CHF 600 free transfer' claim is not supported. The current Wise invite offer is a fee waiver on a first eligible transfer, with the exact limit shown on the Wise invite page. Never imply CHF 600 of savings.",
+      "referrerReward": {
+        "text": "Benefit shown by Wise",
+        "verifiedAsOf": "2026-09-19"
+      },
+      "visitorBenefit": {
+        "text": "Fee waiver on first eligible transfer; exact limit shown by Wise on invite page",
+        "verifiedAsOf": "2026-09-19"
+      },
+      "activationConditions": "New Wise customer only. First eligible outbound transfer via the referral link.",
+      "minimumTerm": null,
+      "providerUrl": {
+        "en": "https://wise.com/invite/dic/9b1ccfe",
+        "de": "https://wise.com/invite/dic/9b1ccfe",
+        "fr": "https://wise.com/invite/dic/9b1ccfe"
+      },
+      "ctaText": {
+        "en": "See my Wise first-transfer discount →",
+        "de": "Meinen Wise-Erstüberweisungsrabatt sehen →",
+        "fr": "Voir ma remise Wise sur premier virement →"
+      },
+      "commercialRelationship": "referral",
+      "disclosure": {
+        "en": "Referral link — SwissNewbie may receive a reward after activation.",
+        "de": "Empfehlungslink — SwissNewbie erhält möglicherweise eine Vergütung nach Aktivierung.",
+        "fr": "Lien de parrainage — SwissNewbie peut recevoir une récompense après activation."
+      },
+      "analyticsOfferId": "wise-transfer-referral",
+      "placements": ["finance", "vouchers", "homepage-overlay-finance"],
+      "lastReviewed": "2026-09-19"
+    },
+
+    {
+      "id": "frankly-3a",
+      "provider": "Frankly",
+      "category": "pension-3a",
+      "segments": ["newcomer", "resident"],
+      "claimStatus": "verified",
+      "benefitType": "cash_bonus",
+      "benefitText": {
+        "en": "CHF 35 fee voucher — valid within 48h of opening as a new customer",
+        "de": "CHF 35 Gebührengutschein — gültig innerhalb von 48h nach Kontoeröffnung als Neukunde",
+        "fr": "Bon de CHF 35 — valable dans les 48h suivant l'ouverture en tant que nouveau client"
+      },
+      "benefitVerifiedAsOf": "2026-09-19",
+      "benefitSourceUrl": "https://www.frankly.ch/de/empfehlung?code=refjf7c46",
+      "_benefitNote": "CHF 35 fee voucher verified via referral code refjf7c46 in active dashboard. 48-hour new-customer code condition applies.",
+      "referrerReward": {
+        "text": "CHF 35 fee voucher",
+        "verifiedAsOf": "2026-09-19"
+      },
+      "visitorBenefit": {
+        "text": "CHF 35 fee voucher for new customers via referral link. Must be redeemed within 48h of opening.",
+        "verifiedAsOf": "2026-09-19"
+      },
+      "activationConditions": "New frankly customers only. Enter code refjf7c46 or use referral link. Redeem within 48h of account opening.",
+      "minimumTerm": null,
+      "code": "refjf7c46",
+      "providerUrl": {
+        "en": "https://www.frankly.ch/de/empfehlung?code=refjf7c46",
+        "de": "https://www.frankly.ch/de/empfehlung?code=refjf7c46",
+        "fr": "https://www.frankly.ch/de/empfehlung?code=refjf7c46"
+      },
+      "ctaText": {
+        "en": "Get CHF 35 with Frankly →",
+        "de": "CHF 35 mit Frankly →",
+        "fr": "CHF 35 avec Frankly →"
+      },
+      "commercialRelationship": "referral",
+      "disclosure": {
+        "en": "Referral link — SwissNewbie may receive a reward after activation.",
+        "de": "Empfehlungslink — SwissNewbie erhält möglicherweise eine Vergütung nach Aktivierung.",
+        "fr": "Lien de parrainage — SwissNewbie peut recevoir une récompense après activation."
+      },
+      "analyticsOfferId": "frankly-3a-referral",
+      "placements": ["finance", "vouchers", "homepage-overlay-finance"],
+      "lastReviewed": "2026-09-19"
+    },
+
+    {
+      "id": "ubs-banking",
+      "provider": "UBS",
+      "category": "banking",
+      "segments": ["newcomer", "resident"],
+      "claimStatus": "verified",
+      "benefitType": "points",
+      "benefitText": {
+        "en": "50 KeyClub points (CHF 50 value) for an eligible banking offer",
+        "de": "50 KeyClub-Punkte (CHF 50 Wert) für ein berechtigtes Bankangebot",
+        "fr": "50 points KeyClub (valeur CHF 50) pour une offre bancaire éligible"
+      },
+      "benefitVerifiedAsOf": "2026-09-19",
+      "benefitSourceUrl": "https://www.ubs.com/ch/en/services/private/recommend.html",
+      "_benefitNote": "50 KeyClub points for eligible banking offer, 250 for pension plan or mortgage, cumulative where applicable. 1 point = CHF 1. Do NOT call points unrestricted cash — they are redeemable at partner retailers (Migros, Coop, SBB etc.).",
+      "referrerReward": {
+        "text": "50 KeyClub points (banking), 250 (pension/mortgage); 1 point = CHF 1 at partner retailers",
+        "verifiedAsOf": "2026-09-19"
+      },
+      "visitorBenefit": {
+        "text": "50 KeyClub points for eligible banking offer; 250 for qualifying pension plan or mortgage",
+        "verifiedAsOf": "2026-09-19"
+      },
+      "activationConditions": "Eligible banking offer, pension plan or mortgage via recommendation link. Points redeemable at UBS KeyClub partners.",
+      "minimumTerm": null,
+      "providerUrl": {
+        "en": "https://www.ubs.com/ch/en/services/private/recommend.html",
+        "de": "https://www.ubs.com/ch/de/services/private/recommend.html",
+        "fr": "https://www.ubs.com/ch/fr/services/private/recommend.html"
+      },
+      "ctaText": {
+        "en": "Get UBS KeyClub points →",
+        "de": "UBS KeyClub-Punkte erhalten →",
+        "fr": "Obtenir des points UBS KeyClub →"
+      },
+      "commercialRelationship": "referral",
+      "disclosure": {
+        "en": "Referral link — SwissNewbie may receive a reward after activation.",
+        "de": "Empfehlungslink — SwissNewbie erhält möglicherweise eine Vergütung nach Aktivierung.",
+        "fr": "Lien de parrainage — SwissNewbie peut recevoir une récompense après activation."
+      },
+      "analyticsOfferId": "ubs-banking-referral",
+      "placements": ["finance", "vouchers"],
+      "lastReviewed": "2026-09-19"
+    },
+
+    {
+      "id": "ubs-3a",
+      "provider": "UBS",
+      "category": "pension-3a",
+      "segments": ["newcomer", "resident"],
+      "claimStatus": "verified",
+      "benefitType": "points",
+      "benefitText": {
+        "en": "250 KeyClub points (CHF 250 value) for a qualifying pension plan",
+        "de": "250 KeyClub-Punkte (CHF 250 Wert) für einen qualifizierenden Vorsorgeplan",
+        "fr": "250 points KeyClub (valeur CHF 250) pour un plan de retraite qualifiant"
+      },
+      "benefitVerifiedAsOf": "2026-09-19",
+      "benefitSourceUrl": "https://www.ubs.com/ch/en/services/private/recommend.html",
+      "referrerReward": {
+        "text": "250 KeyClub points for pension/mortgage; 1 point = CHF 1 at partner retailers",
+        "verifiedAsOf": "2026-09-19"
+      },
+      "visitorBenefit": {
+        "text": "250 KeyClub points for qualifying pension plan or mortgage via recommendation link",
+        "verifiedAsOf": "2026-09-19"
+      },
+      "activationConditions": "Qualifying UBS pension plan or mortgage via recommendation link. Points redeemable at UBS KeyClub partners.",
+      "minimumTerm": null,
+      "providerUrl": {
+        "en": "https://www.ubs.com/ch/en/services/private/recommend.html",
+        "de": "https://www.ubs.com/ch/de/services/private/recommend.html",
+        "fr": "https://www.ubs.com/ch/fr/services/private/recommend.html"
+      },
+      "ctaText": {
+        "en": "Get UBS KeyClub points →",
+        "de": "UBS KeyClub-Punkte erhalten →",
+        "fr": "Obtenir des points UBS KeyClub →"
+      },
+      "commercialRelationship": "referral",
+      "disclosure": {
+        "en": "Referral link — SwissNewbie may receive a reward after activation.",
+        "de": "Empfehlungslink — SwissNewbie erhält möglicherweise eine Vergütung nach Aktivierung.",
+        "fr": "Lien de parrainage — SwissNewbie peut recevoir une récompense après activation."
+      },
+      "analyticsOfferId": "ubs-3a-referral",
+      "placements": ["finance", "vouchers"],
+      "lastReviewed": "2026-09-19"
+    },
+
+    {
+      "id": "ibkr-investing",
+      "provider": "Interactive Brokers",
+      "category": "investing",
+      "segments": ["resident"],
+      "claimStatus": "verified",
+      "benefitType": "shares",
+      "benefitText": {
+        "en": "Up to USD 1,000 in IBKR shares — USD 1 per USD 100 deposited; eligibility applies",
+        "de": "Bis zu USD 1,000 in IBKR-Aktien — USD 1 pro USD 100 eingezahlt; Bedingungen gelten",
+        "fr": "Jusqu'à USD 1,000 en actions IBKR — USD 1 pour USD 100 déposé ; éligibilité requise"
+      },
+      "benefitVerifiedAsOf": "2026-09-19",
+      "benefitSourceUrl": "https://ibkr.com/referral/jan354",
+      "_benefitNote": "USD 1 per USD 100 deposited up to USD 1,000. Eligibility conditions apply. Remove unsupported superlatives ('best broker globally') but keep 'lowest trading fees globally' if supportable — IBKR is verifiably among the lowest for many asset classes.",
+      "referrerReward": {
+        "text": "IBKR shares — amount shown at activation",
+        "verifiedAsOf": "2026-09-19"
+      },
+      "visitorBenefit": {
+        "text": "Up to USD 1,000 in IBKR shares — USD 1 per USD 100 deposited; eligibility applies",
+        "verifiedAsOf": "2026-09-19"
+      },
+      "activationConditions": "New IBKR account via referral link. Deposit qualifying amount. Eligibility conditions and minimum holding period apply.",
+      "minimumTerm": "IBKR terms apply — shares vest over time",
+      "providerUrl": {
+        "en": "https://ibkr.com/referral/jan354",
+        "de": "https://ibkr.com/referral/jan354",
+        "fr": "https://ibkr.com/referral/jan354"
+      },
+      "ctaText": {
+        "en": "Open IBKR account →",
+        "de": "IBKR-Konto eröffnen →",
+        "fr": "Ouvrir un compte IBKR →"
+      },
+      "commercialRelationship": "referral",
+      "disclosure": {
+        "en": "Referral link — SwissNewbie may receive a reward after activation.",
+        "de": "Empfehlungslink — SwissNewbie erhält möglicherweise eine Vergütung nach Aktivierung.",
+        "fr": "Lien de parrainage — SwissNewbie peut recevoir une récompense après activation."
+      },
+      "analyticsOfferId": "ibkr-investing-referral",
+      "placements": ["finance", "vouchers"],
+      "lastReviewed": "2026-09-19"
+    },
+
+    {
+      "id": "swica-health",
+      "provider": "SWICA",
+      "category": "health-insurance",
+      "segments": ["newcomer", "resident"],
+      "claimStatus": "conditional",
+      "benefitType": "consultation",
+      "benefitText": {
+        "en": "Free expert consultation — top-rated expat insurer",
+        "de": "Kostenlose Expertenberatung — bestbewertete Expat-Versicherung",
+        "fr": "Consultation experte gratuite — assureur expatrié le mieux noté"
+      },
+      "benefitVerifiedAsOf": "2026-09-19",
+      "benefitSourceUrl": "https://crmstudio.swica.ch/public/e/l/empfehlung?id=de83f6e0-0700-4dee-92ff-d499423a6918",
+      "_benefitNote": "Remove 'Best deal for expats via SwissNewbie' exclusivity and 'Get best deal' CTA. Remove implied visitor cash benefit. Keep strong consultation CTA. Disclose rewarded referral briefly. Comparis 2025 satisfaction rating is supportable.",
+      "referrerReward": {
+        "text": "Rewarded referral — disclosed on card",
+        "verifiedAsOf": "2026-09-19"
+      },
+      "visitorBenefit": {
+        "text": "Free personalised consultation; no implied exclusive or cash benefit",
+        "verifiedAsOf": "2026-09-19"
+      },
+      "activationConditions": "Via SWICA referral link. Consultation is free; insurance contract terms per SWICA.",
+      "minimumTerm": null,
+      "providerUrl": {
+        "en": "https://crmstudio.swica.ch/public/e/l/empfehlung?id=de83f6e0-0700-4dee-92ff-d499423a6918",
+        "de": "https://crmstudio.swica.ch/public/e/l/empfehlung?id=de83f6e0-0700-4dee-92ff-d499423a6918",
+        "fr": "https://crmstudio.swica.ch/public/e/l/empfehlung?id=de83f6e0-0700-4dee-92ff-d499423a6918"
+      },
+      "ctaText": {
+        "en": "Get SWICA consultation →",
+        "de": "SWICA-Beratung erhalten →",
+        "fr": "Obtenir une consultation SWICA →"
+      },
+      "commercialRelationship": "referral",
+      "disclosure": {
+        "en": "Referral link — SwissNewbie may receive a reward if you sign up.",
+        "de": "Empfehlungslink — SwissNewbie erhält möglicherweise eine Vergütung bei Vertragsabschluss.",
+        "fr": "Lien de parrainage — SwissNewbie peut recevoir une récompense si vous souscrivez."
+      },
+      "analyticsOfferId": "swica-health-referral",
+      "placements": ["health-insurance", "vouchers", "homepage-overlay-health"],
+      "lastReviewed": "2026-09-19"
+    },
+
+    {
+      "id": "smile-home-insurance",
+      "provider": "Smile",
+      "category": "insurance",
+      "segments": ["newcomer"],
+      "claimStatus": "verified",
+      "benefitType": "points_cash_value",
+      "benefitText": {
+        "en": "CHF 40 value for each of you — 3,400 Smile points after eligible contract via invitation link",
+        "de": "CHF 40 Wert für jeden — 3.400 Smile-Punkte nach berechtigtem Vertrag über den Einladungslink",
+        "fr": "CHF 40 de valeur pour chacun — 3.400 points Smile après contrat éligible via le lien d'invitation"
+      },
+      "benefitVerifiedAsOf": "2026-09-19",
+      "benefitSourceUrl": "https://app.smile-insurances.ch/rewards/jan533a2",
+      "_benefitNote": "Verified: each party receives 3,400 points worth CHF 40 after an eligible contract via personal invitation link/code JAN533A2. Prefer 'CHF 40 value for each of you' to 'up to CHF 40'.",
+      "referrerReward": {
+        "text": "3,400 Smile points = CHF 40 value, per eligible contract",
+        "verifiedAsOf": "2026-09-19"
+      },
+      "visitorBenefit": {
+        "text": "3,400 Smile points = CHF 40 value, after eligible contract via invitation link",
+        "verifiedAsOf": "2026-09-19"
+      },
+      "activationConditions": "New Smile customer. Eligible contract (home or car) via personal invitation code JAN533A2. Points awarded after policy start.",
+      "minimumTerm": null,
+      "code": "JAN533A2",
+      "providerUrl": {
+        "en": "https://app.smile-insurances.ch/rewards/jan533a2",
+        "de": "https://app.smile-insurances.ch/rewards/jan533a2",
+        "fr": "https://app.smile-insurances.ch/rewards/jan533a2"
+      },
+      "ctaText": {
+        "en": "Get CHF 40 value with Smile →",
+        "de": "CHF 40 Wert mit Smile →",
+        "fr": "CHF 40 de valeur avec Smile →"
+      },
+      "commercialRelationship": "referral",
+      "disclosure": {
+        "en": "Referral link — SwissNewbie may receive a reward after activation.",
+        "de": "Empfehlungslink — SwissNewbie erhält möglicherweise eine Vergütung nach Aktivierung.",
+        "fr": "Lien de parrainage — SwissNewbie peut recevoir une récompense après activation."
+      },
+      "analyticsOfferId": "smile-home-insurance-referral",
+      "placements": ["insurance", "vouchers", "homepage-overlay-insurance"],
+      "lastReviewed": "2026-09-19"
+    },
+
+    {
+      "id": "smile-car-insurance",
+      "provider": "Smile",
+      "category": "insurance",
+      "segments": ["newcomer", "resident"],
+      "claimStatus": "verified",
+      "benefitType": "points_cash_value",
+      "benefitText": {
+        "en": "CHF 40 value for each of you — 3,400 Smile points after eligible contract via invitation link",
+        "de": "CHF 40 Wert für jeden — 3.400 Smile-Punkte nach berechtigtem Vertrag über den Einladungslink",
+        "fr": "CHF 40 de valeur pour chacun — 3.400 points Smile après contrat éligible via le lien d'invitation"
+      },
+      "benefitVerifiedAsOf": "2026-09-19",
+      "benefitSourceUrl": "https://app.smile-insurances.ch/rewards/jan533a2",
+      "referrerReward": {
+        "text": "3,400 Smile points = CHF 40 value, per eligible contract",
+        "verifiedAsOf": "2026-09-19"
+      },
+      "visitorBenefit": {
+        "text": "3,400 Smile points = CHF 40 value, after eligible contract via invitation link",
+        "verifiedAsOf": "2026-09-19"
+      },
+      "activationConditions": "New Smile customer. Eligible contract (home or car) via personal invitation code JAN533A2. Points awarded after policy start.",
+      "minimumTerm": null,
+      "code": "JAN533A2",
+      "providerUrl": {
+        "en": "https://app.smile-insurances.ch/rewards/jan533a2",
+        "de": "https://app.smile-insurances.ch/rewards/jan533a2",
+        "fr": "https://app.smile-insurances.ch/rewards/jan533a2"
+      },
+      "ctaText": {
+        "en": "Get CHF 40 value with Smile →",
+        "de": "CHF 40 Wert mit Smile →",
+        "fr": "CHF 40 de valeur avec Smile →"
+      },
+      "commercialRelationship": "referral",
+      "disclosure": {
+        "en": "Referral link — SwissNewbie may receive a reward after activation.",
+        "de": "Empfehlungslink — SwissNewbie erhält möglicherweise eine Vergütung nach Aktivierung.",
+        "fr": "Lien de parrainage — SwissNewbie peut recevoir une récompense après activation."
+      },
+      "analyticsOfferId": "smile-car-insurance-referral",
+      "placements": ["insurance", "vouchers"],
+      "lastReviewed": "2026-09-19"
+    },
+
+    {
+      "id": "mobility-carsharing",
+      "provider": "Mobility",
+      "category": "transport",
+      "segments": ["newcomer", "resident"],
+      "claimStatus": "conditional",
+      "benefitType": "driving_credit",
+      "benefitText": {
+        "en": "CHF 20 driving credit for the eligible referrer — visitor benefit shown by Mobility",
+        "de": "CHF 20 Fahrguthaben für den berechtigten Empfehler — Besucher-Vorteil wird von Mobility angezeigt",
+        "fr": "CHF 20 de crédit de conduite pour le parrain éligible — avantage visiteur indiqué par Mobility"
+      },
+      "benefitVerifiedAsOf": "2026-09-19",
+      "benefitSourceUrl": "https://www.mobility.ch/de/download-mobility-app",
+      "_benefitNote": "Public terms verify CHF 20 driving credit for the eligible REFERRER. Visitor benefit is NOT confirmed — do not promise visitors CHF 20 unless the linked journey proves it. Remove 'Up to CHF 20 welcome credit' from visitor-facing copy.",
+      "referrerReward": {
+        "text": "CHF 20 driving credit (verified in public terms for eligible referrer)",
+        "verifiedAsOf": "2026-09-19"
+      },
+      "visitorBenefit": {
+        "text": "Benefit shown by provider — check Mobility app for current offer",
+        "verifiedAsOf": "2026-09-19"
+      },
+      "activationConditions": "Via Mobility referral link. Referrer reward: CHF 20 driving credit per Mobility public terms. Visitor benefit: check Mobility app.",
+      "minimumTerm": null,
+      "providerUrl": {
+        "en": "https://www.mobility.ch/en/download-mobility-app",
+        "de": "https://www.mobility.ch/de/download-mobility-app",
+        "fr": "https://www.mobility.ch/fr/download-mobility-app"
+      },
+      "ctaText": {
+        "en": "Get Mobility driving credit →",
+        "de": "Mobility-Fahrguthaben →",
+        "fr": "Crédit de conduite Mobility →"
+      },
+      "commercialRelationship": "referral",
+      "disclosure": {
+        "en": "Referral link — SwissNewbie may receive a reward after activation.",
+        "de": "Empfehlungslink — SwissNewbie erhält möglicherweise eine Vergütung nach Aktivierung.",
+        "fr": "Lien de parrainage — SwissNewbie peut recevoir une récompense après activation."
+      },
+      "analyticsOfferId": "mobility-carsharing-referral",
+      "placements": ["public-transport", "vouchers"],
+      "lastReviewed": "2026-09-19"
+    }
+  ],
+
+  "providerVerificationQueue": [
+    {
+      "provider": "neon",
+      "offerId": "neon-banking",
+      "fieldsNeeded": ["Current referral bonus amount", "Referral terms URL", "Valid-from date for any numeric benefit", "Confirmation of code CFSH8W status"],
+      "source": "neon referral dashboard"
+    },
+    {
+      "provider": "Sunrise",
+      "offerId": "sunrise-mobile-family",
+      "fieldsNeeded": ["Exact referral credit amount by product", "Family Benefit eligibility criteria written text", "Minimum term per plan", "Locale-specific landing page URLs"],
+      "source": "Sunrise partner/referral dashboard"
+    },
+    {
+      "provider": "Mobility",
+      "offerId": "mobility-carsharing",
+      "fieldsNeeded": ["Visitor welcome credit: confirm amount and attribution mechanism via linked journey", "Referral credit confirmation: CHF 20 for referrer per public terms"],
+      "source": "Mobility referral landing page / public terms"
+    },
+    {
+      "provider": "SWICA",
+      "offerId": "swica-health",
+      "fieldsNeeded": ["Confirm no exclusive visitor cash benefit", "Referrer reward amount and condition", "SwissNewbie-specific landing page if any"],
+      "source": "SWICA partner portal"
+    },
+    {
+      "provider": "Wise",
+      "offerId": "wise-transfer",
+      "fieldsNeeded": ["Current invite offer: exact transfer limit shown on live invite page", "Eligible transfer definition", "Currency/amount cap"],
+      "source": "wise.com/invite/dic/9b1ccfe — check live page"
+    },
+    {
+      "provider": "UBS",
+      "offerId": "ubs-banking",
+      "fieldsNeeded": ["Confirm correct URL: /services/private/recommend.html", "Cumulative points conditions", "KeyClub partner redemption list"],
+      "source": "UBS recommendation page"
+    }
+  ]
+}
