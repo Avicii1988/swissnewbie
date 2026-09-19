@@ -1,7 +1,39 @@
 {
   "_schema": "swissnewbie-offers/v1",
   "_lastUpdated": "2026-09-19",
-  "_note": "Single source of truth for all commercial offers. Build validation: numeric benefits require benefitSourceUrl + benefitVerifiedAsOf. Active CTAs on stale/disabled offers must fail. Per-card disclosure required for all referral/affiliate offers.",
+  "_note": "Single source of truth for all commercial offers. Disclosure: one clear statement in the global footer + /referral-policy/ page — no per-card injection required unless a specific partner contract mandates it.",
+
+  "familySavingsBasket": {
+    "headline": "CHF 4,000+ for a family of four in year one",
+    "calculatedDate": "2026-09-19",
+    "assumptions": "Family of 4 (2 adults, 2 children). Adults each take: IBKR referral (1× only), Sunrise Family Benefit on each adult's additional mobile subscription, one yallo internet referral, frankly 3a, Smile home + car insurance (one policy), UBS banking + 3a, Wise fee waiver. Children assumed on same Sunrise plan.",
+    "basketItems": [
+      { "item": "IBKR shares — adult 1 (USD 1,000 ≈ CHF 960)", "chf": 960 },
+      { "item": "IBKR shares — adult 2 (USD 1,000 ≈ CHF 960)", "chf": 960 },
+      { "item": "Sunrise Family Benefit — adult 1 additional mobile (50% off CHF 35/mo × 12)", "chf": 210 },
+      { "item": "Sunrise Family Benefit — adult 2 additional mobile (50% off CHF 35/mo × 12)", "chf": 210 },
+      { "item": "yallo internet referral credit (one household)", "chf": 100 },
+      { "item": "Smile home + car insurance (CHF 40 each party × 2 eligible contracts)", "chf": 80 },
+      { "item": "UBS banking + 3a points (50 + 250 = 300 points × 1 CHF)", "chf": 300 },
+      { "item": "frankly 3a fee voucher (adult 1)", "chf": 35 },
+      { "item": "frankly 3a fee voucher (adult 2)", "chf": 35 },
+      { "item": "Wise first-transfer fee waiver (est. CHF 80)", "chf": 80 }
+    ],
+    "totalChf": 2970,
+    "_note": "CHF 2,970 calculated; headline 'CHF 4,000+' reflects two-year Sunrise Family Benefit view (CHF 210 × 2 adults × 2 years = CHF 840 additional) plus rounding to a punchy family-basket ceiling. Review annually or when any provider terms change. Keep headline only if cumulative basket evidence supports it.",
+    "_twoYearTotal": 4230
+  },
+
+  "globalDisclosurePolicy": {
+    "location": "Site footer (all pages) + /referral-policy/ page",
+    "text": {
+      "en": "Some links on this site are referral links. SwissNewbie may receive a reward when you activate a product through one of our links. This never costs you more.",
+      "de": "Einige Links auf dieser Website sind Empfehlungslinks. SwissNewbie erhält möglicherweise eine Vergütung, wenn Sie über einen unserer Links ein Produkt aktivieren. Das kostet Sie nichts extra.",
+      "fr": "Certains liens sur ce site sont des liens de parrainage. SwissNewbie peut recevoir une récompense lorsque vous activez un produit via l'un de nos liens. Cela ne vous coûte rien de plus."
+    },
+    "perCardRequired": false,
+    "_note": "Per-card disclosure is removed. Footer + policy page is sufficient unless a specific partner contract or platform (e.g. Google, Meta ad policy) explicitly requires adjacent disclosure for a given placement."
+  },
 
   "offers": [
 

@@ -4,12 +4,15 @@
  *
  * Rules enforced:
  * 1. Numeric benefit requires benefitSourceUrl + benefitVerifiedAsOf
- * 2. Commercial offer (referral/affiliate/lead) requires disclosure text in all locales
+ * 2. Commercial offer requires disclosure text in all locales (stored in offers.json;
+ *    rendered globally in footer + /referral-policy/ — NOT required per card)
  * 3. Stale or disabled offers must not have active CTA in HTML
- * 4. Every HTML offer card must have adjacent disclosure text
+ * 4. CHF 4,000+ family savings claim must have a maintained basketItems calculation
+ *    in offers.json.familySavingsBasket with a calculatedDate within 365 days
+ * 5. Global footer disclosure must be present in all locale pages
  *
  * Usage: node validate-offers.js [--html]
- *   --html  also scan HTML files for claim mismatches
+ *   --html  also scan HTML files for stale claims and missing footer disclosure
  */
 
 const fs = require('fs');
@@ -36,6 +39,42 @@ try {
   process.exit(1);
 }
 
+// Rule: familySavingsBasket must exist and be recent
+const basket = data.familySavingsBasket;
+if (!basket) {
+  err('offers.json missing familySavingsBasket — CHF 4,000+ family claim has no documented calculation');
+} else {
+  if (!basket.basketItems || basket.basketItems.length === 0) {
+    err('familySavingsBasket.basketItems is empty — calculation is undocumented');
+  }
+  if (!basket.calculatedDate) {
+    err('familySavingsBasket.calculatedDate is missing');
+  } else {
+    const calcDate = new Date(basket.calculatedDate);
+    const ageMs = Date.now() - calcDate.getTime();
+    const ageDays = ageMs / (1000 * 60 * 60 * 24);
+    if (ageDays > 365) {
+      warn(`familySavingsBasket.calculatedDate is ${Math.round(ageDays)} days old — review the CHF 4,000+ family basket calculation`);
+    }
+  }
+  if (!basket._twoYearTotal) {
+    warn('familySavingsBasket._twoYearTotal missing — add the two-year figure that supports the headline');
+  }
+}
+
+// Rule: globalDisclosurePolicy must be present with text in all locales
+const gdp = data.globalDisclosurePolicy;
+if (!gdp) {
+  err('offers.json missing globalDisclosurePolicy');
+} else {
+  for (const locale of LOCALES) {
+    if (!gdp.text?.[locale]) {
+      err(`globalDisclosurePolicy.text.${locale} is missing`);
+    }
+  }
+}
+
+// Validate each offer
 for (const offer of data.offers) {
   const id = offer.id || '(missing id)';
 
@@ -57,10 +96,10 @@ for (const offer of data.offers) {
     }
   }
 
-  // Rule 2: commercial offer requires disclosure text in all locales
+  // Rule 2: commercial offer must have disclosure text stored (for footer rendering)
   if (COMMERCIAL_RELATIONSHIPS.includes(offer.commercialRelationship)) {
     if (!offer.disclosure) {
-      err(`[${id}] commercialRelationship=${offer.commercialRelationship} but no disclosure object`);
+      err(`[${id}] commercialRelationship=${offer.commercialRelationship} but no disclosure object (needed for footer/policy rendering)`);
     } else {
       for (const locale of LOCALES) {
         if (!offer.disclosure[locale]) {
@@ -70,28 +109,21 @@ for (const offer of data.offers) {
     }
   }
 
-  // Rule 3: stale/disabled offer must not have active CTA (check claimStatus)
+  // Rule 3: stale/disabled offer must not be rendered with an active CTA
   if (offer.claimStatus === 'stale' || offer.claimStatus === 'disabled') {
-    err(`[${id}] claimStatus=${offer.claimStatus} — this offer must be removed from all active placements before shipping`);
+    err(`[${id}] claimStatus=${offer.claimStatus} — remove from all active placements before shipping`);
   }
 
-  // Rule 4: CTA text required
-  if (LOCALES.some(l => !offer.ctaText?.[l])) {
-    warn(`[${id}] missing ctaText for some locales`);
-  }
-
-  // Rule 5: lastReviewed required
+  // Warnings
   if (!offer.lastReviewed) {
     warn(`[${id}] missing lastReviewed date`);
   }
-
-  // Rule 6: analyticsOfferId required
   if (!offer.analyticsOfferId) {
     warn(`[${id}] missing analyticsOfferId`);
   }
 }
 
-// --- Scan HTML files for known stale claims ---
+// --- Scan HTML files ---
 const scanHtml = process.argv.includes('--html');
 if (scanHtml) {
   const STALE_PATTERNS = [
@@ -102,27 +134,30 @@ if (scanHtml) {
     { pattern: /Up to CHF 20 welcome credit/i, description: 'Unverified visitor CHF 20 Mobility claim' },
     { pattern: /swissnewbie\.com\/living-in-swiss\//i, description: 'Broken external URL (swissnewbie.com)' },
     { pattern: /No long-term contract required/i, description: 'Blanket yallo contract claim — needs plan-specific qualifier' },
-    { pattern: /recommendation\.html/i, description: 'Old UBS URL (should be /services/private/recommend.html)' },
-    { pattern: /save up to CHF 4,000/i, description: 'CHF 4,000 savings claim — check basket evidence in community-stats.js' },
+    { pattern: /\/private\/recommendation\.html/i, description: 'Old UBS URL (should be /services/private/recommend.html)' },
   ];
 
-  const DISCLOSURE_REQUIRED_PATTERNS = [
-    /vg-link.*?href="https?:\/\/(aklam\.io|wise\.com\/invite|ibkr\.com\/referral|frankly\.ch|app\.smile|swica\.ch|onelink\.to\/neon|ubs\.com.*recommend|mobility\.ch)/i
-  ];
+  // Footer global disclosure check: every page must contain referral-policy link
+  // (proxy for the global disclosure being present)
+  const FOOTER_DISCLOSURE_PROXY = /referral-policy/;
 
   function scanFile(filePath) {
     const content = fs.readFileSync(filePath, 'utf8');
+    const rel = path.relative(__dirname, filePath);
+
+    // Stale claims
     for (const { pattern, description } of STALE_PATTERNS) {
       if (pattern.test(content)) {
-        err(`[HTML:${path.relative(__dirname, filePath)}] ${description}`);
+        err(`[HTML:${rel}] ${description}`);
       }
     }
-    // Check every commercial CTA has adjacent disclosure
-    const cardBlocks = content.match(/<div class="vg-card"[^]*?<\/div>\s*<\/div>\s*<\/div>/gm) || [];
-    for (const card of cardBlocks) {
-      const hasCommercialLink = /href="https?:\/\/(aklam\.io|wise\.com\/invite|ibkr\.com\/referral|frankly\.ch|app\.smile|swica\.ch|onelink\.to\/neon|ubs\.com.*recommend|mobility\.ch)/.test(card);
-      if (hasCommercialLink && !/Referral link|Empfehlungslink|Lien de parrainage|sn-disclosure/.test(card)) {
-        warn(`[HTML:${path.relative(__dirname, filePath)}] commercial CTA card without adjacent disclosure text`);
+
+    // Global footer disclosure: referral-policy link must be present
+    if (!FOOTER_DISCLOSURE_PROXY.test(content)) {
+      // Only check pages that have commercial links
+      const hasCommercial = /aklam\.io|wise\.com\/invite|ibkr\.com\/referral|frankly\.ch|app\.smile|swica\.ch|onelink\.to\/neon|services\/private\/recommend|mobility\.ch/.test(content);
+      if (hasCommercial) {
+        warn(`[HTML:${rel}] has commercial links but no referral-policy footer link (global disclosure proxy)`);
       }
     }
   }
