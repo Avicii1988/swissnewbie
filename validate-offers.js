@@ -7,8 +7,8 @@
  * 2. Commercial offer requires disclosure text in all locales (stored in offers.json;
  *    rendered globally in footer + /referral-policy/ — NOT required per card)
  * 3. Stale or disabled offers must not have active CTA in HTML
- * 4. CHF 4,000+ family savings claim must have a maintained basketItems calculation
- *    in offers.json.familySavingsBasket with a calculatedDate within 365 days
+ * 4. family4PersonMatrix must exist with a headlineScenario whose year1TotalChf
+ *    supports the headlineClaim; validator FAILs if claim is not supported
  * 5. Global footer disclosure must be present in all locale pages
  *
  * Usage: node validate-offers.js [--html]
@@ -39,26 +39,56 @@ try {
   process.exit(1);
 }
 
-// Rule: familySavingsBasket must exist and be recent
-const basket = data.familySavingsBasket;
-if (!basket) {
-  err('offers.json missing familySavingsBasket — CHF 4,000+ family claim has no documented calculation');
+// Rule 4: family4PersonMatrix must exist and headline scenario must support the claim
+const matrix = data.family4PersonMatrix;
+if (!matrix) {
+  err('offers.json missing family4PersonMatrix — CHF 4,000+ family claim has no documented calculation');
 } else {
-  if (!basket.basketItems || basket.basketItems.length === 0) {
-    err('familySavingsBasket.basketItems is empty — calculation is undocumented');
-  }
-  if (!basket.calculatedDate) {
-    err('familySavingsBasket.calculatedDate is missing');
+  if (!matrix.calculatedDate) {
+    err('family4PersonMatrix.calculatedDate is missing');
   } else {
-    const calcDate = new Date(basket.calculatedDate);
-    const ageMs = Date.now() - calcDate.getTime();
-    const ageDays = ageMs / (1000 * 60 * 60 * 24);
+    const calcDate = new Date(matrix.calculatedDate);
+    const ageDays = (Date.now() - calcDate.getTime()) / (1000 * 60 * 60 * 24);
     if (ageDays > 365) {
-      warn(`familySavingsBasket.calculatedDate is ${Math.round(ageDays)} days old — review the CHF 4,000+ family basket calculation`);
+      warn(`family4PersonMatrix.calculatedDate is ${Math.round(ageDays)} days old — review the family basket calculation`);
     }
   }
-  if (!basket._twoYearTotal) {
-    warn('familySavingsBasket._twoYearTotal missing — add the two-year figure that supports the headline');
+
+  if (!matrix.headlineScenario) {
+    err('family4PersonMatrix.headlineScenario is missing');
+  } else if (!matrix.headlineClaim) {
+    err('family4PersonMatrix.headlineClaim (numeric CHF amount) is missing');
+  } else {
+    const scenarios = matrix.scenarios || [];
+    const headline = scenarios.find(s => s.id === matrix.headlineScenario);
+    if (!headline) {
+      err(`family4PersonMatrix.headlineScenario="${matrix.headlineScenario}" but no scenario with that id found in scenarios[]`);
+    } else {
+      const supported = headline.year1TotalChf;
+      const claimed = matrix.headlineClaim;
+      if (typeof supported !== 'number') {
+        err(`family4PersonMatrix scenario "${headline.id}" is missing year1TotalChf`);
+      } else if (supported < claimed) {
+        err(`family4PersonMatrix headline claims CHF ${claimed}+ but headline scenario "${headline.id}" only totals CHF ${supported} — raise the scenario total or lower the claim`);
+      }
+
+      // Verify each scenario's items sum to its declared year1TotalChf
+      for (const scenario of scenarios) {
+        if (!Array.isArray(scenario.items)) continue;
+        const itemsSum = scenario.items.reduce((acc, item) => acc + (item.chf || 0), 0);
+        if (itemsSum !== scenario.year1TotalChf) {
+          warn(`family4PersonMatrix scenario "${scenario.id}" items sum to CHF ${itemsSum} but year1TotalChf declares CHF ${scenario.year1TotalChf}`);
+        }
+      }
+    }
+  }
+
+  if (!matrix.headlineQualifier) {
+    warn('family4PersonMatrix.headlineQualifier is missing — add "depending on household eligibility and selected offers"');
+  }
+
+  if (!matrix.offerEligibility || matrix.offerEligibility.length === 0) {
+    warn('family4PersonMatrix.offerEligibility is empty — per-offer eligibility rules are undocumented');
   }
 }
 
@@ -138,7 +168,6 @@ if (scanHtml) {
   ];
 
   // Footer global disclosure check: every page must contain referral-policy link
-  // (proxy for the global disclosure being present)
   const FOOTER_DISCLOSURE_PROXY = /referral-policy/;
 
   function scanFile(filePath) {
@@ -154,7 +183,6 @@ if (scanHtml) {
 
     // Global footer disclosure: referral-policy link must be present
     if (!FOOTER_DISCLOSURE_PROXY.test(content)) {
-      // Only check pages that have commercial links
       const hasCommercial = /aklam\.io|wise\.com\/invite|ibkr\.com\/referral|frankly\.ch|app\.smile|swica\.ch|onelink\.to\/neon|services\/private\/recommend|mobility\.ch/.test(content);
       if (hasCommercial) {
         warn(`[HTML:${rel}] has commercial links but no referral-policy footer link (global disclosure proxy)`);

@@ -1,27 +1,218 @@
 {
-  "_schema": "swissnewbie-offers/v1",
-  "_lastUpdated": "2026-09-19",
+  "_schema": "swissnewbie-offers/v2",
+  "_lastUpdated": "2026-09-20",
   "_note": "Single source of truth for all commercial offers. Disclosure: one clear statement in the global footer + /referral-policy/ page — no per-card injection required unless a specific partner contract mandates it.",
 
-  "familySavingsBasket": {
-    "headline": "CHF 4,000+ for a family of four in year one",
-    "calculatedDate": "2026-09-19",
-    "assumptions": "Family of 4 (2 adults, 2 children). Adults each take: IBKR referral (1× only), Sunrise Family Benefit on each adult's additional mobile subscription, one yallo internet referral, frankly 3a, Smile home + car insurance (one policy), UBS banking + 3a, Wise fee waiver. Children assumed on same Sunrise plan.",
-    "basketItems": [
-      { "item": "IBKR shares — adult 1 (USD 1,000 ≈ CHF 960)", "chf": 960 },
-      { "item": "IBKR shares — adult 2 (USD 1,000 ≈ CHF 960)", "chf": 960 },
-      { "item": "Sunrise Family Benefit — adult 1 additional mobile (50% off CHF 35/mo × 12)", "chf": 210 },
-      { "item": "Sunrise Family Benefit — adult 2 additional mobile (50% off CHF 35/mo × 12)", "chf": 210 },
-      { "item": "yallo internet referral credit (one household)", "chf": 100 },
-      { "item": "Smile home + car insurance (CHF 40 each party × 2 eligible contracts)", "chf": 80 },
-      { "item": "UBS banking + 3a points (50 + 250 = 300 points × 1 CHF)", "chf": 300 },
-      { "item": "frankly 3a fee voucher (adult 1)", "chf": 35 },
-      { "item": "frankly 3a fee voucher (adult 2)", "chf": 35 },
-      { "item": "Wise first-transfer fee waiver (est. CHF 80)", "chf": 80 }
+  "family4PersonMatrix": {
+    "headline": "A family of four can save CHF 4,000+ in the first year",
+    "headlineClaim": 4000,
+    "headlineScenario": "maximum",
+    "headlineQualifier": "depending on household eligibility and selected offers",
+    "calculatedDate": "2026-09-20",
+    "composition": {
+      "adults": 2,
+      "children": 2,
+      "description": "Two employed adults (resident or newly arrived), two minor children. Adults hold existing Sunrise subscriptions qualifying for Family Benefit, open investment/pension/banking accounts, and each own one vehicle."
+    },
+    "offerEligibility": [
+      {
+        "offerId": "ibkr-investing",
+        "benefitPerEligiblePerson": "USD 1 per USD 100 deposited, max USD 1,000 (≈ CHF 960 at USD/CHF 0.96)",
+        "maxEligiblePerHousehold": 2,
+        "adultOnly": true,
+        "minorEligible": false,
+        "conditions": "New IBKR account via referral link; deposit qualifying amount; eligibility and vesting conditions apply; deposit amount determines reward",
+        "stacksPerPerson": false,
+        "scope": "per-person",
+        "depositRequired": "USD 100 minimum; USD 100,000 for maximum USD 1,000 reward",
+        "year1ChfByDeposit": { "usd10k": 96, "usd50k": 480, "usd100k": 960 }
+      },
+      {
+        "offerId": "sunrise-mobile-family",
+        "benefitPerEligiblePerson": "50% off CHF 35/mo Swiss Connect M additional subscription × 12 months = CHF 210/year",
+        "maxEligiblePerHousehold": 4,
+        "adultOnly": false,
+        "minorEligible": true,
+        "conditions": "Requires existing qualifying Sunrise subscription on same bill for Family Benefit; each additional Swiss Connect M subscription qualifies; exclusions apply",
+        "stacksPerPerson": false,
+        "scope": "per-subscription",
+        "depositRequired": null,
+        "stackNote": "Mutually exclusive with yallo mobile per adult — choose one mobile telecom offer per person"
+      },
+      {
+        "offerId": "yallo-internet",
+        "benefitPerEligiblePerson": "CHF 100 — one credit per household internet contract",
+        "maxEligiblePerHousehold": 1,
+        "adultOnly": true,
+        "minorEligible": false,
+        "conditions": "Online activation via referral link required; one credit per household internet contract",
+        "stacksPerPerson": false,
+        "scope": "per-household"
+      },
+      {
+        "offerId": "yallo-mobile",
+        "benefitPerEligiblePerson": "Up to CHF 50 per mobile plan",
+        "maxEligiblePerHousehold": 2,
+        "adultOnly": true,
+        "minorEligible": false,
+        "conditions": "Online activation via referral link required; one credit per mobile subscription",
+        "stacksPerPerson": false,
+        "scope": "per-person",
+        "stackNote": "Mutually exclusive with Sunrise Family Benefit per adult — choose one mobile telecom offer per person"
+      },
+      {
+        "offerId": "wise-transfer",
+        "benefitPerEligiblePerson": "Fee waiver on first transfer — amount shown by Wise (est. CHF 30–80)",
+        "maxEligiblePerHousehold": 2,
+        "adultOnly": true,
+        "minorEligible": false,
+        "conditions": "New Wise customer only; one fee waiver per person on first eligible outbound transfer",
+        "stacksPerPerson": false,
+        "scope": "per-person"
+      },
+      {
+        "offerId": "frankly-3a",
+        "benefitPerEligiblePerson": "CHF 35 fee voucher",
+        "maxEligiblePerHousehold": 2,
+        "adultOnly": true,
+        "minorEligible": false,
+        "conditions": "New frankly customer only; redeem within 48 hours of opening; one per person",
+        "stacksPerPerson": false,
+        "scope": "per-person"
+      },
+      {
+        "offerId": "ubs-banking",
+        "benefitPerEligiblePerson": "50 KeyClub points = CHF 50 value at partner retailers",
+        "maxEligiblePerHousehold": 2,
+        "adultOnly": true,
+        "minorEligible": false,
+        "conditions": "Eligible banking offer via recommendation link; points redeemable at UBS KeyClub partners (Migros, Coop, SBB etc.); not unrestricted cash",
+        "stacksPerPerson": false,
+        "scope": "per-person"
+      },
+      {
+        "offerId": "ubs-3a",
+        "benefitPerEligiblePerson": "250 KeyClub points = CHF 250 value at partner retailers",
+        "maxEligiblePerHousehold": 2,
+        "adultOnly": true,
+        "minorEligible": false,
+        "conditions": "Qualifying UBS pension plan or mortgage via recommendation link; same person may hold both ubs-banking and ubs-3a if both offers are activated",
+        "stacksPerPerson": false,
+        "scope": "per-person"
+      },
+      {
+        "offerId": "smile-home-insurance",
+        "benefitPerEligiblePerson": "CHF 40 value (3,400 Smile points) per eligible home insurance contract",
+        "maxEligiblePerHousehold": 1,
+        "adultOnly": true,
+        "minorEligible": false,
+        "conditions": "New Smile customer; one home insurance policy per household; invitation code JAN533A2; points awarded after policy start",
+        "stacksPerPerson": false,
+        "scope": "per-contract"
+      },
+      {
+        "offerId": "smile-car-insurance",
+        "benefitPerEligiblePerson": "CHF 40 value (3,400 Smile points) per eligible car insurance contract",
+        "maxEligiblePerHousehold": 2,
+        "adultOnly": true,
+        "minorEligible": false,
+        "conditions": "New Smile customer; one credit per vehicle/policy; invitation code JAN533A2; Smile home and car insurance can be stacked as separate contracts",
+        "stacksPerPerson": false,
+        "scope": "per-contract"
+      },
+      {
+        "offerId": "swica-health",
+        "benefitPerEligiblePerson": "Free consultation; estimated year-1 premium saving from model/deductible optimisation",
+        "maxEligiblePerHousehold": 4,
+        "adultOnly": false,
+        "minorEligible": true,
+        "conditions": "Via SWICA referral link; consultation is free; premium saving is not a direct cash referral benefit — it is documented as consultation-enabled financial optimisation. Switching to Telmed or GP model can reduce premiums 12–20%; saving depends on canton, age, current cover and health. Methodology: Priminfo comparison, GP/Telmed vs standard CHF 300 deductible.",
+        "stacksPerPerson": true,
+        "scope": "per-person",
+        "year1ChfConservativeEstimate": { "per_adult": 375, "per_child": 75 }
+      },
+      {
+        "offerId": "mobility-carsharing",
+        "benefitPerEligiblePerson": "CHF 20 driving credit for the eligible referrer",
+        "maxEligiblePerHousehold": 1,
+        "adultOnly": true,
+        "minorEligible": false,
+        "conditions": "CHF 20 driving credit verified for referrer per public Mobility terms; visitor benefit shown by provider — not included in basket",
+        "stacksPerPerson": false,
+        "scope": "per-household"
+      }
     ],
-    "totalChf": 2970,
-    "_note": "CHF 2,970 calculated; headline 'CHF 4,000+' reflects two-year Sunrise Family Benefit view (CHF 210 × 2 adults × 2 years = CHF 840 additional) plus rounding to a punchy family-basket ceiling. Review annually or when any provider terms change. Keep headline only if cumulative basket evidence supports it.",
-    "_twoYearTotal": 4230
+    "doubleCounting": [
+      "yallo mobile and Sunrise Family Benefit are mutually exclusive per adult — choose one mobile telecom offer per adult",
+      "UBS banking and UBS 3a may be combined by the same adult (separate offers, both activated)",
+      "Smile home and Smile car insurance may be stacked (separate contracts and vehicles)"
+    ],
+    "scenarios": [
+      {
+        "id": "moderate",
+        "description": "Newcomer family, no investment account yet, chooses yallo for telecom, activates banking/pension/insurance welcome offers, optimises health insurance model",
+        "year1TotalChf": 1310,
+        "items": [
+          { "item": "yallo mobile — Adult A", "offerId": "yallo-mobile", "eligiblePersons": 1, "chfPerPerson": 50, "chf": 50 },
+          { "item": "yallo mobile — Adult B", "offerId": "yallo-mobile", "eligiblePersons": 1, "chfPerPerson": 50, "chf": 50 },
+          { "item": "yallo internet — household", "offerId": "yallo-internet", "eligiblePersons": 1, "chfPerPerson": 100, "chf": 100 },
+          { "item": "UBS banking — Adult A (50 KeyClub points = CHF 50)", "offerId": "ubs-banking", "eligiblePersons": 1, "chfPerPerson": 50, "chf": 50 },
+          { "item": "UBS banking — Adult B (50 KeyClub points = CHF 50)", "offerId": "ubs-banking", "eligiblePersons": 1, "chfPerPerson": 50, "chf": 50 },
+          { "item": "UBS 3a — Adult A (250 KeyClub points = CHF 250)", "offerId": "ubs-3a", "eligiblePersons": 1, "chfPerPerson": 250, "chf": 250 },
+          { "item": "UBS 3a — Adult B (250 KeyClub points = CHF 250)", "offerId": "ubs-3a", "eligiblePersons": 1, "chfPerPerson": 250, "chf": 250 },
+          { "item": "Smile home insurance — 1 household contract (CHF 40)", "offerId": "smile-home-insurance", "eligiblePersons": 1, "chfPerPerson": 40, "chf": 40 },
+          { "item": "Frankly 3a — Adult A (CHF 35 fee voucher)", "offerId": "frankly-3a", "eligiblePersons": 1, "chfPerPerson": 35, "chf": 35 },
+          { "item": "Frankly 3a — Adult B (CHF 35 fee voucher)", "offerId": "frankly-3a", "eligiblePersons": 1, "chfPerPerson": 35, "chf": 35 },
+          { "item": "Health insurance model optimisation — 2 adults (Telmed/GP vs standard; conservative est. CHF 200/adult)", "offerId": "swica-health", "eligiblePersons": 2, "chfPerPerson": 200, "chf": 400, "_methodologyNote": "Switching from standard to Telmed/GP model; Priminfo range CHF 150–500/adult/year; CHF 200 is conservative" }
+        ]
+      },
+      {
+        "id": "strong",
+        "description": "Established resident family: existing Sunrise subscription qualifies for Family Benefit, each adult invests CHF ~52,000 at IBKR, both own a car, full pension/banking offers activated",
+        "year1TotalChf": 2870,
+        "items": [
+          { "item": "IBKR shares — Adult A (USD 50k deposit → USD 500 ≈ CHF 480)", "offerId": "ibkr-investing", "eligiblePersons": 1, "chfPerPerson": 480, "chf": 480 },
+          { "item": "IBKR shares — Adult B (USD 50k deposit → USD 500 ≈ CHF 480)", "offerId": "ibkr-investing", "eligiblePersons": 1, "chfPerPerson": 480, "chf": 480 },
+          { "item": "Sunrise Family Benefit — Adult A (50% off Swiss Connect M × 12 mo = CHF 210)", "offerId": "sunrise-mobile-family", "eligiblePersons": 1, "chfPerPerson": 210, "chf": 210 },
+          { "item": "Sunrise Family Benefit — Adult B (50% off Swiss Connect M × 12 mo = CHF 210)", "offerId": "sunrise-mobile-family", "eligiblePersons": 1, "chfPerPerson": 210, "chf": 210 },
+          { "item": "yallo internet — household", "offerId": "yallo-internet", "eligiblePersons": 1, "chfPerPerson": 100, "chf": 100 },
+          { "item": "UBS banking — Adult A (50 KeyClub points = CHF 50)", "offerId": "ubs-banking", "eligiblePersons": 1, "chfPerPerson": 50, "chf": 50 },
+          { "item": "UBS banking — Adult B (50 KeyClub points = CHF 50)", "offerId": "ubs-banking", "eligiblePersons": 1, "chfPerPerson": 50, "chf": 50 },
+          { "item": "UBS 3a — Adult A (250 KeyClub points = CHF 250)", "offerId": "ubs-3a", "eligiblePersons": 1, "chfPerPerson": 250, "chf": 250 },
+          { "item": "UBS 3a — Adult B (250 KeyClub points = CHF 250)", "offerId": "ubs-3a", "eligiblePersons": 1, "chfPerPerson": 250, "chf": 250 },
+          { "item": "Smile home insurance — 1 household contract (CHF 40)", "offerId": "smile-home-insurance", "eligiblePersons": 1, "chfPerPerson": 40, "chf": 40 },
+          { "item": "Smile car insurance — Adult A (1 vehicle, CHF 40)", "offerId": "smile-car-insurance", "eligiblePersons": 1, "chfPerPerson": 40, "chf": 40 },
+          { "item": "Smile car insurance — Adult B (1 vehicle, CHF 40)", "offerId": "smile-car-insurance", "eligiblePersons": 1, "chfPerPerson": 40, "chf": 40 },
+          { "item": "Frankly 3a — Adult A (CHF 35 fee voucher)", "offerId": "frankly-3a", "eligiblePersons": 1, "chfPerPerson": 35, "chf": 35 },
+          { "item": "Frankly 3a — Adult B (CHF 35 fee voucher)", "offerId": "frankly-3a", "eligiblePersons": 1, "chfPerPerson": 35, "chf": 35 },
+          { "item": "Health insurance model optimisation — 2 adults (conservative est. CHF 300/adult)", "offerId": "swica-health", "eligiblePersons": 2, "chfPerPerson": 300, "chf": 600, "_methodologyNote": "Priminfo range CHF 250–500/adult/year for Telmed/GP model switch; CHF 300 is mid-conservative" }
+        ]
+      },
+      {
+        "id": "maximum",
+        "description": "Both adults invest at IBKR maximum (USD 100k each), both have Sunrise Family Benefit qualifying subscriptions, both own a car, full pension/banking offers, family switches to optimal health insurance model",
+        "year1TotalChf": 4130,
+        "items": [
+          { "item": "IBKR shares — Adult A (USD 100k deposit → USD 1,000 ≈ CHF 960)", "offerId": "ibkr-investing", "eligiblePersons": 1, "chfPerPerson": 960, "chf": 960 },
+          { "item": "IBKR shares — Adult B (USD 100k deposit → USD 1,000 ≈ CHF 960)", "offerId": "ibkr-investing", "eligiblePersons": 1, "chfPerPerson": 960, "chf": 960 },
+          { "item": "Sunrise Family Benefit — Adult A (50% off Swiss Connect M × 12 mo = CHF 210)", "offerId": "sunrise-mobile-family", "eligiblePersons": 1, "chfPerPerson": 210, "chf": 210 },
+          { "item": "Sunrise Family Benefit — Adult B (50% off Swiss Connect M × 12 mo = CHF 210)", "offerId": "sunrise-mobile-family", "eligiblePersons": 1, "chfPerPerson": 210, "chf": 210 },
+          { "item": "yallo internet — household", "offerId": "yallo-internet", "eligiblePersons": 1, "chfPerPerson": 100, "chf": 100 },
+          { "item": "UBS banking — Adult A (50 KeyClub points = CHF 50)", "offerId": "ubs-banking", "eligiblePersons": 1, "chfPerPerson": 50, "chf": 50 },
+          { "item": "UBS banking — Adult B (50 KeyClub points = CHF 50)", "offerId": "ubs-banking", "eligiblePersons": 1, "chfPerPerson": 50, "chf": 50 },
+          { "item": "UBS 3a — Adult A (250 KeyClub points = CHF 250)", "offerId": "ubs-3a", "eligiblePersons": 1, "chfPerPerson": 250, "chf": 250 },
+          { "item": "UBS 3a — Adult B (250 KeyClub points = CHF 250)", "offerId": "ubs-3a", "eligiblePersons": 1, "chfPerPerson": 250, "chf": 250 },
+          { "item": "Smile home insurance — 1 household contract (CHF 40)", "offerId": "smile-home-insurance", "eligiblePersons": 1, "chfPerPerson": 40, "chf": 40 },
+          { "item": "Smile car insurance — Adult A (1 vehicle, CHF 40)", "offerId": "smile-car-insurance", "eligiblePersons": 1, "chfPerPerson": 40, "chf": 40 },
+          { "item": "Smile car insurance — Adult B (1 vehicle, CHF 40)", "offerId": "smile-car-insurance", "eligiblePersons": 1, "chfPerPerson": 40, "chf": 40 },
+          { "item": "Frankly 3a — Adult A (CHF 35 fee voucher)", "offerId": "frankly-3a", "eligiblePersons": 1, "chfPerPerson": 35, "chf": 35 },
+          { "item": "Frankly 3a — Adult B (CHF 35 fee voucher)", "offerId": "frankly-3a", "eligiblePersons": 1, "chfPerPerson": 35, "chf": 35 },
+          { "item": "Health insurance optimisation — 2 adults (Telmed/GP model switch, est. CHF 375/adult)", "offerId": "swica-health", "eligiblePersons": 2, "chfPerPerson": 375, "chf": 750, "_methodologyNote": "Priminfo: GP/Telmed vs standard CHF 300 deductible. CHF 375/adult conservative; actual range CHF 300–500/adult/year depending on canton, age and insurer" },
+          { "item": "Health insurance optimisation — 2 children (conservative est. CHF 75/child)", "offerId": "swica-health", "eligiblePersons": 2, "chfPerPerson": 75, "chf": 150, "_methodologyNote": "Children's basic insurance model optimisation; range CHF 50–120/child/year" }
+        ]
+      }
+    ],
+    "_note": "Headline 'CHF 4,000+' is supported by the 'maximum' scenario (CHF 4,130). That scenario requires both adults to deposit USD 100,000 each at IBKR — use qualifier 'depending on household eligibility and selected offers' on all public-facing claims. Health insurance entries document consultation-enabled premium optimisation (not a direct cash referral benefit). Review annually or when any provider terms change."
   },
 
   "globalDisclosurePolicy": {
@@ -81,7 +272,7 @@
       },
       "analyticsOfferId": "neon-banking-referral",
       "placements": ["finance", "vouchers", "homepage-overlay-finance"],
-      "lastReviewed": "2026-09-19"
+      "lastReviewed": "2026-09-20"
     },
 
     {
@@ -127,7 +318,7 @@
       },
       "analyticsOfferId": "sunrise-mobile-family-referral",
       "placements": ["mobile-internet", "vouchers", "homepage-overlay-mobile"],
-      "lastReviewed": "2026-09-19"
+      "lastReviewed": "2026-09-20"
     },
 
     {
@@ -173,7 +364,7 @@
       },
       "analyticsOfferId": "sunrise-internet-referral",
       "placements": ["mobile-internet", "vouchers"],
-      "lastReviewed": "2026-09-19"
+      "lastReviewed": "2026-09-20"
     },
 
     {
@@ -190,7 +381,7 @@
       },
       "benefitVerifiedAsOf": "2026-09-19",
       "benefitSourceUrl": "https://aklam.io/5xD8wiqf",
-      "_benefitNote": "yallo referral pays up to CHF 100 depending on product selected. Mobile up to CHF 50, internet up to CHF 100. Amount depends on product and successful online activation through the link. Plan terms and activation fees apply. Remove blanket 'no long-term contract'.",
+      "_benefitNote": "yallo referral pays up to CHF 100 depending on product selected. Mobile up to CHF 50, internet up to CHF 100. Amount depends on product and successful online activation through the link. Plan terms and activation fees apply.",
       "referrerReward": {
         "text": "Benefit shown by provider at activation",
         "verifiedAsOf": "2026-09-19"
@@ -219,7 +410,7 @@
       },
       "analyticsOfferId": "yallo-mobile-referral",
       "placements": ["mobile-internet", "vouchers", "homepage-overlay-mobile"],
-      "lastReviewed": "2026-09-19"
+      "lastReviewed": "2026-09-20"
     },
 
     {
@@ -264,7 +455,7 @@
       },
       "analyticsOfferId": "yallo-internet-referral",
       "placements": ["mobile-internet", "vouchers"],
-      "lastReviewed": "2026-09-19"
+      "lastReviewed": "2026-09-20"
     },
 
     {
@@ -310,7 +501,7 @@
       },
       "analyticsOfferId": "wise-transfer-referral",
       "placements": ["finance", "vouchers", "homepage-overlay-finance"],
-      "lastReviewed": "2026-09-19"
+      "lastReviewed": "2026-09-20"
     },
 
     {
@@ -357,7 +548,7 @@
       },
       "analyticsOfferId": "frankly-3a-referral",
       "placements": ["finance", "vouchers", "homepage-overlay-finance"],
-      "lastReviewed": "2026-09-19"
+      "lastReviewed": "2026-09-20"
     },
 
     {
@@ -403,7 +594,7 @@
       },
       "analyticsOfferId": "ubs-banking-referral",
       "placements": ["finance", "vouchers"],
-      "lastReviewed": "2026-09-19"
+      "lastReviewed": "2026-09-20"
     },
 
     {
@@ -448,7 +639,7 @@
       },
       "analyticsOfferId": "ubs-3a-referral",
       "placements": ["finance", "vouchers"],
-      "lastReviewed": "2026-09-19"
+      "lastReviewed": "2026-09-20"
     },
 
     {
@@ -465,7 +656,7 @@
       },
       "benefitVerifiedAsOf": "2026-09-19",
       "benefitSourceUrl": "https://ibkr.com/referral/jan354",
-      "_benefitNote": "USD 1 per USD 100 deposited up to USD 1,000. Eligibility conditions apply. Remove unsupported superlatives ('best broker globally') but keep 'lowest trading fees globally' if supportable — IBKR is verifiably among the lowest for many asset classes.",
+      "_benefitNote": "USD 1 per USD 100 deposited up to USD 1,000. Eligibility conditions apply. Deposit USD 100,000 for the maximum USD 1,000 reward.",
       "referrerReward": {
         "text": "IBKR shares — amount shown at activation",
         "verifiedAsOf": "2026-09-19"
@@ -494,7 +685,7 @@
       },
       "analyticsOfferId": "ibkr-investing-referral",
       "placements": ["finance", "vouchers"],
-      "lastReviewed": "2026-09-19"
+      "lastReviewed": "2026-09-20"
     },
 
     {
@@ -540,7 +731,7 @@
       },
       "analyticsOfferId": "swica-health-referral",
       "placements": ["health-insurance", "vouchers", "homepage-overlay-health"],
-      "lastReviewed": "2026-09-19"
+      "lastReviewed": "2026-09-20"
     },
 
     {
@@ -587,7 +778,7 @@
       },
       "analyticsOfferId": "smile-home-insurance-referral",
       "placements": ["insurance", "vouchers", "homepage-overlay-insurance"],
-      "lastReviewed": "2026-09-19"
+      "lastReviewed": "2026-09-20"
     },
 
     {
@@ -633,7 +824,7 @@
       },
       "analyticsOfferId": "smile-car-insurance-referral",
       "placements": ["insurance", "vouchers"],
-      "lastReviewed": "2026-09-19"
+      "lastReviewed": "2026-09-20"
     },
 
     {
@@ -650,7 +841,7 @@
       },
       "benefitVerifiedAsOf": "2026-09-19",
       "benefitSourceUrl": "https://www.mobility.ch/de/download-mobility-app",
-      "_benefitNote": "Public terms verify CHF 20 driving credit for the eligible REFERRER. Visitor benefit is NOT confirmed — do not promise visitors CHF 20 unless the linked journey proves it. Remove 'Up to CHF 20 welcome credit' from visitor-facing copy.",
+      "_benefitNote": "Public terms verify CHF 20 driving credit for the eligible REFERRER. Visitor benefit is NOT confirmed — do not promise visitors CHF 20 unless the linked journey proves it.",
       "referrerReward": {
         "text": "CHF 20 driving credit (verified in public terms for eligible referrer)",
         "verifiedAsOf": "2026-09-19"
@@ -679,7 +870,7 @@
       },
       "analyticsOfferId": "mobility-carsharing-referral",
       "placements": ["public-transport", "vouchers"],
-      "lastReviewed": "2026-09-19"
+      "lastReviewed": "2026-09-20"
     }
   ],
 
