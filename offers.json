@@ -4,7 +4,7 @@
   "_note": "Single source of truth for all commercial offers. Disclosure: one clear statement in the global footer + /referral-policy/ page — no per-card injection required unless a specific partner contract mandates it.",
 
   "family4PersonMatrix": {
-    "headline": "A family of four can save CHF 4,000+ in the first year",
+    "headline": "A family of four: CHF 4,000+ total first-year value",
     "headlineClaim": 4000,
     "headlineScenario": "maximum",
     "headlineQualifier": "depending on household eligibility and selected offers",
@@ -122,11 +122,11 @@
       },
       {
         "offerId": "swica-health",
-        "benefitPerEligiblePerson": "Free consultation; estimated year-1 premium saving from model/deductible optimisation",
+        "benefitPerEligiblePerson": "Free consultation; realistic saving from selecting suitable health insurance model and deductible",
         "maxEligiblePerHousehold": 4,
         "adultOnly": false,
         "minorEligible": true,
-        "conditions": "Via SWICA referral link; consultation is free; premium saving is not a direct cash referral benefit — it is documented as consultation-enabled financial optimisation. Switching to Telmed or GP model can reduce premiums 12–20%; saving depends on canton, age, current cover and health. Methodology: Priminfo comparison, GP/Telmed vs standard CHF 300 deductible.",
+        "conditions": "Via SWICA referral link; consultation is free; saving reflects realistic benefit from choosing a suitable model and deductible — not a direct cash referral benefit. Telmed/GP model: 12–20% lower premium vs standard. Depends on canton, age and cover. Methodology: Priminfo comparison.",
         "stacksPerPerson": true,
         "scope": "per-person",
         "year1ChfConservativeEstimate": { "per_adult": 375, "per_child": 75 }
@@ -150,7 +150,7 @@
     "scenarios": [
       {
         "id": "moderate",
-        "description": "Newcomer family, no investment account yet, chooses yallo for telecom, activates banking/pension/insurance welcome offers, optimises health insurance model",
+        "description": "Newcomer family, no investment account yet, chooses yallo for telecom, activates banking/pension/insurance welcome offers, selects suitable health insurance model",
         "year1TotalChf": 1310,
         "items": [
           { "item": "yallo mobile — Adult A", "offerId": "yallo-mobile", "eligiblePersons": 1, "chfPerPerson": 50, "chf": 50 },
@@ -163,7 +163,7 @@
           { "item": "Smile home insurance — 1 household contract (CHF 40)", "offerId": "smile-home-insurance", "eligiblePersons": 1, "chfPerPerson": 40, "chf": 40 },
           { "item": "Frankly 3a — Adult A (CHF 35 fee voucher)", "offerId": "frankly-3a", "eligiblePersons": 1, "chfPerPerson": 35, "chf": 35 },
           { "item": "Frankly 3a — Adult B (CHF 35 fee voucher)", "offerId": "frankly-3a", "eligiblePersons": 1, "chfPerPerson": 35, "chf": 35 },
-          { "item": "Health insurance model optimisation — 2 adults (Telmed/GP vs standard; conservative est. CHF 200/adult)", "offerId": "swica-health", "eligiblePersons": 2, "chfPerPerson": 200, "chf": 400, "_methodologyNote": "Switching from standard to Telmed/GP model; Priminfo range CHF 150–500/adult/year; CHF 200 is conservative" }
+          { "item": "Health insurance — 2 adults: realistic saving from selecting suitable model/deductible (Telmed/GP vs standard, est. CHF 200/adult)", "offerId": "swica-health", "eligiblePersons": 2, "chfPerPerson": 200, "chf": 400, "_methodologyNote": "Switching from standard to Telmed/GP model; Priminfo range CHF 150–500/adult/year; CHF 200 is conservative" }
         ]
       },
       {
@@ -185,7 +185,7 @@
           { "item": "Smile car insurance — Adult B (1 vehicle, CHF 40)", "offerId": "smile-car-insurance", "eligiblePersons": 1, "chfPerPerson": 40, "chf": 40 },
           { "item": "Frankly 3a — Adult A (CHF 35 fee voucher)", "offerId": "frankly-3a", "eligiblePersons": 1, "chfPerPerson": 35, "chf": 35 },
           { "item": "Frankly 3a — Adult B (CHF 35 fee voucher)", "offerId": "frankly-3a", "eligiblePersons": 1, "chfPerPerson": 35, "chf": 35 },
-          { "item": "Health insurance model optimisation — 2 adults (conservative est. CHF 300/adult)", "offerId": "swica-health", "eligiblePersons": 2, "chfPerPerson": 300, "chf": 600, "_methodologyNote": "Priminfo range CHF 250–500/adult/year for Telmed/GP model switch; CHF 300 is mid-conservative" }
+          { "item": "Health insurance — 2 adults: realistic saving from selecting suitable model/deductible (conservative est. CHF 300/adult)", "offerId": "swica-health", "eligiblePersons": 2, "chfPerPerson": 300, "chf": 600, "_methodologyNote": "Priminfo range CHF 250–500/adult/year for Telmed/GP model switch; CHF 300 is mid-conservative" }
         ]
       },
       {
@@ -207,12 +207,12 @@
           { "item": "Smile car insurance — Adult B (1 vehicle, CHF 40)", "offerId": "smile-car-insurance", "eligiblePersons": 1, "chfPerPerson": 40, "chf": 40 },
           { "item": "Frankly 3a — Adult A (CHF 35 fee voucher)", "offerId": "frankly-3a", "eligiblePersons": 1, "chfPerPerson": 35, "chf": 35 },
           { "item": "Frankly 3a — Adult B (CHF 35 fee voucher)", "offerId": "frankly-3a", "eligiblePersons": 1, "chfPerPerson": 35, "chf": 35 },
-          { "item": "Health insurance optimisation — 2 adults (Telmed/GP model switch, est. CHF 375/adult)", "offerId": "swica-health", "eligiblePersons": 2, "chfPerPerson": 375, "chf": 750, "_methodologyNote": "Priminfo: GP/Telmed vs standard CHF 300 deductible. CHF 375/adult conservative; actual range CHF 300–500/adult/year depending on canton, age and insurer" },
-          { "item": "Health insurance optimisation — 2 children (conservative est. CHF 75/child)", "offerId": "swica-health", "eligiblePersons": 2, "chfPerPerson": 75, "chf": 150, "_methodologyNote": "Children's basic insurance model optimisation; range CHF 50–120/child/year" }
+          { "item": "Health insurance — 2 adults: realistic saving from selecting suitable model/deductible (Telmed/GP switch, est. CHF 375/adult)", "offerId": "swica-health", "eligiblePersons": 2, "chfPerPerson": 375, "chf": 750, "_methodologyNote": "Priminfo: GP/Telmed vs standard CHF 300 deductible. CHF 375/adult conservative; actual range CHF 300–500/adult/year depending on canton, age and insurer" },
+          { "item": "Health insurance — 2 children: realistic saving from selecting suitable model (conservative est. CHF 75/child)", "offerId": "swica-health", "eligiblePersons": 2, "chfPerPerson": 75, "chf": 150, "_methodologyNote": "Children's basic insurance model optimisation; range CHF 50–120/child/year" }
         ]
       }
     ],
-    "_note": "Headline 'CHF 4,000+' is supported by the 'maximum' scenario (CHF 4,130). That scenario requires both adults to deposit USD 100,000 each at IBKR — use qualifier 'depending on household eligibility and selected offers' on all public-facing claims. Health insurance entries document consultation-enabled premium optimisation (not a direct cash referral benefit). Review annually or when any provider terms change."
+    "_note": "Headline 'CHF 4,000+' total first-year value is supported by the 'maximum' scenario (CHF 4,130). Total includes direct bonuses, preferential prices, and realistic savings from selecting suitable products. That scenario requires both adults to deposit USD 100,000 each at IBKR — use qualifier 'depending on household eligibility and selected offers' on all public-facing claims. Health insurance entries document realistic savings from suitable product selection (not a direct cash referral benefit). Review annually or when any provider terms change."
   },
 
   "globalDisclosurePolicy": {
