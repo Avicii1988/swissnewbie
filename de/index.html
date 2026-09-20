@@ -182,7 +182,7 @@
 .acc-item.open .acc-body{display:block;}
 .acc-guide-link{display:inline-flex;align-items:center;gap:6px;background:var(--warm);border:1px solid var(--border);color:var(--ink);padding:8px 16px;border-radius:6px;font-size:0.8rem;font-weight:500;text-decoration:none;margin-top:16px;transition:border-color 0.2s;}
 .acc-guide-link:hover{border-color:var(--red);color:var(--red);}
-</style>
+.mnd-lang-row{display:flex;gap:8px;padding:14px 20px 10px;border-bottom:1px solid rgba(255,255,255,0.06);}.mnd-lang-btn{flex:1;text-align:center;padding:9px 0;font-size:0.82rem;font-weight:600;letter-spacing:0.05em;color:rgba(247,245,240,0.5);background:rgba(255,255,255,0.06);border-radius:6px;text-decoration:none;cursor:pointer;transition:background 0.15s,color 0.15s;display:block;}.mnd-lang-btn:hover{background:rgba(255,255,255,0.12);color:rgba(247,245,240,0.9);}.mnd-lang-active{color:#fff!important;background:var(--red)!important;cursor:default;pointer-events:none;}</style>
 <script>document.addEventListener('DOMContentLoaded', function() {
   var u = 'info', d = 'swissnewbie' + '.ch', e = u + '@' + d;
   var spans = document.querySelectorAll('.sn-email-reveal');
@@ -276,7 +276,9 @@
     <a href="/de/" class="logo"><span class="logo-cow">🐄</span>Swiss<span>Newbie</span></a>
     <button class="mnd-close" onclick="toggleMobileNav()">✕</button>
   </div>
-  <div class="mnd-section">
+  
+<div class="mnd-lang-row"><a class="mnd-lang-btn" href="/">EN</a><span class="mnd-lang-btn mnd-lang-active">DE</span><a class="mnd-lang-btn" href="/fr/">FR</a></div>
+<div class="mnd-section">
     <a class="mnd-link mnd-deals-btn" href="/de/vouchers/">🏷️ Gutscheincodes</a>
   </div>
   <div class="mnd-section">
