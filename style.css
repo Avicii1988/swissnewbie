@@ -57,3 +57,4 @@ nav a[href="#"][href] { }
 .tcl-bar{flex:1;height:6px;background:var(--border);border-radius:3px;overflow:hidden;}
 .tcl-bar-fill{height:100%;background:var(--green);border-radius:3px;transition:width 0.3s;}
 .tcl-pct{font-size:0.75rem;font-weight:600;color:var(--green);white-space:nowrap;}
+.mnd-lang-row{display:flex;gap:8px;padding:14px 20px 10px;border-bottom:1px solid rgba(255,255,255,0.06);}.mnd-lang-btn{flex:1;text-align:center;padding:9px 0;font-size:0.82rem;font-weight:600;letter-spacing:0.05em;color:rgba(247,245,240,0.5);background:rgba(255,255,255,0.06);border-radius:6px;text-decoration:none;cursor:pointer;transition:background 0.15s,color 0.15s;display:block;}.mnd-lang-btn:hover{background:rgba(255,255,255,0.12);color:rgba(247,245,240,0.9);}.mnd-lang-active{color:#fff!important;background:var(--red)!important;cursor:default;pointer-events:none;}
