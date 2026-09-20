@@ -183,5 +183,13 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://www.swissnewbie.ch/referral-policy/</loc>
+    <lastmod>2026-09-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.swissnewbie.ch/referral-policy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.swissnewbie.ch/referral-policy/"/>
+  </url>
 
 </urlset>
