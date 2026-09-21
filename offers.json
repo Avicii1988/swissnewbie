@@ -730,7 +730,7 @@
         "fr": "Lien de parrainage — SwissNewbie peut recevoir une récompense si vous souscrivez."
       },
       "analyticsOfferId": "swica-health-referral",
-      "placements": ["health-insurance", "vouchers", "homepage-overlay-health"],
+      "placements": ["health-insurance", "health-insurance-switch", "vouchers", "homepage-overlay-health"],
       "lastReviewed": "2026-09-20"
     },
 
