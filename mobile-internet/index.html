@@ -133,19 +133,34 @@ nav a.active{color:var(--white)!important;border-bottom:2px solid var(--red-ligh
   <div class="mnd-header"><a href="/" class="logo"><span class="logo-cow">🐄</span>Swiss<span>Newbie</span></a><button class="mnd-close" onclick="document.getElementById('mobileNav').classList.remove('open');document.body.style.overflow='';">✕</button></div>
   
 <div class="mnd-lang-row"><span class="mnd-lang-btn mnd-lang-active">EN</span><a class="mnd-lang-btn" href="/de/mobile-internet/">DE</a><a class="mnd-lang-btn" href="/fr/mobile-internet/">FR</a></div>
-<div class="mnd-section"><div class="mnd-label">Topic Guides</div>
-    <a class="mnd-link" href="/health-insurance/">🏥 Health Insurance</a>
-    <a class="mnd-link" href="/finance/">💰 Finance &amp; Banking</a>
-    <a class="mnd-link" href="/insurance/">🛡️ Insurance</a>
-    <a class="mnd-link" href="/mobile-internet/">📱 Mobile &amp; Internet</a>
-    <a class="mnd-link" href="/public-transport/">🚆 Public Transport</a>
-    <a class="mnd-link" href="/groceries/">🛒 Groceries</a>
-    <a class="mnd-link" href="/vouchers/">🏷️ Voucher Codes</a>
-  </div>
-  <div class="mnd-section"><div class="mnd-label">Quick links</div>
-    <a class="mnd-link" href="/">← Full Checklist</a>
+<div class="mnd-section">
+    <a class="mnd-link mnd-deals-btn" href="/vouchers/">🏷️ Deals</a>
   </div>
   <div class="mnd-section">
+    <div class="mnd-label">🌍 Moving to Switzerland</div>
+    <a class="mnd-link" href="/moving-to-switzerland/">🏠 Newcomer Hub</a>
+    <a class="mnd-link" href="/health-insurance/">🏥 Health Insurance</a>
+    <a class="mnd-link" href="/finance/">🏦 Finance &amp; Banking</a>
+    <a class="mnd-link" href="/mobile-internet/">📱 Mobile &amp; Internet</a>
+    <a class="mnd-link" href="/public-transport/">🚆 Public Transport</a>
+  </div>
+  <div class="mnd-section">
+    <div class="mnd-label">💡 Living &amp; Saving</div>
+    <a class="mnd-link" href="/living-in-switzerland/">🏡 Resident Hub</a>
+    <a class="mnd-link" href="/annual-savings-check-switzerland/">📊 Annual Savings Check</a>
+    <a class="mnd-link" href="/switch-mobile-internet-switzerland/">📱 Switch Provider</a>
+    <a class="mnd-link" href="/insurance/">🛡️ Insurance</a>
+  </div>
+  <div class="mnd-section">
+    <div class="mnd-label">📖 Guides</div>
+    <a class="mnd-link" href="/guides/">All Guides</a>
+    <a class="mnd-link" href="/esim-switzerland/">📡 eSIM in Switzerland</a>
+    <a class="mnd-link" href="/mobile-plan-switzerland/">📱 Mobile Plans</a>
+    <a class="mnd-link" href="/first-90-days-switzerland/">📅 First 90 Days</a>
+    <a class="mnd-link" href="/legal-help-switzerland/">⚖️ Legal Help</a>
+    <a class="mnd-link" href="/groceries/">🛒 Groceries</a>
+  </div>
+    <div class="mnd-section">
     <div class="mnd-label">Legal</div>
     <a class="mnd-link" href="/?section=privacy">🔒 Privacy Policy</a>
     <a class="mnd-link" href="/?section=disclaimer">📋 Disclaimer</a>
@@ -157,18 +172,34 @@ nav a.active{color:var(--white)!important;border-bottom:2px solid var(--red-ligh
 <header>
   <a href="/" class="logo"><span class="logo-cow">🐄</span>Swiss<span>Newbie</span></a>
   <nav>
-    <a href="/vouchers/" class="nav-deals-btn">🏷️ Vouchers</a>
-    <a href="/" class="nav-checklist-link">🗒️ Checklist</a>
+    <div class="nav-dd-wrap"><span class="nav-dd-trigger" onclick="this.closest('.nav-dd-wrap').classList.toggle('open');event.stopPropagation()">🌍 Moving <span class="dd-arrow">▼</span></span>
+      <div class="nav-dropdown">
+        <a href="/moving-to-switzerland/">Newcomer Hub</a>
+        <a href="/health-insurance/">🏥 Health Insurance</a>
+        <a href="/finance/">🏦 Finance &amp; Banking</a>
+        <a href="/mobile-internet/">📱 Mobile &amp; Internet</a>
+        <a href="/public-transport/">🚆 Public Transport</a>
+      </div>
+    </div>
+    <div class="nav-dd-wrap"><span class="nav-dd-trigger" onclick="this.closest('.nav-dd-wrap').classList.toggle('open');event.stopPropagation()">💡 Living &amp; Saving <span class="dd-arrow">▼</span></span>
+      <div class="nav-dropdown">
+        <a href="/living-in-switzerland/">Resident Hub</a>
+        <a href="/annual-savings-check-switzerland/">📊 Annual Savings Check</a>
+        <a href="/switch-mobile-internet-switzerland/">📱 Switch Provider</a>
+        <a href="/insurance/">🛡️ Insurance</a>
+      </div>
+    </div>
     <div class="nav-dd-wrap"><span class="nav-dd-trigger" onclick="this.closest('.nav-dd-wrap').classList.toggle('open');event.stopPropagation()">📖 Guides <span class="dd-arrow">▼</span></span>
       <div class="nav-dropdown">
-        <a href="/health-insurance/">🏥 Health Insurance</a>
-        <a href="/insurance/">🛡️ Insurance</a>
-        <a href="/finance/">🏦 Finances &amp; Banking</a>
-        <a href="/mobile-internet/" class="active">📱 Mobile &amp; Internet</a>
-        <a href="/public-transport/">🚆 Public Transport</a>
+        <a href="/guides/">All Guides</a>
+        <a href="/esim-switzerland/">📡 eSIM in Switzerland</a>
+        <a href="/mobile-plan-switzerland/">📱 Mobile Plans</a>
+        <a href="/first-90-days-switzerland/">📅 First 90 Days</a>
+        <a href="/legal-help-switzerland/">⚖️ Legal Help</a>
         <a href="/groceries/">🛒 Groceries</a>
       </div>
     </div>
+    <a href="/vouchers/" class="nav-deals-btn">🏷️ Deals</a>
   </nav>
   <div class="nav-right"><div class="nav-lang"><button class="lang-btn active">EN</button><a class="lang-btn" href="/de/mobile-internet/">DE</a><a class="lang-btn" href="/fr/mobile-internet/">FR</a></div><a href="/" class="nav-login-btn" aria-label="Account" title="Account"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></a><button class="hamburger" onclick="var d=document.getElementById('mobileNav');d.classList.toggle('open');document.body.style.overflow=d.classList.contains('open')?'hidden':'';" aria-label="Menu"><span></span><span></span><span></span></button></div>
 </header>

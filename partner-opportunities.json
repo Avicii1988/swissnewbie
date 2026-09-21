@@ -1,7 +1,7 @@
 {
   "_schema": "swissnewbie-partner-opportunities/v1",
   "_note": "Disabled placeholders for future partner categories. Each must remain disabled until ALL required fields are completed. Do not render active CTAs for any entry here.",
-  "_lastUpdated": "2026-09-19",
+  "_lastUpdated": "2026-09-21",
 
   "opportunities": [
 
@@ -122,6 +122,79 @@
       "status": "disabled",
       "description": "Furniture, appliances, or household setup services for new arrivals.",
       "segment": "newcomer",
+      "requiredBeforeEnable": {
+        "writtenTerms": false,
+        "visitorBenefit": false,
+        "geography": "Switzerland",
+        "dataRecipient": null,
+        "disclosure": null,
+        "benefitSourceUrl": null,
+        "verifiedDate": null
+      }
+    },
+
+    {
+      "id": "mobile-plan-comparison",
+      "category": "connectivity",
+      "title": "Mobile Plan Comparison",
+      "status": "disabled",
+      "description": "Swiss mobile plan comparison or referral — resident segment, linked from Living & Saving hub and annual savings check page.",
+      "segment": "resident",
+      "linkedPages": [
+        "/mobile-plan-switzerland/",
+        "/de/mobilplan-schweiz/",
+        "/fr/forfait-mobile-suisse/",
+        "/annual-savings-check-switzerland/",
+        "/switch-mobile-internet-switzerland/"
+      ],
+      "requiredBeforeEnable": {
+        "writtenTerms": false,
+        "visitorBenefit": false,
+        "geography": "Switzerland",
+        "dataRecipient": null,
+        "disclosure": null,
+        "benefitSourceUrl": null,
+        "verifiedDate": null
+      },
+      "notes": "Comparis.ch remains the recommended neutral comparison tool until a direct partner agreement is in place."
+    },
+
+    {
+      "id": "legal-protection-insurance",
+      "category": "insurance",
+      "title": "Legal Protection Insurance",
+      "status": "disabled",
+      "description": "Referral or comparison for Swiss legal protection insurance (Rechtsschutzversicherung / assurance protection juridique).",
+      "segment": "resident",
+      "linkedPages": [
+        "/legal-protection-insurance-switzerland/",
+        "/de/rechtsschutz-schweiz/",
+        "/fr/assurance-protection-juridique-suisse/"
+      ],
+      "requiredBeforeEnable": {
+        "writtenTerms": false,
+        "visitorBenefit": false,
+        "geography": "Switzerland",
+        "dataRecipient": null,
+        "disclosure": null,
+        "benefitSourceUrl": null,
+        "verifiedDate": null
+      },
+      "notes": "Pages carry mandatory legal disclaimer ('General information only — not legal advice'). Any partner CTA must not contradict the neutral, informational tone."
+    },
+
+    {
+      "id": "annual-savings-check-tool",
+      "category": "resident-optimisation",
+      "title": "Annual Savings Check Tool or Partner",
+      "status": "disabled",
+      "description": "Interactive tool or partner referral tied to the annual savings check content — e.g. household bill audit, broker referral.",
+      "segment": "resident",
+      "linkedPages": [
+        "/annual-savings-check-switzerland/",
+        "/de/jaehrlicher-sparcheck-schweiz/",
+        "/fr/bilan-epargne-annuel-suisse/"
+      ],
       "requiredBeforeEnable": {
         "writtenTerms": false,
         "visitorBenefit": false,

@@ -143,18 +143,34 @@ nav a.active{color:var(--white)!important;border-bottom:2px solid var(--red-ligh
 <header>
   <a href="/fr/" class="logo"><span class="logo-cow">🐄</span>Swiss<span>Newbie</span></a>
   <nav>
-    <a href="/fr/vouchers/" class="nav-deals-btn">🏷️ Codes promo</a>
-    <a href="/fr/" class="nav-checklist-link">🗒️ Checklist</a>
-    <div class="nav-dd-wrap"><span class="nav-dd-trigger" onclick="this.closest('.nav-dd-wrap').classList.toggle('open');event.stopPropagation()">📖 Guides <span class="dd-arrow">▼</span></span>
+    <div class="nav-dd-wrap"><span class="nav-dd-trigger" onclick="this.closest('.nav-dd-wrap').classList.toggle('open');event.stopPropagation()">🌍 S'installer <span class="dd-arrow">▼</span></span>
       <div class="nav-dropdown">
+        <a href="/fr/sinstaller-en-suisse/">Nouveaux arrivants</a>
         <a href="/fr/health-insurance/">🏥 Assurance maladie</a>
-        <a href="/fr/insurance/">🛡️ Assurances</a>
-        <a href="/fr/finance/" class="active">🏦 Finances &amp; Banque</a>
+        <a href="/fr/finance/">🏦 Finances &amp; banque</a>
         <a href="/fr/mobile-internet/">📱 Mobile &amp; Internet</a>
         <a href="/fr/public-transport/">🚆 Transports publics</a>
+      </div>
+    </div>
+    <div class="nav-dd-wrap"><span class="nav-dd-trigger" onclick="this.closest('.nav-dd-wrap').classList.toggle('open');event.stopPropagation()">💡 Vivre &amp; Économiser <span class="dd-arrow">▼</span></span>
+      <div class="nav-dropdown">
+        <a href="/fr/vivre-en-suisse/">Hub résidents</a>
+        <a href="/fr/bilan-epargne-annuel-suisse/">📊 Bilan d'épargne</a>
+        <a href="/fr/changer-operateur-suisse/">📱 Changer d'opérateur</a>
+        <a href="/fr/insurance/">🛡️ Assurances</a>
+      </div>
+    </div>
+    <div class="nav-dd-wrap"><span class="nav-dd-trigger" onclick="this.closest('.nav-dd-wrap').classList.toggle('open');event.stopPropagation()">📖 Guides <span class="dd-arrow">▼</span></span>
+      <div class="nav-dropdown">
+        <a href="/fr/guides/">Tous les guides</a>
+        <a href="/fr/esim-suisse/">📡 eSIM en Suisse</a>
+        <a href="/fr/forfait-mobile-suisse/">📱 Forfaits mobiles</a>
+        <a href="/fr/premiers-90-jours-suisse/">📅 Premiers 90 jours</a>
+        <a href="/fr/aide-juridique-suisse/">⚖️ Aide juridique</a>
         <a href="/fr/groceries/">🛒 Alimentation</a>
       </div>
     </div>
+    <a href="/fr/vouchers/" class="nav-deals-btn">🏷️ Offres</a>
   </nav>
   <div class="nav-right"><div class="nav-lang"><a class="lang-btn" href="/finance/">EN</a><a class="lang-btn" href="/de/finance/">DE</a><a class="lang-btn active" href="/fr/finance/">FR</a></div><a href="/fr/" class="nav-login-btn" aria-label="Compte" title="Compte"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></a><button class="hamburger" onclick="var d=document.getElementById('mobileNav');d.classList.toggle('open');document.body.style.overflow=d.classList.contains('open')?'hidden':'';" aria-label="Menu"><span></span><span></span><span></span></button></div>
 </header>
