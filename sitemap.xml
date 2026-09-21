@@ -461,4 +461,96 @@
     <priority>0.9</priority>
   </url>
 
+  <url>
+    <loc>https://www.swissnewbie.ch/permits/</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.swissnewbie.ch/permits/"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://www.swissnewbie.ch/de/permits/"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://www.swissnewbie.ch/fr/permits/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.swissnewbie.ch/permits/"/>
+  </url>
+  <url>
+    <loc>https://www.swissnewbie.ch/de/permits/</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.swissnewbie.ch/fr/permits/</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.swissnewbie.ch/permits/b-permit/</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.swissnewbie.ch/permits/b-permit/"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://www.swissnewbie.ch/de/permits/b-permit/"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://www.swissnewbie.ch/fr/permits/b-permit/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.swissnewbie.ch/permits/b-permit/"/>
+  </url>
+  <url>
+    <loc>https://www.swissnewbie.ch/de/permits/b-permit/</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.swissnewbie.ch/fr/permits/b-permit/</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.swissnewbie.ch/permits/arrival-card/</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.swissnewbie.ch/permits/arrival-card/"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://www.swissnewbie.ch/de/permits/arrival-card/"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://www.swissnewbie.ch/fr/permits/arrival-card/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.swissnewbie.ch/permits/arrival-card/"/>
+  </url>
+  <url>
+    <loc>https://www.swissnewbie.ch/de/permits/arrival-card/</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.swissnewbie.ch/fr/permits/arrival-card/</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.swissnewbie.ch/permits/sick-note/</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.swissnewbie.ch/permits/sick-note/"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://www.swissnewbie.ch/de/permits/sick-note/"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://www.swissnewbie.ch/fr/permits/sick-note/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.swissnewbie.ch/permits/sick-note/"/>
+  </url>
+  <url>
+    <loc>https://www.swissnewbie.ch/de/permits/sick-note/</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.swissnewbie.ch/fr/permits/sick-note/</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>
