@@ -342,7 +342,7 @@ nav a.active{color:var(--white)!important;border-bottom:2px solid var(--red-ligh
 <!-- ── ÉCONOMIES ── -->
 <div class="guide-section" id="economies">
   <h2>2. Cinq façons de réduire la prime 2027</h2>
-  <p style="color:var(--muted);font-size:0.9rem;margin:0 0 16px;">Les primes 2027 sont sorties. La moyenne du marché augmente d'environ <strong>5%</strong> — mais les caisses évoluent très différemment : <strong>CSS a augmenté de 7,2%</strong>, tandis que des alternatives moins chères ont à peine bougé. Cet écart, c'est de l'argent réel si vous comparez. Voici comment réduire encore votre prime.</p>
+  <p style="color:var(--muted);font-size:0.9rem;margin:0 0 16px;">Les primes 2027 sont sorties. La moyenne du marché augmente de <strong>+5,0%</strong> à CHF 412/mois — mais les caisses évoluent très différemment : <strong>CSS a augmenté de 7,2%</strong>, tandis que des alternatives moins chères ont à peine bougé. Cet écart, c'est de l'argent réel si vous comparez. Voici comment réduire encore votre prime.</p>
   <div class="savings-grid">
     <div class="savings-card">
       <div class="sc-icon">📈</div>
@@ -370,7 +370,7 @@ nav a.active{color:var(--white)!important;border-bottom:2px solid var(--red-ligh
       <p>La caisse la moins chère varie considérablement selon le code postal. Utilisez <a href="https://www.priminfo.admin.ch" target="_blank" rel="noopener">priminfo.admin.ch</a> pour votre situation exacte.</p>
     </div>
   </div>
-  <p class="prognosis-note">Source : primes 2027 officielles, publiées par l'Office fédéral de la santé publique (OFSP) le 29 septembre 2026, disponibles sur <a href="https://www.priminfo.admin.ch" target="_blank" rel="noopener" style="color:inherit;">priminfo.admin.ch</a>. Le chiffre de ~5% est la moyenne du marché publiée par l'OFSP, pas une donnée par caisse — votre propre variation de prime dépend entièrement de votre caisse, canton, modèle et franchise.</p>
+  <p class="prognosis-note">Source : primes 2027 officielles, publiées par l'Office fédéral de la santé publique (OFSP) le 29 septembre 2026 (prime moyenne : CHF 412.00/mois, +5,0% / +CHF 19.70 par rapport à 2026), disponibles sur <a href="https://www.priminfo.admin.ch" target="_blank" rel="noopener" style="color:inherit;">priminfo.admin.ch</a>. C'est la moyenne du marché publiée par l'OFSP, pas une donnée par caisse — votre propre variation de prime dépend entièrement de votre caisse, canton, modèle et franchise.</p>
 </div>
 
 <!-- ── COMPARER ── -->
@@ -383,7 +383,34 @@ nav a.active{color:var(--white)!important;border-bottom:2px solid var(--red-ligh
     <a href="https://www.priminfo.admin.ch" target="_blank" rel="noopener" style="display:inline-block;padding:9px 20px;background:var(--red);color:#fff;border-radius:7px;font-weight:600;font-size:0.9rem;text-decoration:none;">Comparer sur priminfo.admin.ch →</a>
   </div>
 
-  <!-- TODO(2027-savings-table): en attente des chiffres en direct de priminfo.admin.ch pour le Profil A (personne seule, née en 1988, sans accident, franchise 2500, ville de Zurich) et le Profil B (famille 2+2, adultes nés en 1988, enfants nés en 2016/2019, mêmes paramètres). Ne pas remplir avec des chiffres inventés — voir les instructions de la tâche. -->
+  <h3 style="font-size:1rem;margin:28px 0 4px;">Options 2027 les moins chères — personne seule, Zurich</h3>
+  <p style="color:var(--muted);font-size:0.85rem;margin:0 0 14px;">Chiffres réels, pas des moyennes : les 5 modèles d'assurance de base 2027 les moins chers pour une personne seule née en 1988, franchise CHF 2'500, sans couverture accident, ville de Zurich (NPA 8001).</p>
+  <!-- Source : priminfo.admin.ch, consulté le 29 septembre 2026. Profil A : personne seule, née en 1988, sans couverture accident, franchise CHF 2'500, ville de Zurich (NPA 8001). 5 primes d'assurance de base 2027 les moins chères. -->
+  <div class="table-scroll"><table class="provider-table"><thead><tr><th scope="col">Assureur</th><th scope="col">Modèle</th><th scope="col">Prime mensuelle</th><th scope="col">Économie annuelle*</th></tr></thead><tbody>
+  <tr><td data-label="Assureur"><div class="pt-name">Sanitas</div></td><td data-label="Modèle">TelMed Basic (télémédecine)</td><td data-label="Prime mensuelle">CHF 384.05</td><td data-label="Économie annuelle*"><span class="pt-badge green">~CHF 173/an</span></td></tr>
+  <tr><td data-label="Assureur"><div class="pt-name">Assura</div></td><td data-label="Modèle">QualiMed (réseau de médecins)</td><td data-label="Prime mensuelle">CHF 384.20</td><td data-label="Économie annuelle*"><span class="pt-badge green">~CHF 172/an</span></td></tr>
+  <tr><td data-label="Assureur"><div class="pt-name">Atupri</div></td><td data-label="Modèle">HMO</td><td data-label="Prime mensuelle">CHF 386.50</td><td data-label="Économie annuelle*"><span class="pt-badge green">CHF 144/an</span></td></tr>
+  <tr><td data-label="Assureur"><div class="pt-name">Avenir</div></td><td data-label="Modèle">SanaTel (télémédecine)</td><td data-label="Prime mensuelle">CHF 394.70</td><td data-label="Économie annuelle*"><span class="pt-badge blue">~CHF 46/an</span></td></tr>
+  <tr><td data-label="Assureur"><div class="pt-name">KPT</div></td><td data-label="Modèle">KPTwin.smart (médecin de famille avec appli)</td><td data-label="Prime mensuelle">CHF 398.50</td><td data-label="Économie annuelle*"><span class="pt-badge blue">Référence</span></td></tr>
+  </tbody></table></div>
+  <p style="font-size:0.78rem;color:var(--muted);margin:8px 0 0;">*Économie par rapport à l'option la plus chère de ces 5 moins chères (KPT KPTwin.smart, CHF 398.50/mois) — pas par rapport à la moyenne du marché. Source : priminfo.admin.ch, consulté le 29 septembre 2026.</p>
+
+  <h3 style="font-size:1rem;margin:28px 0 4px;">Options 2027 les moins chères — famille de 4, Zurich</h3>
+  <p style="color:var(--muted);font-size:0.85rem;margin:0 0 14px;">Deux adultes nés en 1988 (franchise CHF 2'500), deux enfants nés en 2016 et 2019 (franchise CHF 0), sans couverture accident, ville de Zurich (NPA 8001). Totaux familiaux mensuels.</p>
+  <!-- Source : priminfo.admin.ch, consulté le 29 septembre 2026. Profil B : famille de 4 personnes, adultes nés en 1988 (franchise CHF 2'500), enfants nés en 2016/2019 (franchise CHF 0), sans couverture accident, ville de Zurich (NPA 8001). 5 combinaisons 2027 les moins chères par total familial mensuel. -->
+  <div class="table-scroll"><table class="provider-table"><thead><tr><th scope="col">Assureur</th><th scope="col">Modèle</th><th scope="col">Total familial/mois</th><th scope="col">Économie annuelle*</th></tr></thead><tbody>
+  <tr><td data-label="Assureur"><div class="pt-name">Assura</div></td><td data-label="Modèle">QualiMed (réseau de médecins)</td><td data-label="Total familial/mois">CHF 997.20</td><td data-label="Économie annuelle*"><span class="pt-badge green">~CHF 595/an</span></td></tr>
+  <tr><td data-label="Assureur"><div class="pt-name">KPT</div></td><td data-label="Modèle">KPTwin.smart (médecin de famille avec appli)</td><td data-label="Total familial/mois">CHF 1'034.00</td><td data-label="Économie annuelle*"><span class="pt-badge green">~CHF 154/an</span></td></tr>
+  <tr><td data-label="Assureur"><div class="pt-name">Assura</div></td><td data-label="Modèle">MediTel (télémédecine)</td><td data-label="Total familial/mois">CHF 1'034.80</td><td data-label="Économie annuelle*"><span class="pt-badge blue">CHF 144/an</span></td></tr>
+  <tr><td data-label="Assureur"><div class="pt-name">Helsana</div></td><td data-label="Modèle">BeneFit PLUS Hausarzt R1</td><td data-label="Total familial/mois">CHF 1'044.80</td><td data-label="Économie annuelle*"><span class="pt-badge blue">CHF 24/an</span></td></tr>
+  <tr><td data-label="Assureur"><div class="pt-name">KPT</div></td><td data-label="Modèle">KPTwin.plus (HMO)</td><td data-label="Total familial/mois">CHF 1'046.80</td><td data-label="Économie annuelle*"><span class="pt-badge blue">Référence</span></td></tr>
+  </tbody></table></div>
+  <p style="font-size:0.78rem;color:var(--muted);margin:8px 0 0;">*Économie par rapport à la combinaison la plus chère de ces 5 moins chères (KPT KPTwin.plus, CHF 1'046.80/mois) — pas par rapport à la moyenne du marché. Source : priminfo.admin.ch, consulté le 29 septembre 2026.</p>
+
+  <div style="background:var(--card);border:2px solid var(--red);border-radius:12px;padding:18px 22px;margin:20px 0 0;display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
+    <div style="flex:1;min-width:200px;"><strong style="font-size:0.95rem;">Prêt à changer ?</strong><p style="margin:2px 0 0;font-size:0.85rem;color:var(--muted);">Retrouvez tous les bons plans et partenaires assurance maladie SwissNewbie au même endroit.</p></div>
+    <a href="/fr/vouchers/" style="flex-shrink:0;padding:9px 20px;background:var(--red);color:#fff;border-radius:7px;font-weight:600;font-size:0.9rem;text-decoration:none;text-align:center;max-width:100%;">Voir les offres assurance maladie →</a>
+  </div>
 
   <div class="offer-area">
     <div class="offer-area-title">Assureur recommandé sur SwissNewbie</div>

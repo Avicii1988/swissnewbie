@@ -343,7 +343,7 @@ nav a.active{color:var(--white)!important;border-bottom:2px solid var(--red-ligh
 <!-- ── SPAREN ── -->
 <div class="guide-section" id="sparen">
   <h2>2. Fünf Wege, die Prämie 2027 zu senken</h2>
-  <p style="color:var(--muted);font-size:0.9rem;margin:0 0 16px;">Die Prämien 2027 sind da. Der Marktdurchschnitt steigt um <strong>~5%</strong> — aber die Kassen bewegen sich sehr unterschiedlich: <strong>CSS erhöhte um 7,2%</strong>, während günstigere Alternativen sich kaum bewegten. Dieser Unterschied ist bares Geld, wenn Sie vergleichen. Mit diesen Massnahmen senken Sie Ihre Prämie zusätzlich.</p>
+  <p style="color:var(--muted);font-size:0.9rem;margin:0 0 16px;">Die Prämien 2027 sind da. Der Marktdurchschnitt steigt um <strong>+5,0%</strong> auf CHF 412/Monat — aber die Kassen bewegen sich sehr unterschiedlich: <strong>CSS erhöhte um 7,2%</strong>, während günstigere Alternativen sich kaum bewegten. Dieser Unterschied ist bares Geld, wenn Sie vergleichen. Mit diesen Massnahmen senken Sie Ihre Prämie zusätzlich.</p>
   <div class="savings-grid">
     <div class="savings-card">
       <div class="sc-icon">📈</div>
@@ -371,7 +371,7 @@ nav a.active{color:var(--white)!important;border-bottom:2px solid var(--red-ligh
       <p>Die günstigste Kasse variiert je nach Postleitzahl erheblich. Nutzen Sie <a href="https://www.priminfo.admin.ch" target="_blank" rel="noopener">priminfo.admin.ch</a> für Ihre genaue Situation.</p>
     </div>
   </div>
-  <p class="prognosis-note">Quelle: offizielle Prämien 2027, veröffentlicht vom Bundesamt für Gesundheit (BAG) am 29. September 2026, verfügbar auf <a href="https://www.priminfo.admin.ch" target="_blank" rel="noopener" style="color:inherit;">priminfo.admin.ch</a>. Die ~5%-Zahl ist der vom BAG publizierte Marktdurchschnitt, keine kassenspezifische Angabe — Ihre eigene Prämienänderung hängt von Ihrer Kasse, Ihrem Kanton, Modell und Ihrer Franchise ab.</p>
+  <p class="prognosis-note">Quelle: offizielle Prämien 2027, veröffentlicht vom Bundesamt für Gesundheit (BAG) am 29. September 2026 (Durchschnittsprämie: CHF 412.00/Monat, +5,0% / +CHF 19.70 gegenüber 2026), verfügbar auf <a href="https://www.priminfo.admin.ch" target="_blank" rel="noopener" style="color:inherit;">priminfo.admin.ch</a>. Dies ist der vom BAG publizierte Marktdurchschnitt, keine kassenspezifische Angabe — Ihre eigene Prämienänderung hängt von Ihrer Kasse, Ihrem Kanton, Modell und Ihrer Franchise ab.</p>
 </div>
 
 <!-- ── VERGLEICHEN ── -->
@@ -384,7 +384,34 @@ nav a.active{color:var(--white)!important;border-bottom:2px solid var(--red-ligh
     <a href="https://www.priminfo.admin.ch" target="_blank" rel="noopener" style="display:inline-block;padding:9px 20px;background:var(--red);color:#fff;border-radius:7px;font-weight:600;font-size:0.9rem;text-decoration:none;">Auf priminfo.admin.ch vergleichen →</a>
   </div>
 
-  <!-- TODO(2027-savings-table): wartet auf Live-Zahlen von priminfo.admin.ch für Profil A (Single, geb. 1988, ohne Unfall, Franchise 2500, Stadt Zürich) und Profil B (Familie 2+2, Erwachsene geb. 1988, Kinder geb. 2016/2019, gleiche Parameter). Keine erfundenen Zahlen einsetzen — siehe Task-Vorgaben. -->
+  <h3 style="font-size:1rem;margin:28px 0 4px;">Günstigste Optionen 2027 — Single, Zürich</h3>
+  <p style="color:var(--muted);font-size:0.85rem;margin:0 0 14px;">Echte Zahlen, keine Durchschnittswerte: die 5 günstigsten Grundversicherungsmodelle 2027 für eine Einzelperson, geb. 1988, Franchise CHF 2'500, ohne Unfalldeckung, Stadt Zürich (PLZ 8001).</p>
+  <!-- Quelle: priminfo.admin.ch, abgerufen am 29. September 2026. Profil A: Einzelperson, geb. 1988, ohne Unfalldeckung, Franchise CHF 2'500, Stadt Zürich (PLZ 8001). 5 günstigste Grundversicherungsprämien 2027. -->
+  <div class="table-scroll"><table class="provider-table"><thead><tr><th scope="col">Versicherer</th><th scope="col">Modell</th><th scope="col">Monatsprämie</th><th scope="col">Ersparnis pro Jahr*</th></tr></thead><tbody>
+  <tr><td data-label="Versicherer"><div class="pt-name">Sanitas</div></td><td data-label="Modell">TelMed Basic (Telemedizin)</td><td data-label="Monatsprämie">CHF 384.05</td><td data-label="Ersparnis pro Jahr*"><span class="pt-badge green">~CHF 173/Jahr</span></td></tr>
+  <tr><td data-label="Versicherer"><div class="pt-name">Assura</div></td><td data-label="Modell">QualiMed (Ärztenetz)</td><td data-label="Monatsprämie">CHF 384.20</td><td data-label="Ersparnis pro Jahr*"><span class="pt-badge green">~CHF 172/Jahr</span></td></tr>
+  <tr><td data-label="Versicherer"><div class="pt-name">Atupri</div></td><td data-label="Modell">HMO</td><td data-label="Monatsprämie">CHF 386.50</td><td data-label="Ersparnis pro Jahr*"><span class="pt-badge green">CHF 144/Jahr</span></td></tr>
+  <tr><td data-label="Versicherer"><div class="pt-name">Avenir</div></td><td data-label="Modell">SanaTel (Telemedizin)</td><td data-label="Monatsprämie">CHF 394.70</td><td data-label="Ersparnis pro Jahr*"><span class="pt-badge blue">~CHF 46/Jahr</span></td></tr>
+  <tr><td data-label="Versicherer"><div class="pt-name">KPT</div></td><td data-label="Modell">KPTwin.smart (Hausarzt mit App)</td><td data-label="Monatsprämie">CHF 398.50</td><td data-label="Ersparnis pro Jahr*"><span class="pt-badge blue">Referenz</span></td></tr>
+  </tbody></table></div>
+  <p style="font-size:0.78rem;color:var(--muted);margin:8px 0 0;">*Ersparnis gegenüber der teuersten dieser 5 günstigsten Optionen (KPT KPTwin.smart, CHF 398.50/Monat) — nicht gegenüber dem Marktdurchschnitt. Quelle: priminfo.admin.ch, abgerufen am 29. September 2026.</p>
+
+  <h3 style="font-size:1rem;margin:28px 0 4px;">Günstigste Optionen 2027 — Familie mit 2 Kindern, Zürich</h3>
+  <p style="color:var(--muted);font-size:0.85rem;margin:0 0 14px;">Zwei Erwachsene geb. 1988 (Franchise CHF 2'500), zwei Kinder geb. 2016 und 2019 (Franchise CHF 0), ohne Unfalldeckung, Stadt Zürich (PLZ 8001). Monatliche Familiengesamtprämien.</p>
+  <!-- Quelle: priminfo.admin.ch, abgerufen am 29. September 2026. Profil B: Familie mit 4 Personen, Erwachsene geb. 1988 (Franchise CHF 2'500), Kinder geb. 2016/2019 (Franchise CHF 0), ohne Unfalldeckung, Stadt Zürich (PLZ 8001). 5 günstigste Kombinationen 2027 nach monatlicher Familiengesamtprämie. -->
+  <div class="table-scroll"><table class="provider-table"><thead><tr><th scope="col">Versicherer</th><th scope="col">Modell</th><th scope="col">Familienprämie/Monat</th><th scope="col">Ersparnis pro Jahr*</th></tr></thead><tbody>
+  <tr><td data-label="Versicherer"><div class="pt-name">Assura</div></td><td data-label="Modell">QualiMed (Ärztenetz)</td><td data-label="Familienprämie/Monat">CHF 997.20</td><td data-label="Ersparnis pro Jahr*"><span class="pt-badge green">~CHF 595/Jahr</span></td></tr>
+  <tr><td data-label="Versicherer"><div class="pt-name">KPT</div></td><td data-label="Modell">KPTwin.smart (Hausarzt mit App)</td><td data-label="Familienprämie/Monat">CHF 1'034.00</td><td data-label="Ersparnis pro Jahr*"><span class="pt-badge green">~CHF 154/Jahr</span></td></tr>
+  <tr><td data-label="Versicherer"><div class="pt-name">Assura</div></td><td data-label="Modell">MediTel (Telemedizin)</td><td data-label="Familienprämie/Monat">CHF 1'034.80</td><td data-label="Ersparnis pro Jahr*"><span class="pt-badge blue">CHF 144/Jahr</span></td></tr>
+  <tr><td data-label="Versicherer"><div class="pt-name">Helsana</div></td><td data-label="Modell">BeneFit PLUS Hausarzt R1</td><td data-label="Familienprämie/Monat">CHF 1'044.80</td><td data-label="Ersparnis pro Jahr*"><span class="pt-badge blue">CHF 24/Jahr</span></td></tr>
+  <tr><td data-label="Versicherer"><div class="pt-name">KPT</div></td><td data-label="Modell">KPTwin.plus (HMO)</td><td data-label="Familienprämie/Monat">CHF 1'046.80</td><td data-label="Ersparnis pro Jahr*"><span class="pt-badge blue">Referenz</span></td></tr>
+  </tbody></table></div>
+  <p style="font-size:0.78rem;color:var(--muted);margin:8px 0 0;">*Ersparnis gegenüber der teuersten dieser 5 günstigsten Kombinationen (KPT KPTwin.plus, CHF 1'046.80/Monat) — nicht gegenüber dem Marktdurchschnitt. Quelle: priminfo.admin.ch, abgerufen am 29. September 2026.</p>
+
+  <div style="background:var(--card);border:2px solid var(--red);border-radius:12px;padding:18px 22px;margin:20px 0 0;display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
+    <div style="flex:1;min-width:200px;"><strong style="font-size:0.95rem;">Bereit zu wechseln?</strong><p style="margin:2px 0 0;font-size:0.85rem;color:var(--muted);">Alle SwissNewbie-Krankenversicherungs-Angebote und Partnerdeals auf einen Blick.</p></div>
+    <a href="/de/vouchers/" style="flex-shrink:0;padding:9px 20px;background:var(--red);color:#fff;border-radius:7px;font-weight:600;font-size:0.9rem;text-decoration:none;text-align:center;max-width:100%;">Krankenversicherungs-Angebote →</a>
+  </div>
 
   <div class="offer-area">
     <div class="offer-area-title">Empfohlener Versicherer auf SwissNewbie</div>

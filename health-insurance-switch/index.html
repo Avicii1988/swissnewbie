@@ -343,7 +343,7 @@ nav a.active{color:var(--white)!important;border-bottom:2px solid var(--red-ligh
 <!-- ── SAVINGS ── -->
 <div class="guide-section" id="savings">
   <h2>2. Five ways to lower your 2027 premium</h2>
-  <p style="color:var(--muted);font-size:0.9rem;margin:0 0 16px;">The 2027 premiums are out. The market average rises <strong>~5%</strong> — but insurers moved very differently: <strong>CSS increased 7.2%</strong> while cheaper alternatives barely moved. That gap is real money if you compare. Use these levers to cut your premium further.</p>
+  <p style="color:var(--muted);font-size:0.9rem;margin:0 0 16px;">The 2027 premiums are out. The market average rises <strong>+5.0%</strong> to CHF 412/month — but insurers moved very differently: <strong>CSS increased 7.2%</strong> while cheaper alternatives barely moved. That gap is real money if you compare. Use these levers to cut your premium further.</p>
   <div class="savings-grid">
     <div class="savings-card">
       <div class="sc-icon">📈</div>
@@ -371,7 +371,7 @@ nav a.active{color:var(--white)!important;border-bottom:2px solid var(--red-ligh
       <p>The cheapest insurer varies significantly by postcode. Use <a href="https://www.priminfo.admin.ch" target="_blank" rel="noopener">priminfo.admin.ch</a> to find the lowest premium for your specific situation.</p>
     </div>
   </div>
-  <p class="prognosis-note">Source: official 2027 premiums published by the Federal Office of Public Health (BAG) on 29 September 2026, available on <a href="https://www.priminfo.admin.ch" target="_blank" rel="noopener" style="color:inherit;">priminfo.admin.ch</a>. The ~5% figure is the BAG-published market average, not a per-insurer number — your own premium change depends entirely on your insurer, canton, model and franchise.</p>
+  <p class="prognosis-note">Source: official 2027 premiums published by the Federal Office of Public Health (BAG) on 29 September 2026 (average premium: CHF 412.00/month, +5.0% / +CHF 19.70 vs. 2026), available on <a href="https://www.priminfo.admin.ch" target="_blank" rel="noopener" style="color:inherit;">priminfo.admin.ch</a>. This is the BAG-published market average, not a per-insurer number — your own premium change depends entirely on your insurer, canton, model and franchise.</p>
 </div>
 
 <!-- ── COMPARE AND SIGN UP ── -->
@@ -384,7 +384,34 @@ nav a.active{color:var(--white)!important;border-bottom:2px solid var(--red-ligh
     <a href="https://www.priminfo.admin.ch" target="_blank" rel="noopener" style="display:inline-block;padding:9px 20px;background:var(--red);color:#fff;border-radius:7px;font-weight:600;font-size:0.9rem;text-decoration:none;">Compare on priminfo.admin.ch →</a>
   </div>
 
-  <!-- TODO(2027-savings-table): pending live priminfo.admin.ch figures for Profile A (single, born 1988, no accident, franchise 2500, Zürich city) and Profile B (family 2+2, adults born 1988, children born 2016/2019, same params). Do not fill with invented numbers — see task instructions. -->
+  <h3 style="font-size:1rem;margin:28px 0 4px;">Cheapest 2027 options — single adult, Zürich</h3>
+  <p style="color:var(--muted);font-size:0.85rem;margin:0 0 14px;">Real numbers, not averages: the 5 cheapest 2027 basic-insurance models for a single adult born 1988, franchise CHF 2,500, no accident cover, Zürich city (PLZ 8001).</p>
+  <!-- Source: priminfo.admin.ch, retrieved 29 September 2026. Profile A: single adult, born 1988, no accident cover, franchise CHF 2,500, Zürich city (PLZ 8001). 5 cheapest 2027 basic-insurance premiums. -->
+  <div class="table-scroll"><table class="provider-table"><thead><tr><th scope="col">Insurer</th><th scope="col">Model</th><th scope="col">Monthly premium</th><th scope="col">Yearly saving*</th></tr></thead><tbody>
+  <tr><td data-label="Insurer"><div class="pt-name">Sanitas</div></td><td data-label="Model">TelMed Basic (telemedicine)</td><td data-label="Monthly premium">CHF 384.05</td><td data-label="Yearly saving*"><span class="pt-badge green">~CHF 173/year</span></td></tr>
+  <tr><td data-label="Insurer"><div class="pt-name">Assura</div></td><td data-label="Model">QualiMed (doctor network)</td><td data-label="Monthly premium">CHF 384.20</td><td data-label="Yearly saving*"><span class="pt-badge green">~CHF 172/year</span></td></tr>
+  <tr><td data-label="Insurer"><div class="pt-name">Atupri</div></td><td data-label="Model">HMO</td><td data-label="Monthly premium">CHF 386.50</td><td data-label="Yearly saving*"><span class="pt-badge green">CHF 144/year</span></td></tr>
+  <tr><td data-label="Insurer"><div class="pt-name">Avenir</div></td><td data-label="Model">SanaTel (telemedicine)</td><td data-label="Monthly premium">CHF 394.70</td><td data-label="Yearly saving*"><span class="pt-badge blue">~CHF 46/year</span></td></tr>
+  <tr><td data-label="Insurer"><div class="pt-name">KPT</div></td><td data-label="Model">KPTwin.smart (family doctor with app)</td><td data-label="Monthly premium">CHF 398.50</td><td data-label="Yearly saving*"><span class="pt-badge blue">Reference</span></td></tr>
+  </tbody></table></div>
+  <p style="font-size:0.78rem;color:var(--muted);margin:8px 0 0;">*Saving vs. the most expensive of these 5 cheapest options (KPT KPTwin.smart, CHF 398.50/month) — not vs. the market average. Source: priminfo.admin.ch, retrieved 29 September 2026.</p>
+
+  <h3 style="font-size:1rem;margin:28px 0 4px;">Cheapest 2027 options — family of 4, Zürich</h3>
+  <p style="color:var(--muted);font-size:0.85rem;margin:0 0 14px;">Two adults born 1988 (franchise CHF 2,500), two children born 2016 and 2019 (franchise CHF 0), no accident cover, Zürich city (PLZ 8001). Monthly family totals.</p>
+  <!-- Source: priminfo.admin.ch, retrieved 29 September 2026. Profile B: family of 4, adults born 1988 (franchise CHF 2,500), children born 2016/2019 (franchise CHF 0), no accident cover, Zürich city (PLZ 8001). 5 cheapest 2027 combinations by monthly family total. -->
+  <div class="table-scroll"><table class="provider-table"><thead><tr><th scope="col">Insurer</th><th scope="col">Model</th><th scope="col">Monthly family total</th><th scope="col">Yearly saving*</th></tr></thead><tbody>
+  <tr><td data-label="Insurer"><div class="pt-name">Assura</div></td><td data-label="Model">QualiMed (doctor network)</td><td data-label="Monthly family total">CHF 997.20</td><td data-label="Yearly saving*"><span class="pt-badge green">~CHF 595/year</span></td></tr>
+  <tr><td data-label="Insurer"><div class="pt-name">KPT</div></td><td data-label="Model">KPTwin.smart (family doctor with app)</td><td data-label="Monthly family total">CHF 1,034.00</td><td data-label="Yearly saving*"><span class="pt-badge green">~CHF 154/year</span></td></tr>
+  <tr><td data-label="Insurer"><div class="pt-name">Assura</div></td><td data-label="Model">MediTel (telemedicine)</td><td data-label="Monthly family total">CHF 1,034.80</td><td data-label="Yearly saving*"><span class="pt-badge blue">CHF 144/year</span></td></tr>
+  <tr><td data-label="Insurer"><div class="pt-name">Helsana</div></td><td data-label="Model">BeneFit PLUS Hausarzt R1</td><td data-label="Monthly family total">CHF 1,044.80</td><td data-label="Yearly saving*"><span class="pt-badge blue">CHF 24/year</span></td></tr>
+  <tr><td data-label="Insurer"><div class="pt-name">KPT</div></td><td data-label="Model">KPTwin.plus (HMO)</td><td data-label="Monthly family total">CHF 1,046.80</td><td data-label="Yearly saving*"><span class="pt-badge blue">Reference</span></td></tr>
+  </tbody></table></div>
+  <p style="font-size:0.78rem;color:var(--muted);margin:8px 0 0;">*Saving vs. the most expensive of these 5 cheapest combinations (KPT KPTwin.plus, CHF 1,046.80/month) — not vs. the market average. Source: priminfo.admin.ch, retrieved 29 September 2026.</p>
+
+  <div style="background:var(--card);border:2px solid var(--red);border-radius:12px;padding:18px 22px;margin:20px 0 0;display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
+    <div style="flex:1;min-width:200px;"><strong style="font-size:0.95rem;">Ready to switch?</strong><p style="margin:2px 0 0;font-size:0.85rem;color:var(--muted);">See every SwissNewbie health insurance voucher and partner deal in one place.</p></div>
+    <a href="/vouchers/" style="flex-shrink:0;padding:9px 20px;background:var(--red);color:#fff;border-radius:7px;font-weight:600;font-size:0.9rem;text-decoration:none;text-align:center;max-width:100%;">See health insurance deals →</a>
+  </div>
 
   <div class="offer-area">
     <div class="offer-area-title">Recommended insurer on SwissNewbie</div>
