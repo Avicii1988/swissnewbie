@@ -1,14 +1,14 @@
 {
   "_schema": "swissnewbie-offers/v2",
-  "_lastUpdated": "2026-09-20",
+  "_lastUpdated": "2026-10-02",
   "_note": "Single source of truth for all commercial offers. Disclosure: one clear statement in the global footer + /referral-policy/ page — no per-card injection required unless a specific partner contract mandates it.",
 
   "family4PersonMatrix": {
-    "headline": "A family of four: CHF 4,000+ total first-year value",
-    "headlineClaim": 4000,
+    "headline": "A family of four: CHF 3,500+ total first-year value",
+    "headlineClaim": 3500,
     "headlineScenario": "maximum",
     "headlineQualifier": "depending on household eligibility and selected offers",
-    "calculatedDate": "2026-09-20",
+    "calculatedDate": "2026-10-02",
     "composition": {
       "adults": 2,
       "children": 2,
@@ -82,21 +82,11 @@
       },
       {
         "offerId": "ubs-banking",
-        "benefitPerEligiblePerson": "50 KeyClub points = CHF 50 value at partner retailers",
+        "benefitPerEligiblePerson": "CHF 40 KeyClub points (conservative, lowest Easy-package tier of the CHF 40–150 refer-a-friend range) at partner retailers",
         "maxEligiblePerHousehold": 2,
         "adultOnly": true,
         "minorEligible": false,
-        "conditions": "Eligible banking offer via recommendation link; points redeemable at UBS KeyClub partners (Migros, Coop, SBB etc.); not unrestricted cash",
-        "stacksPerPerson": false,
-        "scope": "per-person"
-      },
-      {
-        "offerId": "ubs-3a",
-        "benefitPerEligiblePerson": "250 KeyClub points = CHF 250 value at partner retailers",
-        "maxEligiblePerHousehold": 2,
-        "adultOnly": true,
-        "minorEligible": false,
-        "conditions": "Qualifying UBS pension plan or mortgage via recommendation link; same person may hold both ubs-banking and ubs-3a if both offers are activated",
+        "conditions": "New account via referral link or code XXOJWZ; points redeemable at UBS KeyClub partners (Migros, Coop, SBB etc.); not unrestricted cash; no separate pension/3a bonus exists",
         "stacksPerPerson": false,
         "scope": "per-person"
       },
@@ -144,22 +134,19 @@
     ],
     "doubleCounting": [
       "yallo mobile and Sunrise Family Benefit are mutually exclusive per adult — choose one mobile telecom offer per adult",
-      "UBS banking and UBS 3a may be combined by the same adult (separate offers, both activated)",
       "Smile home and Smile car insurance may be stacked (separate contracts and vehicles)"
     ],
     "scenarios": [
       {
         "id": "moderate",
         "description": "Newcomer family, no investment account yet, chooses yallo for telecom, activates banking/pension/insurance welcome offers, selects suitable health insurance model",
-        "year1TotalChf": 1310,
+        "year1TotalChf": 790,
         "items": [
           { "item": "yallo mobile — Adult A", "offerId": "yallo-mobile", "eligiblePersons": 1, "chfPerPerson": 50, "chf": 50 },
           { "item": "yallo mobile — Adult B", "offerId": "yallo-mobile", "eligiblePersons": 1, "chfPerPerson": 50, "chf": 50 },
           { "item": "yallo internet — household", "offerId": "yallo-internet", "eligiblePersons": 1, "chfPerPerson": 100, "chf": 100 },
-          { "item": "UBS banking — Adult A (50 KeyClub points = CHF 50)", "offerId": "ubs-banking", "eligiblePersons": 1, "chfPerPerson": 50, "chf": 50 },
-          { "item": "UBS banking — Adult B (50 KeyClub points = CHF 50)", "offerId": "ubs-banking", "eligiblePersons": 1, "chfPerPerson": 50, "chf": 50 },
-          { "item": "UBS 3a — Adult A (250 KeyClub points = CHF 250)", "offerId": "ubs-3a", "eligiblePersons": 1, "chfPerPerson": 250, "chf": 250 },
-          { "item": "UBS 3a — Adult B (250 KeyClub points = CHF 250)", "offerId": "ubs-3a", "eligiblePersons": 1, "chfPerPerson": 250, "chf": 250 },
+          { "item": "UBS banking — Adult A (CHF 40 KeyClub points, Easy package tier)", "offerId": "ubs-banking", "eligiblePersons": 1, "chfPerPerson": 40, "chf": 40 },
+          { "item": "UBS banking — Adult B (CHF 40 KeyClub points, Easy package tier)", "offerId": "ubs-banking", "eligiblePersons": 1, "chfPerPerson": 40, "chf": 40 },
           { "item": "Smile home insurance — 1 household contract (CHF 40)", "offerId": "smile-home-insurance", "eligiblePersons": 1, "chfPerPerson": 40, "chf": 40 },
           { "item": "Frankly 3a — Adult A (CHF 35 fee voucher)", "offerId": "frankly-3a", "eligiblePersons": 1, "chfPerPerson": 35, "chf": 35 },
           { "item": "Frankly 3a — Adult B (CHF 35 fee voucher)", "offerId": "frankly-3a", "eligiblePersons": 1, "chfPerPerson": 35, "chf": 35 },
@@ -169,17 +156,15 @@
       {
         "id": "strong",
         "description": "Established resident family: existing Sunrise subscription qualifies for Family Benefit, each adult invests CHF ~52,000 at IBKR, both own a car, full pension/banking offers activated",
-        "year1TotalChf": 2870,
+        "year1TotalChf": 2350,
         "items": [
           { "item": "IBKR shares — Adult A (USD 50k deposit → USD 500 ≈ CHF 480)", "offerId": "ibkr-investing", "eligiblePersons": 1, "chfPerPerson": 480, "chf": 480 },
           { "item": "IBKR shares — Adult B (USD 50k deposit → USD 500 ≈ CHF 480)", "offerId": "ibkr-investing", "eligiblePersons": 1, "chfPerPerson": 480, "chf": 480 },
           { "item": "Sunrise Family Benefit — Adult A (50% off Swiss Connect M × 12 mo = CHF 210)", "offerId": "sunrise-mobile-family", "eligiblePersons": 1, "chfPerPerson": 210, "chf": 210 },
           { "item": "Sunrise Family Benefit — Adult B (50% off Swiss Connect M × 12 mo = CHF 210)", "offerId": "sunrise-mobile-family", "eligiblePersons": 1, "chfPerPerson": 210, "chf": 210 },
           { "item": "yallo internet — household", "offerId": "yallo-internet", "eligiblePersons": 1, "chfPerPerson": 100, "chf": 100 },
-          { "item": "UBS banking — Adult A (50 KeyClub points = CHF 50)", "offerId": "ubs-banking", "eligiblePersons": 1, "chfPerPerson": 50, "chf": 50 },
-          { "item": "UBS banking — Adult B (50 KeyClub points = CHF 50)", "offerId": "ubs-banking", "eligiblePersons": 1, "chfPerPerson": 50, "chf": 50 },
-          { "item": "UBS 3a — Adult A (250 KeyClub points = CHF 250)", "offerId": "ubs-3a", "eligiblePersons": 1, "chfPerPerson": 250, "chf": 250 },
-          { "item": "UBS 3a — Adult B (250 KeyClub points = CHF 250)", "offerId": "ubs-3a", "eligiblePersons": 1, "chfPerPerson": 250, "chf": 250 },
+          { "item": "UBS banking — Adult A (CHF 40 KeyClub points, Easy package tier)", "offerId": "ubs-banking", "eligiblePersons": 1, "chfPerPerson": 40, "chf": 40 },
+          { "item": "UBS banking — Adult B (CHF 40 KeyClub points, Easy package tier)", "offerId": "ubs-banking", "eligiblePersons": 1, "chfPerPerson": 40, "chf": 40 },
           { "item": "Smile home insurance — 1 household contract (CHF 40)", "offerId": "smile-home-insurance", "eligiblePersons": 1, "chfPerPerson": 40, "chf": 40 },
           { "item": "Smile car insurance — Adult A (1 vehicle, CHF 40)", "offerId": "smile-car-insurance", "eligiblePersons": 1, "chfPerPerson": 40, "chf": 40 },
           { "item": "Smile car insurance — Adult B (1 vehicle, CHF 40)", "offerId": "smile-car-insurance", "eligiblePersons": 1, "chfPerPerson": 40, "chf": 40 },
@@ -191,17 +176,15 @@
       {
         "id": "maximum",
         "description": "Both adults invest at IBKR maximum (USD 100k each), both have Sunrise Family Benefit qualifying subscriptions, both own a car, full pension/banking offers, family switches to optimal health insurance model",
-        "year1TotalChf": 4130,
+        "year1TotalChf": 3610,
         "items": [
           { "item": "IBKR shares — Adult A (USD 100k deposit → USD 1,000 ≈ CHF 960)", "offerId": "ibkr-investing", "eligiblePersons": 1, "chfPerPerson": 960, "chf": 960 },
           { "item": "IBKR shares — Adult B (USD 100k deposit → USD 1,000 ≈ CHF 960)", "offerId": "ibkr-investing", "eligiblePersons": 1, "chfPerPerson": 960, "chf": 960 },
           { "item": "Sunrise Family Benefit — Adult A (50% off Swiss Connect M × 12 mo = CHF 210)", "offerId": "sunrise-mobile-family", "eligiblePersons": 1, "chfPerPerson": 210, "chf": 210 },
           { "item": "Sunrise Family Benefit — Adult B (50% off Swiss Connect M × 12 mo = CHF 210)", "offerId": "sunrise-mobile-family", "eligiblePersons": 1, "chfPerPerson": 210, "chf": 210 },
           { "item": "yallo internet — household", "offerId": "yallo-internet", "eligiblePersons": 1, "chfPerPerson": 100, "chf": 100 },
-          { "item": "UBS banking — Adult A (50 KeyClub points = CHF 50)", "offerId": "ubs-banking", "eligiblePersons": 1, "chfPerPerson": 50, "chf": 50 },
-          { "item": "UBS banking — Adult B (50 KeyClub points = CHF 50)", "offerId": "ubs-banking", "eligiblePersons": 1, "chfPerPerson": 50, "chf": 50 },
-          { "item": "UBS 3a — Adult A (250 KeyClub points = CHF 250)", "offerId": "ubs-3a", "eligiblePersons": 1, "chfPerPerson": 250, "chf": 250 },
-          { "item": "UBS 3a — Adult B (250 KeyClub points = CHF 250)", "offerId": "ubs-3a", "eligiblePersons": 1, "chfPerPerson": 250, "chf": 250 },
+          { "item": "UBS banking — Adult A (CHF 40 KeyClub points, Easy package tier)", "offerId": "ubs-banking", "eligiblePersons": 1, "chfPerPerson": 40, "chf": 40 },
+          { "item": "UBS banking — Adult B (CHF 40 KeyClub points, Easy package tier)", "offerId": "ubs-banking", "eligiblePersons": 1, "chfPerPerson": 40, "chf": 40 },
           { "item": "Smile home insurance — 1 household contract (CHF 40)", "offerId": "smile-home-insurance", "eligiblePersons": 1, "chfPerPerson": 40, "chf": 40 },
           { "item": "Smile car insurance — Adult A (1 vehicle, CHF 40)", "offerId": "smile-car-insurance", "eligiblePersons": 1, "chfPerPerson": 40, "chf": 40 },
           { "item": "Smile car insurance — Adult B (1 vehicle, CHF 40)", "offerId": "smile-car-insurance", "eligiblePersons": 1, "chfPerPerson": 40, "chf": 40 },
@@ -212,7 +195,7 @@
         ]
       }
     ],
-    "_note": "Headline 'CHF 4,000+' total first-year value is supported by the 'maximum' scenario (CHF 4,130). Total includes direct bonuses, preferential prices, and realistic savings from selecting suitable products. That scenario requires both adults to deposit USD 100,000 each at IBKR — use qualifier 'depending on household eligibility and selected offers' on all public-facing claims. Health insurance entries document realistic savings from suitable product selection (not a direct cash referral benefit). Review annually or when any provider terms change."
+    "_note": "Headline 'CHF 3,500+' total first-year value is supported by the 'maximum' scenario (CHF 3,610). Total includes direct bonuses, preferential prices, and realistic savings from selecting suitable products. That scenario requires both adults to deposit USD 100,000 each at IBKR — use qualifier 'depending on household eligibility and selected offers' on all public-facing claims. UBS banking is counted at the conservative CHF 40 (lowest/Easy-package) tier of the real CHF 40-150 refer-a-friend range; the previous UBS 3a/pension KeyClub line item was removed in Oct 2026 because that bonus does not exist (UBS confirms CHF 250 only for mortgage referrals, not pension/3a). Health insurance entries document realistic savings from suitable product selection (not a direct cash referral benefit). Review annually or when any provider terms change."
   },
 
   "globalDisclosurePolicy": {
@@ -559,32 +542,33 @@
       "claimStatus": "verified",
       "benefitType": "points",
       "benefitText": {
-        "en": "50 KeyClub points (CHF 50 value) for an eligible banking offer",
-        "de": "50 KeyClub-Punkte (CHF 50 Wert) für ein berechtigtes Bankangebot",
-        "fr": "50 points KeyClub (valeur CHF 50) pour une offre bancaire éligible"
+        "en": "CHF 40 to 150 in KeyClub points depending on account package (Easy/Classic/Gold/Platinum)",
+        "de": "CHF 40 bis 150 KeyClub-Punkte je nach Kontopaket (Easy/Classic/Gold/Platinum)",
+        "fr": "CHF 40 à 150 en points KeyClub selon le forfait de compte (Easy/Classic/Gold/Platinum)"
       },
-      "benefitVerifiedAsOf": "2026-09-19",
+      "benefitVerifiedAsOf": "2026-10-02",
       "benefitSourceUrl": "https://www.ubs.com/ch/en/services/private/recommend.html",
-      "_benefitNote": "50 KeyClub points for eligible banking offer, 250 for pension plan or mortgage, cumulative where applicable. 1 point = CHF 1. Do NOT call points unrestricted cash — they are redeemable at partner retailers (Migros, Coop, SBB etc.).",
+      "_benefitNote": "UBS refer-a-friend program pays CHF 40/80/100/150 in KeyClub points depending on the new customer's account package (Easy/Classic/Gold/Platinum). 1 point = CHF 1. The CHF 250 pension/mortgage figure previously shown here is NOT part of this account-referral program — it is confirmed only for mortgage referrals and must not be promised for banking or pension (3a) sign-ups. Points are redeemable at partner retailers (Migros, Coop, SBB etc.), not unrestricted cash.",
       "referrerReward": {
-        "text": "50 KeyClub points (banking), 250 (pension/mortgage); 1 point = CHF 1 at partner retailers",
-        "verifiedAsOf": "2026-09-19"
+        "text": "CHF 40 to 150 in KeyClub points depending on the referred account package; 1 point = CHF 1 at partner retailers",
+        "verifiedAsOf": "2026-10-02"
       },
       "visitorBenefit": {
-        "text": "50 KeyClub points for eligible banking offer; 250 for qualifying pension plan or mortgage",
-        "verifiedAsOf": "2026-09-19"
+        "text": "New customer opens an account with referral code XXOJWZ; CHF 40 to 150 in KeyClub points awarded depending on package chosen",
+        "verifiedAsOf": "2026-10-02"
       },
-      "activationConditions": "Eligible banking offer, pension plan or mortgage via recommendation link. Points redeemable at UBS KeyClub partners.",
+      "activationConditions": "New UBS account opened via referral link or using code XXOJWZ in the UBS app. Points redeemable at UBS KeyClub partners.",
       "minimumTerm": null,
+      "code": "XXOJWZ",
       "providerUrl": {
         "en": "https://www.ubs.com/ch/en/services/private/recommend.html",
         "de": "https://www.ubs.com/ch/de/services/private/recommend.html",
         "fr": "https://www.ubs.com/ch/fr/services/private/recommend.html"
       },
       "ctaText": {
-        "en": "Get UBS KeyClub points →",
-        "de": "UBS KeyClub-Punkte erhalten →",
-        "fr": "Obtenir des points UBS KeyClub →"
+        "en": "Visit UBS →",
+        "de": "Zu UBS →",
+        "fr": "Voir UBS →"
       },
       "commercialRelationship": "referral",
       "disclosure": {
@@ -594,52 +578,7 @@
       },
       "analyticsOfferId": "ubs-banking-referral",
       "placements": ["finance", "vouchers"],
-      "lastReviewed": "2026-09-20"
-    },
-
-    {
-      "id": "ubs-3a",
-      "provider": "UBS",
-      "category": "pension-3a",
-      "segments": ["newcomer", "resident"],
-      "claimStatus": "verified",
-      "benefitType": "points",
-      "benefitText": {
-        "en": "250 KeyClub points (CHF 250 value) for a qualifying pension plan",
-        "de": "250 KeyClub-Punkte (CHF 250 Wert) für einen qualifizierenden Vorsorgeplan",
-        "fr": "250 points KeyClub (valeur CHF 250) pour un plan de retraite qualifiant"
-      },
-      "benefitVerifiedAsOf": "2026-09-19",
-      "benefitSourceUrl": "https://www.ubs.com/ch/en/services/private/recommend.html",
-      "referrerReward": {
-        "text": "250 KeyClub points for pension/mortgage; 1 point = CHF 1 at partner retailers",
-        "verifiedAsOf": "2026-09-19"
-      },
-      "visitorBenefit": {
-        "text": "250 KeyClub points for qualifying pension plan or mortgage via recommendation link",
-        "verifiedAsOf": "2026-09-19"
-      },
-      "activationConditions": "Qualifying UBS pension plan or mortgage via recommendation link. Points redeemable at UBS KeyClub partners.",
-      "minimumTerm": null,
-      "providerUrl": {
-        "en": "https://www.ubs.com/ch/en/services/private/recommend.html",
-        "de": "https://www.ubs.com/ch/de/services/private/recommend.html",
-        "fr": "https://www.ubs.com/ch/fr/services/private/recommend.html"
-      },
-      "ctaText": {
-        "en": "Get UBS KeyClub points →",
-        "de": "UBS KeyClub-Punkte erhalten →",
-        "fr": "Obtenir des points UBS KeyClub →"
-      },
-      "commercialRelationship": "referral",
-      "disclosure": {
-        "en": "Referral link — SwissNewbie may receive a reward after activation.",
-        "de": "Empfehlungslink — SwissNewbie erhält möglicherweise eine Vergütung nach Aktivierung.",
-        "fr": "Lien de parrainage — SwissNewbie peut recevoir une récompense après activation."
-      },
-      "analyticsOfferId": "ubs-3a-referral",
-      "placements": ["finance", "vouchers"],
-      "lastReviewed": "2026-09-20"
+      "lastReviewed": "2026-10-02"
     },
 
     {
