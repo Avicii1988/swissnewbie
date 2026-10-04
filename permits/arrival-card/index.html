@@ -264,6 +264,8 @@ nav a.active{color:var(--white)!important;border-bottom:2px solid var(--red-ligh
     <a href="/health-insurance/" class="next-step-cta">Choose health insurance →</a>
   </div>
 </div>
+
+<div style="margin:28px 0;"><div class="next-step-box-title">Your next steps</div><div class="dc-stack"><div class="dc-card"><div class="dc-partner">Partner</div><div class="dc-logo"><img src="/logos/ubs.svg" alt="UBS" loading="lazy"></div><div class="dc-body"><div class="dc-benefit">Open a UBS key4 account via our link.</div><div class="dc-condition">CHF 40-150 as KeyClub points — enter code XXOJWZ in the UBS app.</div></div><a href="https://www.ubs.com/ch/en/services/private/recommend.html" target="_blank" rel="noopener" class="dc-btn" data-voucher-id="ubs-banking-referral">Visit UBS →</a></div><div class="dc-card"><div class="dc-partner">Partner</div><div class="dc-logo"><img src="/logos/sunrise.webp" alt="Sunrise" loading="lazy"></div><div class="dc-body"><div class="dc-benefit">Up to 50% off Sunrise mobile plans — save up to CHF 480/year.</div><div class="dc-condition">Price shown at checkout; final plan and discount confirmed by Sunrise.</div></div><a href="https://aklam.io/7SAazrKj" target="_blank" rel="noopener" class="dc-btn" data-voucher-id="sunrise-mobile-family-referral">Check my Sunrise deal →</a></div><div class="dc-card"><div class="dc-partner">Partner</div><div class="dc-logo"><img src="/logos/ib.webp" alt="Interactive Brokers" loading="lazy"></div><div class="dc-body"><div class="dc-benefit">Open an Interactive Brokers account via our referral link.</div><div class="dc-condition">USD 200 bonus only with a USD 10,000 deposit held for 1 year — limited to the first 15 referrals.</div></div><a href="https://ibkr.com/referral/jan354" target="_blank" rel="noopener" class="dc-btn" data-voucher-id="ibkr-investing-referral">Open IBKR account →</a></div></div></div>
 </main>
 
 <footer><div class="footer-grid"><div class="footer-brand"><a href="/" class="logo" onclick="window.scrollTo({top:0,behavior:'smooth'}); return false;"><span class="logo-cow">🐄</span>Swiss<span>Newbie</span></a><p>Your one-stop shop for the best deals in Switzerland. Save up to CHF 4,000 with exclusive voucher codes for banking, insurance, mobile, transport and more.</p><div class="addr">The Circle · 8058 Zürich, Switzerland</div></div><div class="footer-col"><h4>Guides &amp; Articles</h4><ul><li><a href="/moving-to-switzerland/">🌍 Moving Hub</a></li><li><a href="/permits/">🛂 Permits</a></li><li><a href="/health-insurance/">🏥 Health Insurance</a></li><li><a href="/finance/">🏦 Finances &amp; Banking</a></li><li><a href="/insurance/">🛡️ Insurance</a></li><li><a href="/mobile-internet/">📱 Mobile &amp; Internet</a></li><li><a href="/public-transport/">🚆 Public Transport</a></li></ul></div><div class="footer-col"><h4>SwissNewbie</h4><ul><li><a href="/vouchers/">All Codes</a></li><li><a href="/?section=contact">Contact</a></li><li><a href="/?section=privacy">Privacy Policy</a></li><li><a href="/referral-policy/">Referral Policy</a></li><li><a href="/?section=disclaimer">Disclaimer</a></li><li><a href="/?section=terms">Terms &amp; Conditions</a></li></ul></div></div><div class="footer-bottom"><p>© 2020–2026 SwissNewbie. All rights reserved.</p><p style="font-size:0.75rem;color:rgba(247,245,240,0.45);margin-top:4px;"><time datetime="2026-09-01">Last updated: <span id="sn-footer-date">September 2026</span></time></p><div class="footer-links"><a href="/?section=privacy">Privacy</a><a href="/?section=disclaimer">Disclaimer</a><a href="/?section=terms">T&amp;C</a></div></div></footer>
@@ -279,5 +281,20 @@ window.addEventListener('scroll',function(){
 },{passive:true});
 </script>
 <script>(function(){var now=new Date();var months=['January','February','March','April','May','June','July','August','September','October','November','December'];var d=document.getElementById('sn-footer-date');if(d)d.textContent=months[now.getMonth()]+' '+now.getFullYear();})();</script>
+<script>
+(function(){
+  var KEY='sn_voucher_clicks';
+  function getC(){try{return JSON.parse(localStorage.getItem(KEY)||'{}');}catch(e){return{};}}
+  document.addEventListener('click',function(e){
+    var el=e.target.closest('[data-voucher-id]');
+    if(!el){var lnk=e.target.closest('.vg-link,.vg-actions a');if(lnk){var card=lnk.closest('.vg-card');if(card){el=card.querySelector('[data-voucher-id]');if(!el){var nm=card.querySelector('.vg-name');if(nm){try{fetch('/api/voucher-notify',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({code:nm.textContent.trim().replace(/\s+/g,'-').slice(0,20),page:location.href,ts:new Date().toISOString(),ua:navigator.userAgent.slice(0,120)})}).catch(function(){});}catch(er){}return;}}}}}
+    if(!el)return;
+    var code=el.getAttribute('data-voucher-id'),today=new Date().toISOString().slice(0,10);
+    var d=getC();if(!d[today])d[today]={};d[today][code]=(d[today][code]||0)+1;
+    try{localStorage.setItem(KEY,JSON.stringify(d));}catch(e){}
+    try{fetch('/api/voucher-notify',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({code:code,page:location.href,ts:new Date().toISOString(),ua:navigator.userAgent.slice(0,120)})}).catch(function(){});}catch(er){}
+  },true);
+})();
+</script>
 </body>
 </html>

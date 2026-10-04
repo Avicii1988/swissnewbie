@@ -1,14 +1,14 @@
 {
   "_schema": "swissnewbie-offers/v2",
-  "_lastUpdated": "2026-10-02",
+  "_lastUpdated": "2026-10-04",
   "_note": "Single source of truth for all commercial offers. Disclosure: one clear statement in the global footer + /referral-policy/ page — no per-card injection required unless a specific partner contract mandates it.",
 
   "family4PersonMatrix": {
-    "headline": "A family of four: CHF 3,500+ total first-year value",
-    "headlineClaim": 3500,
+    "headline": "A family of four: CHF 2,000+ total first-year value",
+    "headlineClaim": 2000,
     "headlineScenario": "maximum",
     "headlineQualifier": "depending on household eligibility and selected offers",
-    "calculatedDate": "2026-10-02",
+    "calculatedDate": "2026-10-04",
     "composition": {
       "adults": 2,
       "children": 2,
@@ -17,15 +17,15 @@
     "offerEligibility": [
       {
         "offerId": "ibkr-investing",
-        "benefitPerEligiblePerson": "USD 1 per USD 100 deposited, max USD 1,000 (≈ CHF 960 at USD/CHF 0.96)",
+        "benefitPerEligiblePerson": "Flat USD 200 (≈ CHF 192 at USD/CHF 0.96), only with a USD 10,000 deposit held 1 year; program-wide cap of 15 referrals total, not guaranteed available",
         "maxEligiblePerHousehold": 2,
         "adultOnly": true,
         "minorEligible": false,
-        "conditions": "New IBKR account via referral link; deposit qualifying amount; eligibility and vesting conditions apply; deposit amount determines reward",
+        "conditions": "New IBKR account via referral link; minimum USD 10,000 deposit held for 1 year required; limited to the first 15 referrals program-wide; not a percentage of deposit",
         "stacksPerPerson": false,
         "scope": "per-person",
-        "depositRequired": "USD 100 minimum; USD 100,000 for maximum USD 1,000 reward",
-        "year1ChfByDeposit": { "usd10k": 96, "usd50k": 480, "usd100k": 960 }
+        "depositRequired": "USD 10,000 minimum, held for 1 year, for the flat USD 200 reward; no reward below this threshold",
+        "year1ChfByDeposit": { "usd10k": 192, "usd50k": 192, "usd100k": 192 }
       },
       {
         "offerId": "sunrise-mobile-family",
@@ -155,11 +155,11 @@
       },
       {
         "id": "strong",
-        "description": "Established resident family: existing Sunrise subscription qualifies for Family Benefit, each adult invests CHF ~52,000 at IBKR, both own a car, full pension/banking offers activated",
-        "year1TotalChf": 2350,
+        "description": "Established resident family: existing Sunrise subscription qualifies for Family Benefit, each adult deposits USD 10,000+ at IBKR (held 1 year), both own a car, full pension/banking offers activated",
+        "year1TotalChf": 1774,
         "items": [
-          { "item": "IBKR shares — Adult A (USD 50k deposit → USD 500 ≈ CHF 480)", "offerId": "ibkr-investing", "eligiblePersons": 1, "chfPerPerson": 480, "chf": 480 },
-          { "item": "IBKR shares — Adult B (USD 50k deposit → USD 500 ≈ CHF 480)", "offerId": "ibkr-investing", "eligiblePersons": 1, "chfPerPerson": 480, "chf": 480 },
+          { "item": "IBKR shares — Adult A (USD 10k+ deposit, 1yr hold → flat USD 200 ≈ CHF 192)", "offerId": "ibkr-investing", "eligiblePersons": 1, "chfPerPerson": 192, "chf": 192 },
+          { "item": "IBKR shares — Adult B (USD 10k+ deposit, 1yr hold → flat USD 200 ≈ CHF 192)", "offerId": "ibkr-investing", "eligiblePersons": 1, "chfPerPerson": 192, "chf": 192 },
           { "item": "Sunrise Family Benefit — Adult A (50% off Swiss Connect M × 12 mo = CHF 210)", "offerId": "sunrise-mobile-family", "eligiblePersons": 1, "chfPerPerson": 210, "chf": 210 },
           { "item": "Sunrise Family Benefit — Adult B (50% off Swiss Connect M × 12 mo = CHF 210)", "offerId": "sunrise-mobile-family", "eligiblePersons": 1, "chfPerPerson": 210, "chf": 210 },
           { "item": "yallo internet — household", "offerId": "yallo-internet", "eligiblePersons": 1, "chfPerPerson": 100, "chf": 100 },
@@ -175,11 +175,11 @@
       },
       {
         "id": "maximum",
-        "description": "Both adults invest at IBKR maximum (USD 100k each), both have Sunrise Family Benefit qualifying subscriptions, both own a car, full pension/banking offers, family switches to optimal health insurance model",
-        "year1TotalChf": 3610,
+        "description": "Both adults deposit USD 10,000+ at IBKR (held 1 year, subject to the 15-referral program cap), both have Sunrise Family Benefit qualifying subscriptions, both own a car, full pension/banking offers, family switches to optimal health insurance model",
+        "year1TotalChf": 2074,
         "items": [
-          { "item": "IBKR shares — Adult A (USD 100k deposit → USD 1,000 ≈ CHF 960)", "offerId": "ibkr-investing", "eligiblePersons": 1, "chfPerPerson": 960, "chf": 960 },
-          { "item": "IBKR shares — Adult B (USD 100k deposit → USD 1,000 ≈ CHF 960)", "offerId": "ibkr-investing", "eligiblePersons": 1, "chfPerPerson": 960, "chf": 960 },
+          { "item": "IBKR shares — Adult A (USD 10k+ deposit, 1yr hold → flat USD 200 ≈ CHF 192)", "offerId": "ibkr-investing", "eligiblePersons": 1, "chfPerPerson": 192, "chf": 192 },
+          { "item": "IBKR shares — Adult B (USD 10k+ deposit, 1yr hold → flat USD 200 ≈ CHF 192)", "offerId": "ibkr-investing", "eligiblePersons": 1, "chfPerPerson": 192, "chf": 192 },
           { "item": "Sunrise Family Benefit — Adult A (50% off Swiss Connect M × 12 mo = CHF 210)", "offerId": "sunrise-mobile-family", "eligiblePersons": 1, "chfPerPerson": 210, "chf": 210 },
           { "item": "Sunrise Family Benefit — Adult B (50% off Swiss Connect M × 12 mo = CHF 210)", "offerId": "sunrise-mobile-family", "eligiblePersons": 1, "chfPerPerson": 210, "chf": 210 },
           { "item": "yallo internet — household", "offerId": "yallo-internet", "eligiblePersons": 1, "chfPerPerson": 100, "chf": 100 },
@@ -195,7 +195,7 @@
         ]
       }
     ],
-    "_note": "Headline 'CHF 3,500+' total first-year value is supported by the 'maximum' scenario (CHF 3,610). Total includes direct bonuses, preferential prices, and realistic savings from selecting suitable products. That scenario requires both adults to deposit USD 100,000 each at IBKR — use qualifier 'depending on household eligibility and selected offers' on all public-facing claims. UBS banking is counted at the conservative CHF 40 (lowest/Easy-package) tier of the real CHF 40-150 refer-a-friend range; the previous UBS 3a/pension KeyClub line item was removed in Oct 2026 because that bonus does not exist (UBS confirms CHF 250 only for mortgage referrals, not pension/3a). Health insurance entries document realistic savings from suitable product selection (not a direct cash referral benefit). Review annually or when any provider terms change."
+    "_note": "Headline 'CHF 2,000+' total first-year value is supported by the 'maximum' scenario (CHF 2,074). Total includes direct bonuses, preferential prices, and realistic savings from selecting suitable products. Use qualifier 'depending on household eligibility and selected offers' on all public-facing claims. UBS banking is counted at the conservative CHF 40 (lowest/Easy-package) tier of the real CHF 40-150 refer-a-friend range; the previous UBS 3a/pension KeyClub line item was removed in Oct 2026 because that bonus does not exist (UBS confirms CHF 250 only for mortgage referrals, not pension/3a). IBKR is counted as a flat USD 200 (≈ CHF 192) per qualifying adult, corrected in Oct 2026 from an incorrect linear 'USD 1 per USD 100 deposited up to USD 1,000' model — the real program pays a flat USD 200 only once a USD 10,000 deposit has been held for 1 year, and is capped program-wide at the first 15 referrals (not guaranteed available). This correction significantly lowered the 'strong' and 'maximum' scenario totals and the headline claim from the previous CHF 3,500+ figure. Health insurance entries document realistic savings from suitable product selection (not a direct cash referral benefit). Review annually or when any provider terms change."
   },
 
   "globalDisclosurePolicy": {
@@ -589,22 +589,22 @@
       "claimStatus": "verified",
       "benefitType": "shares",
       "benefitText": {
-        "en": "Up to USD 1,000 in IBKR shares — USD 1 per USD 100 deposited; eligibility applies",
-        "de": "Bis zu USD 1,000 in IBKR-Aktien — USD 1 pro USD 100 eingezahlt; Bedingungen gelten",
-        "fr": "Jusqu'à USD 1,000 en actions IBKR — USD 1 pour USD 100 déposé ; éligibilité requise"
+        "en": "USD 200 in IBKR shares — only with a USD 10,000 deposit held for 1 year; limited to the first 15 referrals",
+        "de": "USD 200 in IBKR-Aktien — nur bei einer Einzahlung von USD 10'000, die 1 Jahr gehalten wird; limitiert auf die ersten 15 Empfehlungen",
+        "fr": "USD 200 en actions IBKR — uniquement avec un dépôt de USD 10'000 conservé 1 an ; limité aux 15 premiers parrainages"
       },
-      "benefitVerifiedAsOf": "2026-09-19",
+      "benefitVerifiedAsOf": "2026-10-04",
       "benefitSourceUrl": "https://ibkr.com/referral/jan354",
-      "_benefitNote": "USD 1 per USD 100 deposited up to USD 1,000. Eligibility conditions apply. Deposit USD 100,000 for the maximum USD 1,000 reward.",
+      "_benefitNote": "Flat USD 200 bonus, not a percentage of deposit. Requires a minimum USD 10,000 deposit held for 1 year. Program-wide cap of 15 referrals total — not guaranteed to be available. Below the USD 10,000 threshold, or after the 15-referral cap is reached, no bonus applies.",
       "referrerReward": {
         "text": "IBKR shares — amount shown at activation",
-        "verifiedAsOf": "2026-09-19"
+        "verifiedAsOf": "2026-10-04"
       },
       "visitorBenefit": {
-        "text": "Up to USD 1,000 in IBKR shares — USD 1 per USD 100 deposited; eligibility applies",
-        "verifiedAsOf": "2026-09-19"
+        "text": "USD 200 in IBKR shares — only with a USD 10,000 deposit held for 1 year; limited to the first 15 referrals",
+        "verifiedAsOf": "2026-10-04"
       },
-      "activationConditions": "New IBKR account via referral link. Deposit qualifying amount. Eligibility conditions and minimum holding period apply.",
+      "activationConditions": "New IBKR account via referral link. Minimum USD 10,000 deposit held for 1 year required for the USD 200 bonus. Limited to the first 15 referrals program-wide.",
       "minimumTerm": "IBKR terms apply — shares vest over time",
       "providerUrl": {
         "en": "https://ibkr.com/referral/jan354",
@@ -624,7 +624,7 @@
       },
       "analyticsOfferId": "ibkr-investing-referral",
       "placements": ["finance", "vouchers"],
-      "lastReviewed": "2026-09-20"
+      "lastReviewed": "2026-10-04"
     },
 
     {
@@ -635,22 +635,22 @@
       "claimStatus": "conditional",
       "benefitType": "consultation",
       "benefitText": {
-        "en": "Free expert consultation — top-rated expat insurer",
-        "de": "Kostenlose Expertenberatung — bestbewertete Expat-Versicherung",
-        "fr": "Consultation experte gratuite — assureur expatrié le mieux noté"
+        "en": "Free expert consultation — up to CHF 100 as a digital gift code after you book and sign with SWICA (adults only)",
+        "de": "Kostenlose Expertenberatung — bis zu CHF 100 als digitaler Geschenkcode nach Beratung und Vertragsabschluss bei SWICA (nur Erwachsene)",
+        "fr": "Consultation experte gratuite — jusqu'à CHF 100 sous forme de code cadeau numérique après réservation et souscription chez SWICA (adultes uniquement)"
       },
-      "benefitVerifiedAsOf": "2026-09-19",
+      "benefitVerifiedAsOf": "2026-10-04",
       "benefitSourceUrl": "https://crmstudio.swica.ch/public/e/l/empfehlung?id=de83f6e0-0700-4dee-92ff-d499423a6918",
-      "_benefitNote": "Remove 'Best deal for expats via SwissNewbie' exclusivity and 'Get best deal' CTA. Remove implied visitor cash benefit. Keep strong consultation CTA. Disclose rewarded referral briefly. Comparis 2025 satisfaction rating is supportable.",
+      "_benefitNote": "Consultation is free and always available. The CHF 100 digital gift code is only awarded after booking a consultation AND signing a SWICA policy; it is a gift code, not cash, and restricted to adults. Never present SWICA as the cheapest insurer — only as top-rated for expats (Comparis 2025 satisfaction rating is supportable). Remove 'Best deal for expats via SwissNewbie' exclusivity and 'Get best deal' CTA.",
       "referrerReward": {
         "text": "Rewarded referral — disclosed on card",
-        "verifiedAsOf": "2026-09-19"
+        "verifiedAsOf": "2026-10-04"
       },
       "visitorBenefit": {
-        "text": "Free personalised consultation; no implied exclusive or cash benefit",
-        "verifiedAsOf": "2026-09-19"
+        "text": "Free personalised consultation; up to CHF 100 as a digital gift code after booking a consultation and signing with SWICA. Adults only. Not cash.",
+        "verifiedAsOf": "2026-10-04"
       },
-      "activationConditions": "Via SWICA referral link. Consultation is free; insurance contract terms per SWICA.",
+      "activationConditions": "Via SWICA referral link. Consultation is free; CHF 100 digital gift code awarded only after a consultation is booked and a SWICA policy is signed. Adults only. Insurance contract terms per SWICA.",
       "minimumTerm": null,
       "providerUrl": {
         "en": "https://crmstudio.swica.ch/public/e/l/empfehlung?id=de83f6e0-0700-4dee-92ff-d499423a6918",
@@ -670,7 +670,7 @@
       },
       "analyticsOfferId": "swica-health-referral",
       "placements": ["health-insurance", "health-insurance-switch", "vouchers", "homepage-overlay-health"],
-      "lastReviewed": "2026-09-20"
+      "lastReviewed": "2026-10-04"
     },
 
     {
