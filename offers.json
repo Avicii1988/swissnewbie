@@ -82,11 +82,11 @@
       },
       {
         "offerId": "ubs-banking",
-        "benefitPerEligiblePerson": "CHF 40 KeyClub points (conservative, lowest Easy-package tier of the CHF 40–150 refer-a-friend range) at partner retailers",
+        "benefitPerEligiblePerson": "CHF 40 KeyClub points (conservative, lowest tier — no UBS credit card issued — of the CHF 40–150 range) redeemable in the KeyClub eStore",
         "maxEligiblePerHousehold": 2,
         "adultOnly": true,
         "minorEligible": false,
-        "conditions": "New account via referral link or code XXOJWZ; points redeemable at UBS KeyClub partners (Migros, Coop, SBB etc.); not unrestricted cash; no separate pension/3a bonus exists",
+        "conditions": "New UBS Personal Account via a valid personal referral code, entered in UBS Digital Banking after account opening (within 30 days); points redeemable in the KeyClub eStore only, not cash; no separate pension/3a bonus exists",
         "stacksPerPerson": false,
         "scope": "per-person"
       },
@@ -145,8 +145,8 @@
           { "item": "yallo mobile — Adult A", "offerId": "yallo-mobile", "eligiblePersons": 1, "chfPerPerson": 50, "chf": 50 },
           { "item": "yallo mobile — Adult B", "offerId": "yallo-mobile", "eligiblePersons": 1, "chfPerPerson": 50, "chf": 50 },
           { "item": "yallo internet — household", "offerId": "yallo-internet", "eligiblePersons": 1, "chfPerPerson": 100, "chf": 100 },
-          { "item": "UBS banking — Adult A (CHF 40 KeyClub points, Easy package tier)", "offerId": "ubs-banking", "eligiblePersons": 1, "chfPerPerson": 40, "chf": 40 },
-          { "item": "UBS banking — Adult B (CHF 40 KeyClub points, Easy package tier)", "offerId": "ubs-banking", "eligiblePersons": 1, "chfPerPerson": 40, "chf": 40 },
+          { "item": "UBS banking — Adult A (CHF 40 KeyClub points, no UBS credit card issued)", "offerId": "ubs-banking", "eligiblePersons": 1, "chfPerPerson": 40, "chf": 40 },
+          { "item": "UBS banking — Adult B (CHF 40 KeyClub points, no UBS credit card issued)", "offerId": "ubs-banking", "eligiblePersons": 1, "chfPerPerson": 40, "chf": 40 },
           { "item": "Smile home insurance — 1 household contract (CHF 40)", "offerId": "smile-home-insurance", "eligiblePersons": 1, "chfPerPerson": 40, "chf": 40 },
           { "item": "Frankly 3a — Adult A (CHF 35 fee voucher)", "offerId": "frankly-3a", "eligiblePersons": 1, "chfPerPerson": 35, "chf": 35 },
           { "item": "Frankly 3a — Adult B (CHF 35 fee voucher)", "offerId": "frankly-3a", "eligiblePersons": 1, "chfPerPerson": 35, "chf": 35 },
@@ -163,8 +163,8 @@
           { "item": "Sunrise Family Benefit — Adult A (50% off Swiss Connect M × 12 mo = CHF 210)", "offerId": "sunrise-mobile-family", "eligiblePersons": 1, "chfPerPerson": 210, "chf": 210 },
           { "item": "Sunrise Family Benefit — Adult B (50% off Swiss Connect M × 12 mo = CHF 210)", "offerId": "sunrise-mobile-family", "eligiblePersons": 1, "chfPerPerson": 210, "chf": 210 },
           { "item": "yallo internet — household", "offerId": "yallo-internet", "eligiblePersons": 1, "chfPerPerson": 100, "chf": 100 },
-          { "item": "UBS banking — Adult A (CHF 40 KeyClub points, Easy package tier)", "offerId": "ubs-banking", "eligiblePersons": 1, "chfPerPerson": 40, "chf": 40 },
-          { "item": "UBS banking — Adult B (CHF 40 KeyClub points, Easy package tier)", "offerId": "ubs-banking", "eligiblePersons": 1, "chfPerPerson": 40, "chf": 40 },
+          { "item": "UBS banking — Adult A (CHF 40 KeyClub points, no UBS credit card issued)", "offerId": "ubs-banking", "eligiblePersons": 1, "chfPerPerson": 40, "chf": 40 },
+          { "item": "UBS banking — Adult B (CHF 40 KeyClub points, no UBS credit card issued)", "offerId": "ubs-banking", "eligiblePersons": 1, "chfPerPerson": 40, "chf": 40 },
           { "item": "Smile home insurance — 1 household contract (CHF 40)", "offerId": "smile-home-insurance", "eligiblePersons": 1, "chfPerPerson": 40, "chf": 40 },
           { "item": "Smile car insurance — Adult A (1 vehicle, CHF 40)", "offerId": "smile-car-insurance", "eligiblePersons": 1, "chfPerPerson": 40, "chf": 40 },
           { "item": "Smile car insurance — Adult B (1 vehicle, CHF 40)", "offerId": "smile-car-insurance", "eligiblePersons": 1, "chfPerPerson": 40, "chf": 40 },
@@ -183,8 +183,8 @@
           { "item": "Sunrise Family Benefit — Adult A (50% off Swiss Connect M × 12 mo = CHF 210)", "offerId": "sunrise-mobile-family", "eligiblePersons": 1, "chfPerPerson": 210, "chf": 210 },
           { "item": "Sunrise Family Benefit — Adult B (50% off Swiss Connect M × 12 mo = CHF 210)", "offerId": "sunrise-mobile-family", "eligiblePersons": 1, "chfPerPerson": 210, "chf": 210 },
           { "item": "yallo internet — household", "offerId": "yallo-internet", "eligiblePersons": 1, "chfPerPerson": 100, "chf": 100 },
-          { "item": "UBS banking — Adult A (CHF 40 KeyClub points, Easy package tier)", "offerId": "ubs-banking", "eligiblePersons": 1, "chfPerPerson": 40, "chf": 40 },
-          { "item": "UBS banking — Adult B (CHF 40 KeyClub points, Easy package tier)", "offerId": "ubs-banking", "eligiblePersons": 1, "chfPerPerson": 40, "chf": 40 },
+          { "item": "UBS banking — Adult A (CHF 40 KeyClub points, no UBS credit card issued)", "offerId": "ubs-banking", "eligiblePersons": 1, "chfPerPerson": 40, "chf": 40 },
+          { "item": "UBS banking — Adult B (CHF 40 KeyClub points, no UBS credit card issued)", "offerId": "ubs-banking", "eligiblePersons": 1, "chfPerPerson": 40, "chf": 40 },
           { "item": "Smile home insurance — 1 household contract (CHF 40)", "offerId": "smile-home-insurance", "eligiblePersons": 1, "chfPerPerson": 40, "chf": 40 },
           { "item": "Smile car insurance — Adult A (1 vehicle, CHF 40)", "offerId": "smile-car-insurance", "eligiblePersons": 1, "chfPerPerson": 40, "chf": 40 },
           { "item": "Smile car insurance — Adult B (1 vehicle, CHF 40)", "offerId": "smile-car-insurance", "eligiblePersons": 1, "chfPerPerson": 40, "chf": 40 },
@@ -542,33 +542,33 @@
       "claimStatus": "verified",
       "benefitType": "points",
       "benefitText": {
-        "en": "CHF 40 to 150 in KeyClub points depending on account package (Easy/Classic/Gold/Platinum)",
-        "de": "CHF 40 bis 150 KeyClub-Punkte je nach Kontopaket (Easy/Classic/Gold/Platinum)",
-        "fr": "CHF 40 à 150 en points KeyClub selon le forfait de compte (Easy/Classic/Gold/Platinum)"
+        "en": "40-150 KeyClub points, worth CHF 40-150",
+        "de": "40-150 KeyClub-Punkte im Wert von CHF 40-150",
+        "fr": "40-150 points KeyClub, d'une valeur de CHF 40-150"
       },
-      "benefitVerifiedAsOf": "2026-10-02",
-      "benefitSourceUrl": "https://www.ubs.com/ch/en/services/private/recommend.html",
-      "_benefitNote": "UBS refer-a-friend program pays CHF 40/80/100/150 in KeyClub points depending on the new customer's account package (Easy/Classic/Gold/Platinum). 1 point = CHF 1. The CHF 250 pension/mortgage figure previously shown here is NOT part of this account-referral program — it is confirmed only for mortgage referrals and must not be promised for banking or pension (3a) sign-ups. Points are redeemable at partner retailers (Migros, Coop, SBB etc.), not unrestricted cash.",
+      "benefitVerifiedAsOf": "2026-10-05",
+      "benefitSourceUrl": "https://www.ubs.com/ch/en/services/private/referrals.html",
+      "_benefitNote": "Verified 5 Oct 2026 against the current code-based referral program at /services/private/referrals.html (participation and promotion terms valid from 23 September 2026) — NOT the old /services/private/recommend.html or the KeyClub collecting-rules pages, which still describe the superseded flat-50-point program. Reward depends on the UBS credit card actually issued to the new customer, not just the package selected: 40 points each (referrer and newcomer) with no UBS credit card (prepaid/none — even if a higher package was selected), 80 each with Classic, 100 each with Gold, 150 each with Platinum. 1 KeyClub point = CHF 1 redemption value in the KeyClub eStore only — no cash payout. Eligibility: newcomer generally has no UBS banking relationship in the previous 24 months (exceptions listed in the terms), is at least 15, resides in Switzerland; at least a UBS Personal Account required; both participants need active Digital Banking and digital KeyClub accounts; selected products must be activated. Code is entered and redeemed AFTER onboarding, within 30 calendar days — not during account opening. Reward level depends on the onboarding date. Referral-code sharing is restricted to personal contacts; public sharing on websites/forums/social media is classified as misuse and can lead to exclusion and reward clawback — do not present the publicly listed code XXOJWZ as guaranteed valid or guaranteed to earn a reward. No separate pension/3a bonus exists.",
       "referrerReward": {
-        "text": "CHF 40 to 150 in KeyClub points depending on the referred account package; 1 point = CHF 1 at partner retailers",
-        "verifiedAsOf": "2026-10-02"
+        "text": "Same as the newcomer: 40 points with no UBS credit card issued, 80 with Classic, 100 with Gold, 150 with Platinum; 1 point = CHF 1 in the KeyClub eStore, not cash",
+        "verifiedAsOf": "2026-10-05"
       },
       "visitorBenefit": {
-        "text": "New customer opens an account with referral code XXOJWZ; CHF 40 to 150 in KeyClub points awarded depending on package chosen",
-        "verifiedAsOf": "2026-10-02"
+        "text": "New customer (newcomer) receives the same reward level as the referrer: 40-150 KeyClub points depending on the UBS credit card issued (none/Classic/Gold/Platinum); redeemable in the KeyClub eStore, not cash. Requires a valid personal referral and a qualifying new UBS Personal Account.",
+        "verifiedAsOf": "2026-10-05"
       },
-      "activationConditions": "New UBS account opened via referral link or using code XXOJWZ in the UBS app. Points redeemable at UBS KeyClub partners.",
+      "activationConditions": "New UBS Personal Account required; newcomer generally has no UBS banking relationship in the previous 24 months (exceptions apply), is at least 15 and resides in Switzerland. Both participants need active Digital Banking and digital KeyClub accounts, and selected products must be activated. Enter the referral code in UBS Digital Banking AFTER account opening, within 30 calendar days — reward level depends on the onboarding date. Referral codes are for personal contacts only; public sharing (websites, forums, social media) counts as misuse and may lead to exclusion or reward clawback. Full UBS participation and promotion terms apply.",
       "minimumTerm": null,
       "code": "XXOJWZ",
       "providerUrl": {
-        "en": "https://www.ubs.com/ch/en/services/private/recommend.html",
-        "de": "https://www.ubs.com/ch/de/services/private/recommend.html",
-        "fr": "https://www.ubs.com/ch/fr/services/private/recommend.html"
+        "en": "https://www.ubs.com/ch/en/services/private/referrals.html",
+        "de": "https://www.ubs.com/ch/de/services/private/referrals.html",
+        "fr": "https://www.ubs.com/ch/fr/services/private/referrals.html"
       },
       "ctaText": {
-        "en": "Visit UBS →",
-        "de": "Zu UBS →",
-        "fr": "Voir UBS →"
+        "en": "See UBS referral terms →",
+        "de": "UBS-Empfehlungsbedingungen ansehen →",
+        "fr": "Voir les conditions UBS →"
       },
       "commercialRelationship": "referral",
       "disclosure": {
@@ -578,7 +578,7 @@
       },
       "analyticsOfferId": "ubs-banking-referral",
       "placements": ["finance", "vouchers"],
-      "lastReviewed": "2026-10-02"
+      "lastReviewed": "2026-10-05"
     },
 
     {
@@ -847,8 +847,8 @@
     {
       "provider": "UBS",
       "offerId": "ubs-banking",
-      "fieldsNeeded": ["Confirm correct URL: /services/private/recommend.html", "Cumulative points conditions", "KeyClub partner redemption list"],
-      "source": "UBS recommendation page"
+      "fieldsNeeded": ["Re-check current points table and card-tier thresholds yearly (last verified 5 Oct 2026 against /services/private/referrals.html, terms valid from 23 Sep 2026)", "Confirm KeyClub eStore redemption catalogue is current", "Confirm public code XXOJWZ has not been excluded for public-sharing misuse"],
+      "source": "UBS referral program page: https://www.ubs.com/ch/en/services/private/referrals.html (NOT /services/private/recommend.html or the KeyClub collecting-rules pages, which describe the superseded flat-50-point program)"
     }
   ]
 }

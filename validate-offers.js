@@ -164,7 +164,9 @@ if (scanHtml) {
     { pattern: /Up to CHF 20 welcome credit/i, description: 'Unverified visitor CHF 20 Mobility claim' },
     { pattern: /swissnewbie\.com\/living-in-swiss\//i, description: 'Broken external URL (swissnewbie.com)' },
     { pattern: /No long-term contract required/i, description: 'Blanket yallo contract claim — needs plan-specific qualifier' },
-    { pattern: /\/private\/recommendation\.html/i, description: 'Old UBS URL (should be /services/private/recommend.html)' },
+    { pattern: /\/private\/recommendation\.html/i, description: 'Old UBS URL (should be /services/private/referrals.html)' },
+    { pattern: /\/services\/private\/recommend\.html/i, description: 'Superseded UBS URL — the old 50-point recommend.html page; the current code-based program is at /services/private/referrals.html' },
+    { pattern: /UBS key4 Banking/i, description: 'Stale UBS banking-referral card title — the verified reward is for the UBS Banking offering, not a key4-specific promise; use "UBS Banking"' },
   ];
 
   // Footer global disclosure check: every page must contain referral-policy link
