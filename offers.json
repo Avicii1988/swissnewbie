@@ -542,9 +542,9 @@
       "claimStatus": "verified",
       "benefitType": "points",
       "benefitText": {
-        "en": "40-150 KeyClub points, worth CHF 40-150",
-        "de": "40-150 KeyClub-Punkte im Wert von CHF 40-150",
-        "fr": "40-150 points KeyClub, d'une valeur de CHF 40-150"
+        "en": "40-150 KeyClub points (worth CHF 40-150)",
+        "de": "40-150 KeyClub-Punkte (im Wert von CHF 40-150)",
+        "fr": "40-150 points KeyClub (d'une valeur de CHF 40-150)"
       },
       "benefitVerifiedAsOf": "2026-10-05",
       "benefitSourceUrl": "https://www.ubs.com/ch/en/services/private/referrals.html",
@@ -589,9 +589,9 @@
       "claimStatus": "verified",
       "benefitType": "shares",
       "benefitText": {
-        "en": "USD 200 in IBKR shares — only with a USD 10,000 deposit held for 1 year; limited to the first 15 referrals",
-        "de": "USD 200 in IBKR-Aktien — nur bei einer Einzahlung von USD 10'000, die 1 Jahr gehalten wird; limitiert auf die ersten 15 Empfehlungen",
-        "fr": "USD 200 en actions IBKR — uniquement avec un dépôt de USD 10'000 conservé 1 an ; limité aux 15 premiers parrainages"
+        "en": "USD 200 bonus with a USD 10,000 deposit held 1 year",
+        "de": "USD 200 Bonus bei einer Einzahlung von USD 10'000, gehalten über 1 Jahr",
+        "fr": "Bonus de USD 200 avec un dépôt de USD 10'000 conservé 1 an"
       },
       "benefitVerifiedAsOf": "2026-10-04",
       "benefitSourceUrl": "https://ibkr.com/referral/jan354",
@@ -601,7 +601,7 @@
         "verifiedAsOf": "2026-10-04"
       },
       "visitorBenefit": {
-        "text": "USD 200 in IBKR shares — only with a USD 10,000 deposit held for 1 year; limited to the first 15 referrals",
+        "text": "USD 200 bonus with a USD 10,000 deposit held 1 year",
         "verifiedAsOf": "2026-10-04"
       },
       "activationConditions": "New IBKR account via referral link. Minimum USD 10,000 deposit held for 1 year required for the USD 200 bonus. Limited to the first 15 referrals program-wide.",
