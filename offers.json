@@ -17,15 +17,15 @@
     "offerEligibility": [
       {
         "offerId": "ibkr-investing",
-        "benefitPerEligiblePerson": "Flat USD 200 (≈ CHF 192 at USD/CHF 0.96), only with a USD 10,000 deposit held 1 year; program-wide cap of 15 referrals total, not guaranteed available",
+        "benefitPerEligiblePerson": "Up to USD 1,000 in IBKR shares per IBKR's own refer-a-friend terms; amount and eligibility set by IBKR, not guaranteed. The USD 200 flat reward belongs to SwissNewbie as the referrer and is NOT a household/visitor benefit — excluded from this family's guaranteed total.",
         "maxEligiblePerHousehold": 2,
         "adultOnly": true,
         "minorEligible": false,
-        "conditions": "New IBKR account via referral link; minimum USD 10,000 deposit held for 1 year required; limited to the first 15 referrals program-wide; not a percentage of deposit",
+        "conditions": "New IBKR account via referral link; visitor's share reward is variable and determined by IBKR at activation (see ibkr.com) — not counted as a flat CHF figure here",
         "stacksPerPerson": false,
         "scope": "per-person",
-        "depositRequired": "USD 10,000 minimum, held for 1 year, for the flat USD 200 reward; no reward below this threshold",
-        "year1ChfByDeposit": { "usd10k": 192, "usd50k": 192, "usd100k": 192 }
+        "depositRequired": "Set by IBKR's own program terms; not disclosed by SwissNewbie as a guaranteed figure",
+        "year1ChfByDeposit": { "usd10k": 0, "usd50k": 0, "usd100k": 0 }
       },
       {
         "offerId": "sunrise-mobile-family",
@@ -195,7 +195,7 @@
         ]
       }
     ],
-    "_note": "Headline 'CHF 2,000+' total first-year value is supported by the 'maximum' scenario (CHF 2,074). Total includes direct bonuses, preferential prices, and realistic savings from selecting suitable products. Use qualifier 'depending on household eligibility and selected offers' on all public-facing claims. UBS banking is counted at the conservative CHF 40 (lowest/Easy-package) tier of the real CHF 40-150 refer-a-friend range; the previous UBS 3a/pension KeyClub line item was removed in Oct 2026 because that bonus does not exist (UBS confirms CHF 250 only for mortgage referrals, not pension/3a). IBKR is counted as a flat USD 200 (≈ CHF 192) per qualifying adult, corrected in Oct 2026 from an incorrect linear 'USD 1 per USD 100 deposited up to USD 1,000' model — the real program pays a flat USD 200 only once a USD 10,000 deposit has been held for 1 year, and is capped program-wide at the first 15 referrals (not guaranteed available). This correction significantly lowered the 'strong' and 'maximum' scenario totals and the headline claim from the previous CHF 3,500+ figure. Health insurance entries document realistic savings from suitable product selection (not a direct cash referral benefit). Review annually or when any provider terms change."
+    "_note": "Headline 'CHF 2,000+' total first-year value was supported by a 'maximum' scenario of CHF 2,074, which included CHF 384 (2 adults x CHF 192) from IBKR. CORRECTION (6 Oct 2026): that CHF 192/adult figure wrongly counted IBKR's referrer-only USD 200 reward as a visitor/household benefit — the USD 200 belongs to SwissNewbie as the referrer, not to the family. IBKR's actual visitor benefit (up to USD 1,000 in IBKR shares, amount and eligibility set by IBKR) is variable and not guaranteed, so it is now excluded from this guaranteed-total calculation (year1ChfByDeposit set to 0 in the ibkr-investing entry above). This means the 'maximum' scenario is now CHF ~1,690, below the CHF 2,000+ headline — the headline, headlineClaim and this family4PersonMatrix's totals have NOT yet been re-verified against this change and should be re-audited/re-written before being treated as current. UBS banking is counted at the conservative CHF 40 (lowest/Easy-package) tier of the real CHF 40-150 refer-a-friend range; the previous UBS 3a/pension KeyClub line item was removed in Oct 2026 because that bonus does not exist (UBS confirms CHF 250 only for mortgage referrals, not pension/3a). Health insurance entries document realistic savings from suitable product selection (not a direct cash referral benefit). Review annually or when any provider terms change."
   },
 
   "globalDisclosurePolicy": {
@@ -589,22 +589,22 @@
       "claimStatus": "verified",
       "benefitType": "shares",
       "benefitText": {
-        "en": "USD 200 bonus with a USD 10,000 deposit held 1 year",
-        "de": "USD 200 Bonus bei einer Einzahlung von USD 10'000, gehalten über 1 Jahr",
-        "fr": "Bonus de USD 200 avec un dépôt de USD 10'000 conservé 1 an"
+        "en": "Up to USD 1,000 in IBKR shares — terms on IBKR.com",
+        "de": "Bis zu USD 1'000 in IBKR-Aktien — Bedingungen auf IBKR.com",
+        "fr": "Jusqu'à USD 1'000 en actions IBKR — conditions sur IBKR.com"
       },
-      "benefitVerifiedAsOf": "2026-10-04",
+      "benefitVerifiedAsOf": "2026-10-06",
       "benefitSourceUrl": "https://ibkr.com/referral/jan354",
-      "_benefitNote": "Flat USD 200 bonus, not a percentage of deposit. Requires a minimum USD 10,000 deposit held for 1 year. Program-wide cap of 15 referrals total — not guaranteed to be available. Below the USD 10,000 threshold, or after the 15-referral cap is reached, no bonus applies.",
+      "_benefitNote": "The USD 200 referral reward goes to the REFERRER (SwissNewbie) only and must never be shown as a visitor/newcomer bonus. The visitor (newcomer who signs up via the link) is eligible for up to USD 1,000 in IBKR stock under IBKR's own refer-a-friend program; the exact amount and eligibility are determined by IBKR at activation, not by SwissNewbie — do not state a flat/guaranteed dollar figure for the visitor. Corrected 6 Oct 2026 after the card copy incorrectly presented the referrer's USD 200 as a visitor-facing bonus.",
       "referrerReward": {
-        "text": "IBKR shares — amount shown at activation",
-        "verifiedAsOf": "2026-10-04"
+        "text": "USD 200 — paid to SwissNewbie as the referrer, not to the visitor",
+        "verifiedAsOf": "2026-10-06"
       },
       "visitorBenefit": {
-        "text": "USD 200 bonus with a USD 10,000 deposit held 1 year",
-        "verifiedAsOf": "2026-10-04"
+        "text": "Up to USD 1,000 in IBKR shares — terms on IBKR.com",
+        "verifiedAsOf": "2026-10-06"
       },
-      "activationConditions": "New IBKR account via referral link. Minimum USD 10,000 deposit held for 1 year required for the USD 200 bonus. Limited to the first 15 referrals program-wide.",
+      "activationConditions": "New IBKR account via referral link. Visitor's share reward (up to USD 1,000) and its conditions are set by IBKR and shown on ibkr.com — not a flat guaranteed figure. The USD 200 referrer reward belongs to SwissNewbie and is not part of the visitor's benefit.",
       "minimumTerm": "IBKR terms apply — shares vest over time",
       "providerUrl": {
         "en": "https://ibkr.com/referral/jan354",
