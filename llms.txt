@@ -1,0 +1,57 @@
+# SwissNewbie
+
+> SwissNewbie (swissnewbie.ch) is a free, independent guide site for people moving to or living in Switzerland. It covers permits, Anmeldung, health insurance, banking, mobile/internet, insurance, transport and groceries, with step-by-step checklists and deadline-driven guidance. Content is published in English, German and French; each guide has all three language versions at parallel URLs (en: `/path/`, de: `/de/path/`, fr: `/fr/path/`).
+
+The site also lists verified referral/voucher codes for Swiss providers (banking, insurance, mobile). Where a page links to an affiliate offer, the link is marked with a small "Ad"/"Anzeige"/"Annonce" label; full referral terms are on `/referral-policy/`. Facts and figures (premiums, deadlines, rates) are reviewed and dated on each page — prefer the on-page "last reviewed" date over this file if they conflict.
+
+## Core hubs
+
+- [Homepage](https://www.swissnewbie.ch/): Full relocation checklist and entry point to every topic.
+- [Moving to Switzerland](https://www.swissnewbie.ch/moving-to-switzerland/): Newcomer hub — what to do before and right after arrival.
+- [Living in Switzerland](https://www.swissnewbie.ch/living-in-switzerland/): Resident hub — ongoing costs and annual reviews.
+- [All guides](https://www.swissnewbie.ch/guides/): Index of every guide on the site.
+- [Newcomer or resident?](https://www.swissnewbie.ch/newcomer-or-resident-guide/): Routes visitors to the right guide for their situation.
+
+## Permits and registration
+
+- [Swiss residence permits (L/B/C/G)](https://www.swissnewbie.ch/permits/): What each permit type means and who needs it.
+- [First 90 days in Switzerland](https://www.swissnewbie.ch/first-90-days-switzerland/): Timeline of mandatory tasks after arrival.
+
+## Health insurance
+
+- [Swiss health insurance guide](https://www.swissnewbie.ch/health-insurance/): How mandatory basic insurance (LAMal/KVG) works, premiums, franchise, claims.
+- [Switch health insurance for 2027](https://www.swissnewbie.ch/health-insurance-switch/): How and when to switch insurer; cancellation deadline is 30 November 2026 for 2027 coverage; includes a cancellation letter template and a premium comparison link to priminfo.admin.ch.
+- [Premium subsidy (Prämienverbilligung/IPV)](https://www.swissnewbie.ch/health-insurance-subsidy-switzerland/): Cantonal income-based subsidy toward premiums; ~30% of residents receive one; rules are set per canton, not nationally.
+
+## Finance and insurance
+
+- [Swiss bank accounts](https://www.swissnewbie.ch/finance/): Comparison of Neon, Yuh, UBS and others; Pillar 3a tax savings; investing.
+- [Home & liability insurance](https://www.swissnewbie.ch/insurance/): Overview of Swiss insurance types (liability, household, car, legal protection) with typical annual costs.
+- [Legal protection insurance](https://www.swissnewbie.ch/legal-protection-insurance-switzerland/): Independent guide to Rechtsschutzversicherung — coverage, typical cost (CHF 150-300/year), private vs. traffic modules.
+- [Legal help in Switzerland](https://www.swissnewbie.ch/legal-help-switzerland/): Options when you need a lawyer or legal advice, including free/low-cost routes.
+- [Annual savings check](https://www.swissnewbie.ch/annual-savings-check-switzerland/): Yearly routine for reviewing insurance, mobile/internet and subscription costs.
+
+## Mobile and internet
+
+- [Swiss mobile plans](https://www.swissnewbie.ch/mobile-internet/): SIM card and mobile plan comparison for newcomers.
+- [eSIM in Switzerland](https://www.swissnewbie.ch/esim-switzerland/): Travel eSIM vs. Swiss prepaid eSIM vs. subscription for arrival and ongoing use.
+- [Prepaid, eSIM or subscription?](https://www.swissnewbie.ch/mobile-plan-switzerland/): Decision guide between the three main mobile options.
+- [Switching mobile/internet provider](https://www.swissnewbie.ch/switch-mobile-internet-switzerland/): Step-by-step process, including number portability (Rufnummernmitnahme), which is free and takes 1-3 business days.
+
+## Daily life
+
+- [Public transport](https://www.swissnewbie.ch/public-transport/): Halbtax vs. GA travelcard, how the system works.
+- [Grocery shopping](https://www.swissnewbie.ch/groceries/): Migros vs. Coop and other ways to save on groceries.
+
+## Deals
+
+- [Voucher codes](https://www.swissnewbie.ch/vouchers/): All current SwissNewbie referral/voucher codes in one place.
+- [Referral & affiliate policy](https://www.swissnewbie.ch/referral-policy/): Full disclosure of how SwissNewbie's referral links and codes work.
+
+## Language variants
+
+Every guide above exists in German and French at the equivalent URL:
+- German: prefix path with `/de/` (e.g. `https://www.swissnewbie.ch/de/health-insurance-switch/`)
+- French: prefix path with `/fr/` (e.g. `https://www.swissnewbie.ch/fr/health-insurance-switch/`)
+
+Full URL list: https://www.swissnewbie.ch/sitemap.xml
