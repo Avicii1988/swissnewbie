@@ -1,6 +1,6 @@
 {
   "_schema": "swissnewbie-offers/v2",
-  "_lastUpdated": "2026-10-04",
+  "_lastUpdated": "2026-10-08",
   "_note": "Single source of truth for all commercial offers. Disclosure: one clear statement in the global footer + /referral-policy/ page — no per-card injection required unless a specific partner contract mandates it.",
 
   "family4PersonMatrix": {
@@ -810,6 +810,53 @@
       "analyticsOfferId": "mobility-carsharing-referral",
       "placements": ["public-transport", "vouchers"],
       "lastReviewed": "2026-09-20"
+    },
+
+    {
+      "id": "manor-department-store",
+      "provider": "Manor",
+      "category": "retail",
+      "segments": ["newcomer", "resident"],
+      "claimStatus": "conditional",
+      "benefitType": "ongoing_discount",
+      "benefitText": {
+        "en": "Switzerland's biggest department store — fashion, home, beauty & electronics, with sales all year",
+        "de": "Die grössten Warenhäuser der Schweiz — Mode, Wohnen, Beauty & Elektronik, das ganze Jahr im Sale",
+        "fr": "Le plus grand magasin de Suisse — mode, maison, beauté et électronique, en promo toute l'année"
+      },
+      "benefitVerifiedAsOf": "2026-10-08",
+      "benefitSourceUrl": "https://go.adt228.com/t/t?a=1636471576&as=2064719298&t=2&tk=1",
+      "_benefitNote": "General affiliate link to manor.ch via ad network tracking; no fixed referral bonus or voucher code is offered. Benefit is Manor's own regular sales and product range, not a SwissNewbie-specific numeric reward.",
+      "referrerReward": {
+        "text": "Commission per qualifying purchase — amount set by the affiliate network, not disclosed to visitors",
+        "verifiedAsOf": "2026-10-08"
+      },
+      "visitorBenefit": {
+        "text": "No SwissNewbie-specific visitor bonus — visitors shop at Manor's standard prices and regular sales",
+        "verifiedAsOf": "2026-10-08"
+      },
+      "activationConditions": "No activation condition — general affiliate link to manor.ch with tracking.",
+      "minimumTerm": null,
+      "code": null,
+      "providerUrl": {
+        "en": "https://go.adt228.com/t/t?a=1636471576&as=2064719298&t=2&tk=1",
+        "de": "https://go.adt228.com/t/t?a=1636471576&as=2064719298&t=2&tk=1",
+        "fr": "https://go.adt228.com/t/t?a=1636471576&as=2064719298&t=2&tk=1"
+      },
+      "ctaText": {
+        "en": "Shop Manor →",
+        "de": "Zu Manor →",
+        "fr": "Voir Manor →"
+      },
+      "commercialRelationship": "affiliate",
+      "disclosure": {
+        "en": "Referral link — SwissNewbie may receive a reward after activation.",
+        "de": "Empfehlungslink — SwissNewbie erhält möglicherweise eine Vergütung nach Aktivierung.",
+        "fr": "Lien de parrainage — SwissNewbie peut recevoir une récompense après activation."
+      },
+      "analyticsOfferId": "manor-department-store-referral",
+      "placements": ["vouchers"],
+      "lastReviewed": "2026-10-08"
     }
   ],
 
