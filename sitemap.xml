@@ -553,4 +553,35 @@
     <priority>0.7</priority>
   </url>
 
+<url>
+    <loc>https://www.swissnewbie.ch/health-insurance-subsidy-switzerland/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.swissnewbie.ch/health-insurance-subsidy-switzerland/"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://www.swissnewbie.ch/de/praemienverbilligung-schweiz/"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://www.swissnewbie.ch/fr/reduction-prime-maladie-suisse/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.swissnewbie.ch/health-insurance-subsidy-switzerland/"/>
+  </url>
+  <url>
+    <loc>https://www.swissnewbie.ch/de/praemienverbilligung-schweiz/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.swissnewbie.ch/health-insurance-subsidy-switzerland/"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://www.swissnewbie.ch/de/praemienverbilligung-schweiz/"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://www.swissnewbie.ch/fr/reduction-prime-maladie-suisse/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.swissnewbie.ch/health-insurance-subsidy-switzerland/"/>
+  </url>
+  <url>
+    <loc>https://www.swissnewbie.ch/fr/reduction-prime-maladie-suisse/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.swissnewbie.ch/health-insurance-subsidy-switzerland/"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://www.swissnewbie.ch/de/praemienverbilligung-schweiz/"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://www.swissnewbie.ch/fr/reduction-prime-maladie-suisse/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.swissnewbie.ch/health-insurance-subsidy-switzerland/"/>
+  </url>
+
 </urlset>
