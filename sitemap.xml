@@ -584,4 +584,35 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.swissnewbie.ch/health-insurance-subsidy-switzerland/"/>
   </url>
 
+  <url>
+    <loc>https://www.swissnewbie.ch/interactive-brokers-switzerland/</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.swissnewbie.ch/interactive-brokers-switzerland/"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://www.swissnewbie.ch/de/interactive-brokers-schweiz/"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://www.swissnewbie.ch/fr/interactive-brokers-suisse/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.swissnewbie.ch/interactive-brokers-switzerland/"/>
+  </url>
+  <url>
+    <loc>https://www.swissnewbie.ch/de/interactive-brokers-schweiz/</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.swissnewbie.ch/interactive-brokers-switzerland/"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://www.swissnewbie.ch/de/interactive-brokers-schweiz/"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://www.swissnewbie.ch/fr/interactive-brokers-suisse/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.swissnewbie.ch/interactive-brokers-switzerland/"/>
+  </url>
+  <url>
+    <loc>https://www.swissnewbie.ch/fr/interactive-brokers-suisse/</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.swissnewbie.ch/interactive-brokers-switzerland/"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://www.swissnewbie.ch/de/interactive-brokers-schweiz/"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://www.swissnewbie.ch/fr/interactive-brokers-suisse/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.swissnewbie.ch/interactive-brokers-switzerland/"/>
+  </url>
+
 </urlset>
