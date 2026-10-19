@@ -635,22 +635,22 @@
       "claimStatus": "conditional",
       "benefitType": "consultation",
       "benefitText": {
-        "en": "Free expert consultation — up to CHF 100 as a digital gift code after you book and sign with SWICA (adults only)",
-        "de": "Kostenlose Expertenberatung — bis zu CHF 100 als digitaler Geschenkcode nach Beratung und Vertragsabschluss bei SWICA (nur Erwachsene)",
-        "fr": "Consultation experte gratuite — jusqu'à CHF 100 sous forme de code cadeau numérique après réservation et souscription chez SWICA (adultes uniquement)"
+        "en": "Free, non-binding consultation and comparison of your health insurance options with SWICA",
+        "de": "Kostenlose, unverbindliche Beratung und Vergleich deiner Krankenversicherungsoptionen bei SWICA",
+        "fr": "Consultation gratuite et sans engagement pour comparer tes options d'assurance maladie chez SWICA"
       },
       "benefitVerifiedAsOf": "2026-10-04",
       "benefitSourceUrl": "https://crmstudio.swica.ch/public/e/l/empfehlung?id=de83f6e0-0700-4dee-92ff-d499423a6918",
-      "_benefitNote": "Consultation is free and always available. The CHF 100 digital gift code is only awarded after booking a consultation AND signing a SWICA policy; it is a gift code, not cash, and restricted to adults. Never present SWICA as the cheapest insurer — only as top-rated for expats (Comparis 2025 satisfaction rating is supportable). Remove 'Best deal for expats via SwissNewbie' exclusivity and 'Get best deal' CTA.",
+      "_benefitNote": "No confirmed monetary benefit from SWICA — do not state a CHF amount or promise a gift code anywhere on the site. The only confirmed benefit is the free, non-binding consultation itself. Never present SWICA as the cheapest insurer — only as top-rated for expats (Comparis 2025 satisfaction rating is supportable). Remove 'Best deal for expats via SwissNewbie' exclusivity and 'Get best deal' CTA.",
       "referrerReward": {
         "text": "Rewarded referral — disclosed on card",
         "verifiedAsOf": "2026-10-04"
       },
       "visitorBenefit": {
-        "text": "Free personalised consultation; up to CHF 100 as a digital gift code after booking a consultation and signing with SWICA. Adults only. Not cash.",
+        "text": "Free, non-binding personalised consultation. No confirmed monetary benefit.",
         "verifiedAsOf": "2026-10-04"
       },
-      "activationConditions": "Via SWICA referral link. Consultation is free; CHF 100 digital gift code awarded only after a consultation is booked and a SWICA policy is signed. Adults only. Insurance contract terms per SWICA.",
+      "activationConditions": "Via SWICA referral link. Consultation is free and non-binding. Insurance contract terms per SWICA.",
       "minimumTerm": null,
       "providerUrl": {
         "en": "https://crmstudio.swica.ch/public/e/l/empfehlung?id=de83f6e0-0700-4dee-92ff-d499423a6918",
