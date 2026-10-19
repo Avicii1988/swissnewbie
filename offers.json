@@ -681,13 +681,13 @@
       "claimStatus": "verified",
       "benefitType": "points_cash_value",
       "benefitText": {
-        "en": "CHF 40 value for each of you — 3,400 Smile points after eligible contract via invitation link",
-        "de": "CHF 40 Wert für jeden — 3.400 Smile-Punkte nach berechtigtem Vertrag über den Einladungslink",
-        "fr": "CHF 40 de valeur pour chacun — 3.400 points Smile après contrat éligible via le lien d'invitation"
+        "en": "CHF 40 for you — 3,400 Smile points after eligible contract via invitation link",
+        "de": "CHF 40 für dich — 3.400 Smile-Punkte nach berechtigtem Vertrag über den Einladungslink",
+        "fr": "CHF 40 pour toi — 3.400 points Smile après contrat éligible via le lien d'invitation"
       },
       "benefitVerifiedAsOf": "2026-09-19",
       "benefitSourceUrl": "https://app.smile-insurances.ch/rewards/jan533a2",
-      "_benefitNote": "Verified: each party receives 3,400 points worth CHF 40 after an eligible contract via personal invitation link/code JAN533A2. Prefer 'CHF 40 value for each of you' to 'up to CHF 40'.",
+      "_benefitNote": "Verified: each party receives 3,400 points worth CHF 40 after an eligible contract via personal invitation link/code JAN533A2. Prefer 'CHF 40 for you' to 'up to CHF 40'; do not state the referrer's share anywhere on the page.",
       "referrerReward": {
         "text": "3,400 Smile points = CHF 40 value, per eligible contract",
         "verifiedAsOf": "2026-09-19"
@@ -728,9 +728,9 @@
       "claimStatus": "verified",
       "benefitType": "points_cash_value",
       "benefitText": {
-        "en": "CHF 40 value for each of you — 3,400 Smile points after eligible contract via invitation link",
-        "de": "CHF 40 Wert für jeden — 3.400 Smile-Punkte nach berechtigtem Vertrag über den Einladungslink",
-        "fr": "CHF 40 de valeur pour chacun — 3.400 points Smile après contrat éligible via le lien d'invitation"
+        "en": "CHF 40 for you — 3,400 Smile points after eligible contract via invitation link",
+        "de": "CHF 40 für dich — 3.400 Smile-Punkte nach berechtigtem Vertrag über den Einladungslink",
+        "fr": "CHF 40 pour toi — 3.400 points Smile après contrat éligible via le lien d'invitation"
       },
       "benefitVerifiedAsOf": "2026-09-19",
       "benefitSourceUrl": "https://app.smile-insurances.ch/rewards/jan533a2",

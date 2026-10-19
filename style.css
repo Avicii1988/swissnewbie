@@ -111,6 +111,8 @@ nav a[href="#"][href] { }
 .toc-list li a{font-size:0.85rem;color:var(--ink);text-decoration:none;font-weight:500;}
 .toc-list li a:hover{color:var(--red);}
 .toc-list li::before{content:'→ ';}
+.sn-textlink{color:var(--ink);text-decoration:none;font-weight:500;transition:color 0.15s;}
+.sn-textlink:hover{color:var(--red);}
 .guide-section{margin:36px 0;}
 .guide-section h2{font-family:'Fraunces',serif;font-size:1.25rem;font-weight:700;color:var(--ink);margin-bottom:14px;padding-top:4px;}
 .guide-section h3{font-size:0.95rem;font-weight:700;color:var(--ink);margin:18px 0 8px;}
