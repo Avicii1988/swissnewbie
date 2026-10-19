@@ -615,4 +615,65 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.swissnewbie.ch/interactive-brokers-switzerland/"/>
   </url>
 
+  <url>
+    <loc>https://www.swissnewbie.ch/mobile-plan-comparison-switzerland/</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.swissnewbie.ch/mobile-plan-comparison-switzerland/"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://www.swissnewbie.ch/de/mobilfunkanbieter-vergleich-schweiz/"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://www.swissnewbie.ch/fr/comparatif-operateurs-mobiles-suisse/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.swissnewbie.ch/mobile-plan-comparison-switzerland/"/>
+  </url>
+  <url>
+    <loc>https://www.swissnewbie.ch/de/mobilfunkanbieter-vergleich-schweiz/</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.swissnewbie.ch/mobile-plan-comparison-switzerland/"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://www.swissnewbie.ch/de/mobilfunkanbieter-vergleich-schweiz/"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://www.swissnewbie.ch/fr/comparatif-operateurs-mobiles-suisse/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.swissnewbie.ch/mobile-plan-comparison-switzerland/"/>
+  </url>
+  <url>
+    <loc>https://www.swissnewbie.ch/fr/comparatif-operateurs-mobiles-suisse/</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.swissnewbie.ch/mobile-plan-comparison-switzerland/"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://www.swissnewbie.ch/de/mobilfunkanbieter-vergleich-schweiz/"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://www.swissnewbie.ch/fr/comparatif-operateurs-mobiles-suisse/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.swissnewbie.ch/mobile-plan-comparison-switzerland/"/>
+  </url>
+  <url>
+    <loc>https://www.swissnewbie.ch/best-broker-expats-switzerland/</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.swissnewbie.ch/best-broker-expats-switzerland/"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://www.swissnewbie.ch/de/bester-broker-expats-schweiz/"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://www.swissnewbie.ch/fr/meilleur-courtier-expatries-suisse/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.swissnewbie.ch/best-broker-expats-switzerland/"/>
+  </url>
+  <url>
+    <loc>https://www.swissnewbie.ch/de/bester-broker-expats-schweiz/</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.swissnewbie.ch/best-broker-expats-switzerland/"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://www.swissnewbie.ch/de/bester-broker-expats-schweiz/"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://www.swissnewbie.ch/fr/meilleur-courtier-expatries-suisse/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.swissnewbie.ch/best-broker-expats-switzerland/"/>
+  </url>
+  <url>
+    <loc>https://www.swissnewbie.ch/fr/meilleur-courtier-expatries-suisse/</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.swissnewbie.ch/best-broker-expats-switzerland/"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://www.swissnewbie.ch/de/bester-broker-expats-schweiz/"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://www.swissnewbie.ch/fr/meilleur-courtier-expatries-suisse/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.swissnewbie.ch/best-broker-expats-switzerland/"/>
+  </url>
+
 </urlset>

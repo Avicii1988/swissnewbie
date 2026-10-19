@@ -31,6 +31,9 @@ The site also lists verified referral/voucher codes for Swiss providers (banking
 - [Legal help in Switzerland](https://www.swissnewbie.ch/legal-help-switzerland/): Options when you need a lawyer or legal advice, including free/low-cost routes.
 - [Annual savings check](https://www.swissnewbie.ch/annual-savings-check-switzerland/): Yearly routine for reviewing insurance, mobile/internet and subscription costs.
 - [Interactive Brokers for expats](https://www.swissnewbie.ch/interactive-brokers-switzerland/): IBKR account opening from Switzerland — fees, CHF funding, SIPC protection and how Swiss tax reporting works.
+- [Best broker for expats in Switzerland (EN)](https://www.swissnewbie.ch/best-broker-expats-switzerland/): IBKR vs Swissquote vs Saxo vs neon vs Yuh — trading fees, custody fees and currency conversion compared.
+- [Bester Broker für Expats in der Schweiz (DE)](https://www.swissnewbie.ch/de/bester-broker-expats-schweiz/): German version of the broker comparison above.
+- [Meilleur courtier pour expatriés en Suisse (FR)](https://www.swissnewbie.ch/fr/meilleur-courtier-expatries-suisse/): French version of the broker comparison above.
 
 ## Mobile and internet
 
@@ -38,6 +41,9 @@ The site also lists verified referral/voucher codes for Swiss providers (banking
 - [eSIM in Switzerland](https://www.swissnewbie.ch/esim-switzerland/): Travel eSIM vs. Swiss prepaid eSIM vs. subscription for arrival and ongoing use.
 - [Prepaid, eSIM or subscription?](https://www.swissnewbie.ch/mobile-plan-switzerland/): Decision guide between the three main mobile options.
 - [Switching mobile/internet provider](https://www.swissnewbie.ch/switch-mobile-internet-switzerland/): Step-by-step process, including number portability (Rufnummernmitnahme), which is free and takes 1-3 business days.
+- [Sunrise vs Swisscom vs Salt vs Wingo for newcomers (EN)](https://www.swissnewbie.ch/mobile-plan-comparison-switzerland/): Prices, contract terms and networks for the four main Swiss mobile providers, October 2026.
+- [Sunrise vs Swisscom vs Salt vs Wingo im Vergleich (DE)](https://www.swissnewbie.ch/de/mobilfunkanbieter-vergleich-schweiz/): German version of the provider comparison above.
+- [Sunrise vs Swisscom vs Salt vs Wingo en comparaison (FR)](https://www.swissnewbie.ch/fr/comparatif-operateurs-mobiles-suisse/): French version of the provider comparison above.
 
 ## Daily life
 
