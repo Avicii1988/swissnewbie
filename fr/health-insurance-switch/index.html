@@ -134,7 +134,7 @@
           "name": "Quelle franchise choisir ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Si vous êtes en bonne santé et consultez rarement un médecin, la franchise la plus élevée (CHF 2'500) vous fait économiser le plus sur votre prime mensuelle — souvent plusieurs centaines de francs par an. Une franchise plus basse ne se justifie que si vos frais médicaux prescrits attendus dépassent environ CHF 1'900 par an. Règle de base : en bonne santé signifie franchise élevée."
+            "text": "Si vous êtes en bonne santé et consultez rarement un médecin, la franchise la plus élevée (CHF 2'500) fait généralement le plus économiser sur la prime mensuelle. Que cela soit avantageux pour vous dépend de vos propres primes et frais attendus — utilisez le calculateur de franchise sur cette page pour votre seuil de rentabilité exact, plutôt qu'une règle générale."
           }
         }
       ]
@@ -181,6 +181,37 @@ nav a.active{color:var(--white)!important;border-bottom:2px solid var(--red-ligh
 .author-reviewed strong{color:var(--ink);}
 .guide-section{max-width:860px;margin:0 auto 36px;padding:0 5vw;}
 .guide-section h2{font-size:1.25rem;margin:0 0 14px;}
+.fc-box{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:24px 26px;max-width:860px;margin:24px auto;}
+.fc-badge{display:inline-block;font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--red);background:rgba(208,2,27,0.08);border-radius:20px;padding:4px 12px;margin-bottom:10px;}
+.fc-box h2{margin:0 0 6px;font-size:1.15rem;}
+.fc-sub{margin:0 0 20px;font-size:0.88rem;color:var(--muted);}
+.fc-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start;}
+.fc-field{margin-bottom:14px;}
+.fc-field label{display:block;font-size:0.78rem;font-weight:600;color:var(--ink);margin-bottom:6px;}
+.fc-input-wrap{display:flex;align-items:center;gap:6px;border:1px solid var(--border);border-radius:8px;padding:8px 12px;background:var(--warm);}
+.fc-input-wrap span{font-size:0.78rem;color:var(--muted);font-weight:600;}
+.fc-input-wrap input{border:none;background:none;outline:none;font-size:0.95rem;width:100%;font-family:inherit;color:var(--ink);}
+.fc-hint{font-size:0.76rem;color:var(--muted);margin:2px 0 16px;}
+.fc-hint a{color:var(--red);}
+.fc-range-row{display:flex;align-items:center;gap:12px;}
+.fc-range-row input[type=range]{flex:1;accent-color:var(--red);}
+.fc-range-row .fc-input-wrap{width:110px;flex-shrink:0;}
+.fc-result{background:var(--warm);border:1px solid var(--border);border-radius:10px;padding:18px 20px;}
+.fc-placeholder{font-size:0.85rem;color:var(--muted);margin:0 0 14px;}
+.fc-stat-row{display:flex;gap:10px;margin-bottom:14px;}
+.fc-stat{flex:1;background:var(--card);border:1px solid var(--border);border-radius:8px;padding:12px;text-align:center;}
+.fc-stat.fc-win{border-color:var(--green);background:rgba(45,90,61,0.06);}
+.fc-stat-label{font-size:0.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:4px;}
+.fc-stat-value{font-size:1.1rem;font-weight:700;font-family:'Fraunces',serif;}
+.fc-verdict{font-size:0.92rem;font-weight:600;margin:0 0 10px;}
+.fc-verdict strong{color:var(--green);}
+.fc-meta{font-size:0.78rem;color:var(--muted);line-height:1.6;margin:0 0 14px;}
+.fc-cta{display:inline-block;padding:10px 20px;background:var(--red);color:#fff;border-radius:8px;font-size:0.85rem;font-weight:600;text-decoration:none;}
+.fc-cta:hover{opacity:0.9;}
+.fc-assumptions{margin-top:16px;font-size:0.8rem;color:var(--muted);}
+.fc-assumptions summary{cursor:pointer;font-weight:600;color:var(--ink);}
+.fc-assumptions p{margin:8px 0 0;}
+@media (max-width:720px){.fc-grid{grid-template-columns:1fr;}}
 </style>
 <script defer data-website-id="dfid_Ff4ExOjZmHgiwkscdmYHq" data-domain="www.swissnewbie.ch" src="https://datafa.st/js/script.js"></script>
 <script defer src="/_vercel/insights/script.js"></script>
@@ -307,9 +338,42 @@ nav a.active{color:var(--white)!important;border-bottom:2px solid var(--red-ligh
 </div>
 
 <div class="alert green" style="max-width:860px;margin:18px auto;"><span class="alert-icon">✅</span><div><strong>Réponse rapide:</strong> Oui — vous pouvez changer de caisse maladie une fois par an, et votre résiliation écrite doit parvenir physiquement à votre caisse actuelle avant le 30 novembre 2026 pour prendre effet au 1er janvier 2027 (c'est la date de réception qui compte, pas le cachet postal). Envoyez-la par recommandé au plus tard le 15 novembre pour garantir une réception à temps, et inscrivez-vous en parallèle auprès de votre nouvelle caisse sans attendre la confirmation de l'ancienne.</div></div>
+
+<div class="fc-box" id="calculateur-franchise">
+  <div class="fc-badge">🧮 Calculateur</div>
+  <h2>Franchise 300 vs. 2'500 — qu'est-ce qui est le plus avantageux pour vous ?</h2>
+  <p class="fc-sub">Oubliez la règle générale. Entrez vos vrais chiffres priminfo et obtenez votre propre réponse.</p>
+  <div class="fc-grid">
+    <div class="fc-col">
+      <div class="fc-field">
+        <label for="fcP300">Prime mensuelle — franchise CHF 300</label>
+        <div class="fc-input-wrap"><span>CHF</span><input type="number" id="fcP300" inputmode="decimal" min="0" step="0.05" placeholder="p. ex. 420.55"></div>
+      </div>
+      <div class="fc-field">
+        <label for="fcP2500">Prime mensuelle — franchise CHF 2'500</label>
+        <div class="fc-input-wrap"><span>CHF</span><input type="number" id="fcP2500" inputmode="decimal" min="0" step="0.05" placeholder="p. ex. 349.95"></div>
+      </div>
+      <p class="fc-hint">Trouvez les deux sur <a href="https://www.priminfo.admin.ch" target="_blank" rel="noopener">priminfo.admin.ch</a> — même année, même modèle, même couverture accident, seule la franchise change.</p>
+      <div class="fc-field">
+        <label for="fcCosts">Frais de traitement annuels attendus</label>
+        <div class="fc-range-row">
+          <input type="range" id="fcCostsRange" min="0" max="10000" step="50" value="1000" aria-label="Frais de traitement annuels attendus">
+          <div class="fc-input-wrap fc-input-wrap-sm"><span>CHF</span><input type="number" id="fcCosts" min="0" max="100000" step="10" value="1000"></div>
+        </div>
+      </div>
+    </div>
+    <div class="fc-result" id="fcResult" aria-live="polite"></div>
+  </div>
+  <details class="fc-assumptions">
+    <summary>Hypothèses</summary>
+    <p>S'applique aux adultes, hors maternité, enfants, quote-part médicaments de 40% et contribution hospitalière ; chiffres 2027.</p>
+  </details>
+</div>
+
 <div class="toc-box" style="max-width:860px;margin:0 auto 32px;">
   <div class="toc-box-title">Sommaire</div>
   <ol class="toc-list">
+    <li><a href="#calculateur-franchise">Calculateur franchise 300 vs. 2'500</a></li>
     <li><a href="#comment-changer">Changer étape par étape</a></li>
     <li><a href="#economies">5 façons de réduire la prime</a></li>
     <li><a href="#comparer">Comparer et s'inscrire</a></li>
@@ -379,7 +443,7 @@ nav a.active{color:var(--white)!important;border-bottom:2px solid var(--red-ligh
     <div class="savings-card">
       <div class="sc-icon">📈</div>
       <h4>Augmenter la franchise à CHF 2'500</h4>
-      <p>En bonne santé et rarement chez le médecin ? La franchise de CHF 2'500 vous fait économiser plusieurs centaines de francs par an. Une franchise plus basse ne se justifie que si vos frais médicaux prescrits attendus dépassent environ <strong>CHF 1'900/an</strong>. Règle de base : en bonne santé = franchise élevée.</p>
+      <p>En bonne santé et rarement chez le médecin ? La franchise CHF 2'500 fait généralement le plus économiser sur la prime mensuelle. Que cela soit avantageux pour vous dépend de vos propres chiffres — utilisez le <a href="#calculateur-franchise">calculateur ci-dessus</a> pour voir votre seuil de rentabilité exact.</p>
     </div>
     <div class="savings-card">
       <div class="sc-icon">📞</div>
@@ -535,7 +599,7 @@ Conservez le récépissé. C'est la date de réception par la caisse qui fait fo
   </div>
   <div class="faq-item">
     <div class="faq-q" onclick="faqToggle(this)">Quelle franchise choisir ? <span class="faq-chevron">▾</span></div>
-    <div class="faq-a"><p>Si vous êtes en bonne santé et consultez rarement un médecin, la franchise la plus élevée (<strong>CHF 2'500</strong>) vous fait économiser le plus sur votre prime mensuelle — souvent plusieurs centaines de francs par an. Une franchise plus basse ne se justifie que si vos frais médicaux prescrits attendus dépassent environ <strong>CHF 1'900/an</strong>. Règle de base : en bonne santé signifie franchise élevée.</p></div>
+    <div class="faq-a"><p>Si vous êtes en bonne santé et consultez rarement un médecin, la franchise la plus élevée (<strong>CHF 2'500</strong>) fait généralement le plus économiser sur la prime mensuelle. Que cela soit avantageux pour vous dépend de vos propres chiffres — utilisez le <a href="#calculateur-franchise">calculateur ci-dessus</a> plutôt qu'une règle générale.</p></div>
   </div>
   <div class="faq-item">
     <div class="faq-q" onclick="faqToggle(this)">Qu'en est-il de l'assurance complémentaire ? <span class="faq-chevron">▾</span></div>
@@ -582,5 +646,77 @@ window.addEventListener('scroll',function(){
 },{passive:true});
 </script>
 <script>(function(){var now=new Date();var months=['Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août','Septembre','Octobre','Novembre','Décembre'];var d=document.getElementById('sn-footer-date');if(d)d.textContent=months[now.getMonth()]+' '+now.getFullYear();})();</script>
+<script src="/js/franchise-calculator.js"></script>
+<script>
+(function () {
+  var p300El = document.getElementById('fcP300');
+  var p2500El = document.getElementById('fcP2500');
+  var costsEl = document.getElementById('fcCosts');
+  var rangeEl = document.getElementById('fcCostsRange');
+  var resultEl = document.getElementById('fcResult');
+  if (!p300El || !resultEl || !window.FranchiseCalc) return;
+
+  function fmt(n) {
+    var s = Math.round(n).toString();
+    var out = '';
+    for (var i = 0; i < s.length; i++) {
+      if (i > 0 && (s.length - i) % 3 === 0) out += "'";
+      out += s[i];
+    }
+    return out;
+  }
+
+  function render() {
+    var p300 = parseFloat(p300El.value);
+    var p2500 = parseFloat(p2500El.value);
+    var costs = parseFloat(costsEl.value) || 0;
+    var maxShare300 = FranchiseCalc.maxCostShare(FranchiseCalc.FRANCHISE_LOW);
+    var maxShare2500 = FranchiseCalc.maxCostShare(FranchiseCalc.FRANCHISE_HIGH);
+    var metaHtml = '<p class="fc-meta">Participation aux coûts maximale par an (traitement seulement, primes et contribution hospitalière non comprises) : CHF ' + fmt(maxShare300) + ' pour la franchise 300 · CHF ' + fmt(maxShare2500) + ' pour la franchise 2\'500.</p>' +
+      '<a href="https://www.priminfo.admin.ch" target="_blank" rel="noopener" class="fc-cta">Comparer les primes 2027 →</a>';
+
+    if (!(isFinite(p300) && p300 > 0 && isFinite(p2500) && p2500 > 0)) {
+      resultEl.innerHTML = '<p class="fc-placeholder">Entrez les deux primes ci-dessus pour voir vos chiffres.</p>' + metaHtml;
+      return;
+    }
+
+    var r = FranchiseCalc.compare(p300, p2500, costs);
+    var verdict;
+    if (r.cheaper === 'low') {
+      verdict = 'La franchise 300 est plus avantageuse pour vous — de <strong>CHF ' + fmt(r.diff) + '/an</strong>.';
+    } else if (r.cheaper === 'high') {
+      verdict = 'La franchise 2\'500 est plus avantageuse pour vous — de <strong>CHF ' + fmt(r.diff) + '/an</strong>.';
+    } else {
+      verdict = 'Les deux options vous coûtent le même montant cette année.';
+    }
+
+    var be = r.breakeven;
+    var beLine;
+    if (!be.exists) {
+      beLine = 'Seuil de rentabilité : la franchise 2\'500 est plus avantageuse quels que soient vos frais de traitement, avec ces primes.';
+    } else if (be.costs === 0) {
+      beLine = 'Seuil de rentabilité : la franchise 300 est toujours aussi avantageuse ou plus, quels que soient vos frais de traitement, avec ces primes.';
+    } else {
+      beLine = 'Seuil de rentabilité : la franchise 300 ne devient avantageuse qu\'au-delà de <strong>CHF ' + fmt(be.costs) + '</strong> de frais de traitement annuels.';
+    }
+
+    resultEl.innerHTML =
+      '<div class="fc-stat-row">' +
+        '<div class="fc-stat' + (r.cheaper === 'low' ? ' fc-win' : '') + '"><div class="fc-stat-label">Franchise 300</div><div class="fc-stat-value">CHF ' + fmt(r.cost300) + '</div></div>' +
+        '<div class="fc-stat' + (r.cheaper === 'high' ? ' fc-win' : '') + '"><div class="fc-stat-label">Franchise 2\'500</div><div class="fc-stat-value">CHF ' + fmt(r.cost2500) + '</div></div>' +
+      '</div>' +
+      '<p class="fc-verdict">' + verdict + '</p>' +
+      '<p class="fc-meta">' + beLine + '</p>' +
+      metaHtml;
+  }
+
+  p300El.addEventListener('input', render);
+  p2500El.addEventListener('input', render);
+  costsEl.addEventListener('input', function () { rangeEl.value = costsEl.value; render(); });
+  rangeEl.addEventListener('input', function () { costsEl.value = rangeEl.value; render(); });
+
+  render();
+})();
+</script>
 </body>
 </html>

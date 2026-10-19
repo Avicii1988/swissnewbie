@@ -134,7 +134,7 @@
           "name": "Which franchise should I choose?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "If you're healthy and rarely see a doctor, the highest franchise (CHF 2,500) saves you the most on your monthly premium — often hundreds of francs per year. A lower franchise only pays off if your expected doctor-prescribed medical costs exceed roughly CHF 1,900 per year. Rule of thumb: healthy means high franchise."
+            "text": "If you're healthy and rarely see a doctor, the highest franchise (CHF 2,500) usually saves you the most on your monthly premium. Whether it actually pays off depends on your own premiums and expected costs — use the franchise calculator on this page for your exact break-even instead of a generic rule of thumb."
           }
         }
       ]
@@ -182,6 +182,37 @@ nav a.active{color:var(--white)!important;border-bottom:2px solid var(--red-ligh
 .author-reviewed strong{color:var(--ink);}
 .guide-section{max-width:860px;margin:0 auto 36px;padding:0 5vw;}
 .guide-section h2{font-size:1.25rem;margin:0 0 14px;}
+.fc-box{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:24px 26px;max-width:860px;margin:24px auto;}
+.fc-badge{display:inline-block;font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--red);background:rgba(208,2,27,0.08);border-radius:20px;padding:4px 12px;margin-bottom:10px;}
+.fc-box h2{margin:0 0 6px;font-size:1.15rem;}
+.fc-sub{margin:0 0 20px;font-size:0.88rem;color:var(--muted);}
+.fc-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start;}
+.fc-field{margin-bottom:14px;}
+.fc-field label{display:block;font-size:0.78rem;font-weight:600;color:var(--ink);margin-bottom:6px;}
+.fc-input-wrap{display:flex;align-items:center;gap:6px;border:1px solid var(--border);border-radius:8px;padding:8px 12px;background:var(--warm);}
+.fc-input-wrap span{font-size:0.78rem;color:var(--muted);font-weight:600;}
+.fc-input-wrap input{border:none;background:none;outline:none;font-size:0.95rem;width:100%;font-family:inherit;color:var(--ink);}
+.fc-hint{font-size:0.76rem;color:var(--muted);margin:2px 0 16px;}
+.fc-hint a{color:var(--red);}
+.fc-range-row{display:flex;align-items:center;gap:12px;}
+.fc-range-row input[type=range]{flex:1;accent-color:var(--red);}
+.fc-range-row .fc-input-wrap{width:110px;flex-shrink:0;}
+.fc-result{background:var(--warm);border:1px solid var(--border);border-radius:10px;padding:18px 20px;}
+.fc-placeholder{font-size:0.85rem;color:var(--muted);margin:0 0 14px;}
+.fc-stat-row{display:flex;gap:10px;margin-bottom:14px;}
+.fc-stat{flex:1;background:var(--card);border:1px solid var(--border);border-radius:8px;padding:12px;text-align:center;}
+.fc-stat.fc-win{border-color:var(--green);background:rgba(45,90,61,0.06);}
+.fc-stat-label{font-size:0.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:4px;}
+.fc-stat-value{font-size:1.1rem;font-weight:700;font-family:'Fraunces',serif;}
+.fc-verdict{font-size:0.92rem;font-weight:600;margin:0 0 10px;}
+.fc-verdict strong{color:var(--green);}
+.fc-meta{font-size:0.78rem;color:var(--muted);line-height:1.6;margin:0 0 14px;}
+.fc-cta{display:inline-block;padding:10px 20px;background:var(--red);color:#fff;border-radius:8px;font-size:0.85rem;font-weight:600;text-decoration:none;}
+.fc-cta:hover{opacity:0.9;}
+.fc-assumptions{margin-top:16px;font-size:0.8rem;color:var(--muted);}
+.fc-assumptions summary{cursor:pointer;font-weight:600;color:var(--ink);}
+.fc-assumptions p{margin:8px 0 0;}
+@media (max-width:720px){.fc-grid{grid-template-columns:1fr;}}
 </style>
 <script defer data-website-id="dfid_Ff4ExOjZmHgiwkscdmYHq" data-domain="www.swissnewbie.ch" src="https://datafa.st/js/script.js"></script>
 <script defer src="/_vercel/insights/script.js"></script>
@@ -308,9 +339,42 @@ nav a.active{color:var(--white)!important;border-bottom:2px solid var(--red-ligh
 </div>
 
 <div class="alert green" style="max-width:860px;margin:18px auto;"><span class="alert-icon">✅</span><div><strong>Quick answer:</strong> Yes — you can switch Swiss health insurance once a year, and your written cancellation must physically arrive at your current insurer by 30 November 2026 to take effect on 1 January 2027 (the receipt date counts, not the postmark). Send it by registered mail no later than 15 November to guarantee on-time delivery, and sign up with your new insurer in parallel rather than waiting for your old insurer's confirmation.</div></div>
+
+<div class="fc-box" id="franchise-calculator">
+  <div class="fc-badge">🧮 Calculator</div>
+  <h2>Franchise 300 vs. 2,500 — which wins for you?</h2>
+  <p class="fc-sub">Skip the rule of thumb. Enter your own priminfo numbers and see your real answer.</p>
+  <div class="fc-grid">
+    <div class="fc-col">
+      <div class="fc-field">
+        <label for="fcP300">Monthly premium — franchise CHF 300</label>
+        <div class="fc-input-wrap"><span>CHF</span><input type="number" id="fcP300" inputmode="decimal" min="0" step="0.05" placeholder="e.g. 420.55"></div>
+      </div>
+      <div class="fc-field">
+        <label for="fcP2500">Monthly premium — franchise CHF 2,500</label>
+        <div class="fc-input-wrap"><span>CHF</span><input type="number" id="fcP2500" inputmode="decimal" min="0" step="0.05" placeholder="e.g. 349.95"></div>
+      </div>
+      <p class="fc-hint">Find both on <a href="https://www.priminfo.admin.ch" target="_blank" rel="noopener">priminfo.admin.ch</a> — same year, same model, same accident cover, only the franchise changed.</p>
+      <div class="fc-field">
+        <label for="fcCosts">Expected yearly treatment costs</label>
+        <div class="fc-range-row">
+          <input type="range" id="fcCostsRange" min="0" max="10000" step="50" value="1000" aria-label="Expected yearly treatment costs">
+          <div class="fc-input-wrap fc-input-wrap-sm"><span>CHF</span><input type="number" id="fcCosts" min="0" max="100000" step="10" value="1000"></div>
+        </div>
+      </div>
+    </div>
+    <div class="fc-result" id="fcResult" aria-live="polite"></div>
+  </div>
+  <details class="fc-assumptions">
+    <summary>Assumptions</summary>
+    <p>Applies to adults, ordinary treatment — excludes maternity, children, the 40% medicine deductible and the hospital daily contribution. 2027 figures.</p>
+  </details>
+</div>
+
 <div class="toc-box" style="max-width:860px;margin:0 auto 32px;">
   <div class="toc-box-title">On this page</div>
   <ol class="toc-list">
+    <li><a href="#franchise-calculator">Franchise 300 vs. 2,500 calculator</a></li>
     <li><a href="#how-to-switch">How to switch — step by step</a></li>
     <li><a href="#savings">5 ways to lower your premium</a></li>
     <li><a href="#compare">Compare and sign up</a></li>
@@ -380,7 +444,7 @@ nav a.active{color:var(--white)!important;border-bottom:2px solid var(--red-ligh
     <div class="savings-card">
       <div class="sc-icon">📈</div>
       <h4>Raise your franchise to CHF 2,500</h4>
-      <p>Healthy and rarely see a doctor? The CHF 2,500 franchise saves you hundreds per year. A lower franchise only pays off if your expected doctor-prescribed costs exceed roughly <strong>CHF 1,900/year</strong>. Rule of thumb: healthy = high franchise.</p>
+      <p>Healthy and rarely see a doctor? Franchise 2,500 usually saves the most on your monthly premium. Whether it pays off for you depends on your own numbers — use the <a href="#franchise-calculator">calculator above</a> to find your exact break-even.</p>
     </div>
     <div class="savings-card">
       <div class="sc-icon">📞</div>
@@ -536,7 +600,7 @@ Keep the postal receipt. The receipt date at your insurer counts, not the postma
   </div>
   <div class="faq-item">
     <div class="faq-q" onclick="faqToggle(this)">Which franchise should I choose? <span class="faq-chevron">▾</span></div>
-    <div class="faq-a"><p>If you're healthy and rarely see a doctor, the highest franchise (<strong>CHF 2,500</strong>) saves you the most on your monthly premium — often hundreds of francs per year. A lower franchise only pays off if your expected doctor-prescribed medical costs exceed roughly <strong>CHF 1,900/year</strong>. Rule of thumb: healthy means high franchise.</p></div>
+    <div class="faq-a"><p>If you're healthy and rarely see a doctor, the highest franchise (<strong>CHF 2,500</strong>) usually saves you the most on your monthly premium. Whether it pays off for you depends on your own numbers — use the <a href="#franchise-calculator">calculator above</a> to see your exact break-even instead of a generic rule of thumb.</p></div>
   </div>
   <div class="faq-item">
     <div class="faq-q" onclick="faqToggle(this)">What about supplementary insurance (Zusatzversicherung)? <span class="faq-chevron">▾</span></div>
@@ -583,5 +647,77 @@ window.addEventListener('scroll',function(){
 },{passive:true});
 </script>
 <script>(function(){var now=new Date();var months=['January','February','March','April','May','June','July','August','September','October','November','December'];var d=document.getElementById('sn-footer-date');if(d)d.textContent=months[now.getMonth()]+' '+now.getFullYear();})();</script>
+<script src="/js/franchise-calculator.js"></script>
+<script>
+(function () {
+  var p300El = document.getElementById('fcP300');
+  var p2500El = document.getElementById('fcP2500');
+  var costsEl = document.getElementById('fcCosts');
+  var rangeEl = document.getElementById('fcCostsRange');
+  var resultEl = document.getElementById('fcResult');
+  if (!p300El || !resultEl || !window.FranchiseCalc) return;
+
+  function fmt(n) {
+    var s = Math.round(n).toString();
+    var out = '';
+    for (var i = 0; i < s.length; i++) {
+      if (i > 0 && (s.length - i) % 3 === 0) out += ',';
+      out += s[i];
+    }
+    return out;
+  }
+
+  function render() {
+    var p300 = parseFloat(p300El.value);
+    var p2500 = parseFloat(p2500El.value);
+    var costs = parseFloat(costsEl.value) || 0;
+    var maxShare300 = FranchiseCalc.maxCostShare(FranchiseCalc.FRANCHISE_LOW);
+    var maxShare2500 = FranchiseCalc.maxCostShare(FranchiseCalc.FRANCHISE_HIGH);
+    var metaHtml = '<p class="fc-meta">Maximum yearly cost-sharing (treatment only, premiums &amp; hospital contribution not included): CHF ' + fmt(maxShare300) + ' at franchise 300 · CHF ' + fmt(maxShare2500) + ' at franchise 2,500.</p>' +
+      '<a href="https://www.priminfo.admin.ch" target="_blank" rel="noopener" class="fc-cta">Compare 2027 premiums →</a>';
+
+    if (!(isFinite(p300) && p300 > 0 && isFinite(p2500) && p2500 > 0)) {
+      resultEl.innerHTML = '<p class="fc-placeholder">Enter both premiums above to see your numbers.</p>' + metaHtml;
+      return;
+    }
+
+    var r = FranchiseCalc.compare(p300, p2500, costs);
+    var verdict;
+    if (r.cheaper === 'low') {
+      verdict = 'Franchise 300 is cheaper for you — by <strong>CHF ' + fmt(r.diff) + '/year</strong>.';
+    } else if (r.cheaper === 'high') {
+      verdict = 'Franchise 2,500 is cheaper for you — by <strong>CHF ' + fmt(r.diff) + '/year</strong>.';
+    } else {
+      verdict = 'Both options cost you the same this year.';
+    }
+
+    var be = r.breakeven;
+    var beLine;
+    if (!be.exists) {
+      beLine = 'Break-even: franchise 2,500 is cheaper no matter your treatment costs, given these premiums.';
+    } else if (be.costs === 0) {
+      beLine = 'Break-even: franchise 300 is cheaper (or equal) no matter your treatment costs, given these premiums.';
+    } else {
+      beLine = 'Break-even: franchise 300 only pays off once your yearly treatment costs exceed <strong>CHF ' + fmt(be.costs) + '</strong>.';
+    }
+
+    resultEl.innerHTML =
+      '<div class="fc-stat-row">' +
+        '<div class="fc-stat' + (r.cheaper === 'low' ? ' fc-win' : '') + '"><div class="fc-stat-label">Franchise 300</div><div class="fc-stat-value">CHF ' + fmt(r.cost300) + '</div></div>' +
+        '<div class="fc-stat' + (r.cheaper === 'high' ? ' fc-win' : '') + '"><div class="fc-stat-label">Franchise 2,500</div><div class="fc-stat-value">CHF ' + fmt(r.cost2500) + '</div></div>' +
+      '</div>' +
+      '<p class="fc-verdict">' + verdict + '</p>' +
+      '<p class="fc-meta">' + beLine + '</p>' +
+      metaHtml;
+  }
+
+  p300El.addEventListener('input', render);
+  p2500El.addEventListener('input', render);
+  costsEl.addEventListener('input', function () { rangeEl.value = costsEl.value; render(); });
+  rangeEl.addEventListener('input', function () { costsEl.value = rangeEl.value; render(); });
+
+  render();
+})();
+</script>
 </body>
 </html>
