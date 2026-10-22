@@ -5,7 +5,7 @@
   <!-- English (default) -->
   <url>
     <loc>https://www.swissnewbie.ch/</loc>
-    <lastmod>2026-09-19</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en"        href="https://www.swissnewbie.ch/"/>
@@ -15,7 +15,7 @@
   </url>
   <url>
     <loc>https://www.swissnewbie.ch/health-insurance/</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en"        href="https://www.swissnewbie.ch/health-insurance/"/>
@@ -25,7 +25,7 @@
   </url>
   <url>
     <loc>https://www.swissnewbie.ch/finance/</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en"        href="https://www.swissnewbie.ch/finance/"/>
@@ -45,7 +45,7 @@
   </url>
   <url>
     <loc>https://www.swissnewbie.ch/mobile-internet/</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en"        href="https://www.swissnewbie.ch/mobile-internet/"/>
@@ -93,13 +93,13 @@
   </url>
   <url>
     <loc>https://www.swissnewbie.ch/de/health-insurance/</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.swissnewbie.ch/de/finance/</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -111,7 +111,7 @@
   </url>
   <url>
     <loc>https://www.swissnewbie.ch/de/mobile-internet/</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -143,13 +143,13 @@
   </url>
   <url>
     <loc>https://www.swissnewbie.ch/fr/health-insurance/</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.swissnewbie.ch/fr/finance/</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -161,7 +161,7 @@
   </url>
   <url>
     <loc>https://www.swissnewbie.ch/fr/mobile-internet/</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -361,7 +361,7 @@
   </url>
   <url>
     <loc>https://www.swissnewbie.ch/de/rechtsschutz-schweiz/</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
@@ -586,7 +586,7 @@
 
   <url>
     <loc>https://www.swissnewbie.ch/interactive-brokers-switzerland/</loc>
-    <lastmod>2026-10-17</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
     <xhtml:link rel="alternate" hreflang="en"        href="https://www.swissnewbie.ch/interactive-brokers-switzerland/"/>
@@ -596,7 +596,7 @@
   </url>
   <url>
     <loc>https://www.swissnewbie.ch/de/interactive-brokers-schweiz/</loc>
-    <lastmod>2026-10-17</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
     <xhtml:link rel="alternate" hreflang="en"        href="https://www.swissnewbie.ch/interactive-brokers-switzerland/"/>
@@ -606,7 +606,7 @@
   </url>
   <url>
     <loc>https://www.swissnewbie.ch/fr/interactive-brokers-suisse/</loc>
-    <lastmod>2026-10-17</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
     <xhtml:link rel="alternate" hreflang="en"        href="https://www.swissnewbie.ch/interactive-brokers-switzerland/"/>
