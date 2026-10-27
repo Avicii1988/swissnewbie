@@ -35,13 +35,23 @@
   </url>
   <url>
     <loc>https://www.swissnewbie.ch/insurance/</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en"        href="https://www.swissnewbie.ch/insurance/"/>
     <xhtml:link rel="alternate" hreflang="de"        href="https://www.swissnewbie.ch/de/insurance/"/>
     <xhtml:link rel="alternate" hreflang="fr"        href="https://www.swissnewbie.ch/fr/insurance/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.swissnewbie.ch/insurance/"/>
+  </url>
+  <url>
+    <loc>https://www.swissnewbie.ch/css-quote/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.swissnewbie.ch/css-quote/"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://www.swissnewbie.ch/de/css-offerte/"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://www.swissnewbie.ch/fr/offre-css/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.swissnewbie.ch/css-quote/"/>
   </url>
   <url>
     <loc>https://www.swissnewbie.ch/mobile-internet/</loc>
@@ -105,9 +115,15 @@
   </url>
   <url>
     <loc>https://www.swissnewbie.ch/de/insurance/</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.swissnewbie.ch/de/css-offerte/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.swissnewbie.ch/de/mobile-internet/</loc>
@@ -155,9 +171,15 @@
   </url>
   <url>
     <loc>https://www.swissnewbie.ch/fr/insurance/</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.swissnewbie.ch/fr/offre-css/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.swissnewbie.ch/fr/mobile-internet/</loc>
