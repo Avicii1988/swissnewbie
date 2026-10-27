@@ -175,29 +175,28 @@ nav a.active{color:var(--white)!important;border-bottom:2px solid var(--red-ligh
 
 <div class="cssq-wrap" style="padding-top:28px;">
 
-<div id="cssqActive" class="cssq-hidden">
-  <p class="cssq-intro">Wählen Sie ein oder mehrere Produkte für eine unverbindliche Offerte aus. Sie können mehrere gleichzeitig anfragen — Ihre Auswahl bleibt erhalten, bis Sie das Formular unten absenden.</p>
+<p class="cssq-intro">Wählen Sie ein oder mehrere Produkte für eine unverbindliche Offerte aus. Sie können mehrere gleichzeitig anfragen — Ihre Auswahl bleibt erhalten, bis Sie das Formular unten absenden.</p>
 
-  <div class="cssq-products">
-    <div class="cssq-product">
-      <div class="cssq-product-main"><span class="cssq-product-icon">🏠</span><span class="cssq-product-name">Hausratversicherung</span></div>
-      <button type="button" class="cssq-product-btn" data-product="home_contents" aria-pressed="false">Auswählen →</button>
-    </div>
-    <div class="cssq-product">
-      <div class="cssq-product-main"><span class="cssq-product-icon">🛡️</span><span class="cssq-product-name">Privathaftpflicht</span></div>
-      <button type="button" class="cssq-product-btn" data-product="personal_liability" aria-pressed="false">Auswählen →</button>
-    </div>
-    <div class="cssq-product">
-      <div class="cssq-product-main"><span class="cssq-product-icon">✈️</span><span class="cssq-product-name">Reiseversicherung (Jahresvertrag)</span></div>
-      <button type="button" class="cssq-product-btn" data-product="travel_annual" aria-pressed="false">Auswählen →</button>
-    </div>
-    <div class="cssq-product">
-      <div class="cssq-product-main"><span class="cssq-product-icon">🏢</span><span class="cssq-product-name">Gebäudeversicherung</span></div>
-      <button type="button" class="cssq-product-btn" data-product="buildings" aria-pressed="false">Auswählen →</button>
-    </div>
+<div class="cssq-products">
+  <div class="cssq-product">
+    <div class="cssq-product-main"><span class="cssq-product-icon">🏠</span><span class="cssq-product-name">Hausratversicherung</span></div>
+    <button type="button" class="cssq-product-btn cssq-active-only cssq-hidden" data-product="home_contents" aria-pressed="false">Auswählen →</button>
   </div>
+  <div class="cssq-product">
+    <div class="cssq-product-main"><span class="cssq-product-icon">🛡️</span><span class="cssq-product-name">Privathaftpflicht</span></div>
+    <button type="button" class="cssq-product-btn cssq-active-only cssq-hidden" data-product="personal_liability" aria-pressed="false">Auswählen →</button>
+  </div>
+  <div class="cssq-product">
+    <div class="cssq-product-main"><span class="cssq-product-icon">✈️</span><span class="cssq-product-name">Reiseversicherung (Jahresvertrag)</span></div>
+    <button type="button" class="cssq-product-btn cssq-active-only cssq-hidden" data-product="travel_annual" aria-pressed="false">Auswählen →</button>
+  </div>
+  <div class="cssq-product">
+    <div class="cssq-product-main"><span class="cssq-product-icon">🏢</span><span class="cssq-product-name">Gebäudeversicherung</span></div>
+    <button type="button" class="cssq-product-btn cssq-active-only cssq-hidden" data-product="buildings" aria-pressed="false">Auswählen →</button>
+  </div>
+</div>
 
-  <div class="cssq-form-box" id="cssqForm">
+<div class="cssq-form-box cssq-active-only cssq-hidden" id="cssqForm">
     <h2>Ihre Angaben</h2>
     <form id="cssqFormEl" novalidate>
       <div class="cssq-field" id="cssqFieldName">
@@ -241,7 +240,6 @@ nav a.active{color:var(--white)!important;border-bottom:2px solid var(--red-ligh
       <div class="cssq-result" id="cssqResult" role="status" aria-live="polite"></div>
     </form>
   </div>
-</div>
 
 <div id="cssqInactive" class="cssq-hidden">
   <div class="cssq-unavailable">Offertanfragen für die CSS sind auf dieser Seite noch nicht verfügbar. Schauen Sie bald wieder vorbei, oder kontaktieren Sie uns direkt unter <a href="mailto:info@swissnewbie.ch" style="color:var(--red);">info@swissnewbie.ch</a>.</div>
@@ -282,7 +280,8 @@ window.addEventListener('scroll',function(){
     submit: 'Offerte anfragen',
     sending: 'Wird gesendet…',
     success: 'Danke! Deine Anfrage wurde an die CSS weitergeleitet.',
-    error: 'Leider ist ein Fehler aufgetreten und wir konnten Ihre Anfrage nicht weiterleiten. Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt unter <a href="mailto:info@swissnewbie.ch">info@swissnewbie.ch</a>.'
+    error: 'Leider ist ein Fehler aufgetreten und wir konnten Ihre Anfrage nicht weiterleiten. Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt unter <a href="mailto:info@swissnewbie.ch">info@swissnewbie.ch</a>.',
+    expired: 'Dieses Formular war eine Weile geöffnet, Ihre Sitzung ist daher abgelaufen. Bitte laden Sie die Seite neu und senden Sie Ihre Anfrage erneut.'
   };
   var LOCALE = 'de';
 
@@ -297,9 +296,23 @@ window.addEventListener('scroll',function(){
   }
 
   var formStartedAt = null;
+  var pendingSubmissionId = null;
+  var pendingFingerprint = null;
+
+  // One stable identity per form intent: reused across submit attempts as long as the
+  // outgoing payload hasn't changed (e.g. a manual retry after an ambiguous failure);
+  // a new identity is minted only when the visitor actually changed something.
+  function fingerprint(f){
+    return JSON.stringify({
+      name: f.name.value.trim(),
+      email: f.email.value.trim(),
+      phone: f.phone.value.trim() || null,
+      products: f.products.filter(function(c){ return c.checked; }).map(function(c){ return c.value; }).sort(),
+      consent: !!f.consent.checked
+    });
+  }
 
   function init(){
-    var activeBox = document.getElementById('cssqActive');
     var inactiveBox = document.getElementById('cssqInactive');
     var form = document.getElementById('cssqFormEl');
     var submitBtn = document.getElementById('cssqSubmit');
@@ -385,8 +398,14 @@ window.addEventListener('scroll',function(){
       submitBtn.textContent = L.sending;
       resultEl.className = 'cssq-result';
 
+      var fp = fingerprint(f);
+      if (!pendingSubmissionId || fp !== pendingFingerprint) {
+        pendingSubmissionId = uuid();
+        pendingFingerprint = fp;
+      }
+
       var payload = {
-        submissionId: uuid(),
+        submissionId: pendingSubmissionId,
         name: f.name.value.trim(),
         email: f.email.value.trim(),
         products: f.products.filter(function(c){ return c.checked; }).map(function(c){ return c.value; }),
@@ -415,6 +434,11 @@ window.addEventListener('scroll',function(){
             b.setAttribute('aria-pressed', 'false');
             b.textContent = L.select;
           });
+          pendingSubmissionId = null;
+          pendingFingerprint = null;
+          updateSubmitState();
+        } else if (res.body && (res.body.error === 'submission_expired' || res.body.error === 'invalid_timing')) {
+          showResult('error', L.expired);
           updateSubmitState();
         } else {
           showResult('error', L.error);
@@ -433,7 +457,7 @@ window.addEventListener('scroll',function(){
     CssLeadActive.check().then(function(active){
       if (active){
         formStartedAt = new Date().toISOString();
-        activeBox.classList.remove('cssq-hidden');
+        document.querySelectorAll('.cssq-active-only').forEach(function(el){ el.classList.remove('cssq-hidden'); });
       } else {
         inactiveBox.classList.remove('cssq-hidden');
       }

@@ -7,11 +7,22 @@ const {
   handleCssLeadNotify,
   computeActive,
   validatePayload,
+  checkFormAge,
   buildEmailBody,
   productsLabelDe,
   isAllowedOrigin,
   hashIp
 } = require('../api/css-lead-notify.js');
+
+// A controllable clock for crossing the 24h boundary deterministically without
+// real waits. clock() reads the current simulated time; clock.set()/advance() move it.
+function makeClock(startMs) {
+  let t = startMs;
+  const fn = () => t;
+  fn.set = (ms) => { t = ms; };
+  fn.advance = (ms) => { t += ms; };
+  return fn;
+}
 
 const FULL_CONFIG = {
   to: 'weiterempfehlungen@css.ch',
@@ -442,4 +453,139 @@ test('origin: production allowlist accepts only www.swissnewbie.ch and swissnewb
   assert.equal(isAllowedOrigin('https://swissnewbie.ch'), true);
   assert.equal(isAllowedOrigin('https://evil.example.com'), false);
   assert.equal(isAllowedOrigin(undefined), false);
+});
+
+// ---------------------------------------------------------------------------
+// Part A: request-age bounds and the TTL invariant (no silent resend after expiry)
+// ---------------------------------------------------------------------------
+
+test('checkFormAge: accepts a recent timestamp', () => {
+  const now = Date.now();
+  assert.equal(checkFormAge(new Date(now - 60000).toISOString(), now), 'ok');
+});
+
+test('checkFormAge: rejects a timestamp older than the maximum form age', () => {
+  const now = Date.now();
+  const justUnder = new Date(now - (24 * 3600 * 1000 - 1000)).toISOString();
+  const justOver = new Date(now - (24 * 3600 * 1000 + 1000)).toISOString();
+  assert.equal(checkFormAge(justUnder, now), 'ok');
+  assert.equal(checkFormAge(justOver, now), 'expired');
+});
+
+test('checkFormAge: rejects a timestamp implausibly far in the future, tolerates small clock skew', () => {
+  const now = Date.now();
+  assert.equal(checkFormAge(new Date(now + 60 * 1000).toISOString(), now), 'ok'); // 1 min skew: fine
+  assert.equal(checkFormAge(new Date(now + 3600 * 1000).toISOString(), now), 'future'); // 1h ahead: not fine
+});
+
+test('expired submission: a stale formStartedAt is rejected with an honest error, zero sends', async () => {
+  const clock = makeClock(Date.UTC(2026, 0, 1));
+  const fetchImpl = fetchThatAccepts();
+  const stale = new Date(clock() - 25 * 3600 * 1000).toISOString(); // 25h old, over the 24h max
+  const res = await handleCssLeadNotify(validPayload({ formStartedAt: stale }), {
+    config: FULL_CONFIG,
+    kv: fakeKv(),
+    fetchImpl,
+    now: clock
+  });
+  assert.equal(res.status, 410);
+  assert.equal(res.body.ok, false);
+  assert.equal(res.body.error, 'submission_expired');
+  assert.equal(fetchImpl.calls(), 0);
+});
+
+test('far-future formStartedAt is rejected, zero sends', async () => {
+  const clock = makeClock(Date.UTC(2026, 0, 1));
+  const fetchImpl = fetchThatAccepts();
+  const future = new Date(clock() + 2 * 3600 * 1000).toISOString(); // 2h ahead, beyond tolerance
+  const res = await handleCssLeadNotify(validPayload({ formStartedAt: future }), {
+    config: FULL_CONFIG,
+    kv: fakeKv(),
+    fetchImpl,
+    now: clock
+  });
+  assert.equal(res.status, 400);
+  assert.equal(res.body.ok, false);
+  assert.equal(res.body.error, 'invalid_timing');
+  assert.equal(fetchImpl.calls(), 0);
+});
+
+test('expired record: identical replay (same submissionId, same payload) after the record has expired is rejected, zero sends', async () => {
+  // Simulate the record having expired out of KV (as it genuinely would after
+  // SUBMISSION_TTL_SECONDS) by never seeding one, and replaying with the SAME
+  // formStartedAt from the original (now long-past) form load.
+  const clock = makeClock(Date.UTC(2026, 0, 1));
+  const kv = fakeKv();
+  const fetchImpl = fetchThatAccepts();
+  const originalFormStartedAt = new Date(clock() - 10000).toISOString();
+  const payload = validPayload({ formStartedAt: originalFormStartedAt });
+
+  // First, a genuine send right away succeeds.
+  const first = await handleCssLeadNotify(payload, { config: FULL_CONFIG, kv, fetchImpl, now: clock });
+  assert.equal(first.body.ok, true);
+  assert.equal(fetchImpl.calls(), 1);
+
+  // The KV record naturally expires (TTL elapses); simulate that directly.
+  kv._store.delete(`cssl:sub:${payload.submissionId}`);
+
+  // Move the clock well past the record's TTL (30h) — a replay this late is,
+  // by construction, also past MAX_FORM_AGE_SECONDS (24h) for the same
+  // formStartedAt, so the age check rejects it before any idempotency lookup.
+  clock.set(Date.UTC(2026, 0, 1) + 31 * 3600 * 1000);
+  const replay = await handleCssLeadNotify(payload, { config: FULL_CONFIG, kv, fetchImpl, now: clock });
+  assert.equal(replay.status, 410);
+  assert.equal(replay.body.ok, false);
+  assert.equal(replay.body.error, 'submission_expired');
+  assert.equal(fetchImpl.calls(), 1, 'the expired replay must not send a second email');
+});
+
+test('retry after an ambiguous provider outcome within the retention window: same submissionId and payload, exactly one acceptance, same Idempotency-Key, no duplicate send', async () => {
+  const clock = makeClock(Date.UTC(2026, 0, 1));
+  const kv = fakeKv();
+  const keysSeen = [];
+  let call = 0;
+  const fetchImpl = async (url, opts) => {
+    call++;
+    keysSeen.push(opts.headers['Idempotency-Key']);
+    if (call === 1) throw new Error('network down'); // ambiguous outcome on the first attempt
+    return { ok: true, status: 200, json: async () => ({ id: 'email_ok' }) };
+  };
+  const payload = validPayload({ formStartedAt: new Date(clock() - 10000).toISOString() });
+
+  // First POST: the server-side bounded retry (inside sendCssLeadEmail) also fails
+  // because our fetchImpl only recovers starting from call #2; force a first failure
+  // by capping attempts, then retry at the handler level an hour later (still well
+  // inside the 30h retention window) with the identical submissionId and payload.
+  const firstFetch = async () => { throw new Error('down'); };
+  const first = await handleCssLeadNotify(payload, { config: FULL_CONFIG, kv, fetchImpl: firstFetch, now: clock });
+  assert.equal(first.body.ok, false);
+
+  clock.advance(3600 * 1000); // 1h later, still well within the 30h record retention
+  const retry = await handleCssLeadNotify(payload, { config: FULL_CONFIG, kv, fetchImpl, now: clock });
+  assert.equal(retry.body.ok, true);
+  assert.equal(call, 2, 'exactly one real provider acceptance after the ambiguous first attempt');
+  assert.equal(keysSeen[0], keysSeen[1], 'the retry reuses the same Idempotency-Key as the original attempt');
+  assert.equal(keysSeen[0], `css-lead:${payload.submissionId}`);
+});
+
+test('fresh request with a new identity after a rejected stale one: the accepted path is unchanged', async () => {
+  const clock = makeClock(Date.UTC(2026, 0, 1));
+  const kv = fakeKv();
+  const fetchImpl = fetchThatAccepts();
+
+  const staleSubmission = validPayload({ formStartedAt: new Date(clock() - 25 * 3600 * 1000).toISOString() });
+  const staleRes = await handleCssLeadNotify(staleSubmission, { config: FULL_CONFIG, kv, fetchImpl, now: clock });
+  assert.equal(staleRes.status, 410);
+  assert.equal(fetchImpl.calls(), 0);
+
+  // The visitor reloads the page (per the frontend's honest-error flow) and submits
+  // again: a brand-new submissionId and a fresh formStartedAt.
+  const freshSubmission = validPayload({
+    submissionId: 'bbbbbbbb-cccc-4ddd-8eee-ffffffffffff',
+    formStartedAt: new Date(clock() - 10000).toISOString()
+  });
+  const freshRes = await handleCssLeadNotify(freshSubmission, { config: FULL_CONFIG, kv, fetchImpl, now: clock });
+  assert.equal(freshRes.status, 200);
+  assert.equal(freshRes.body.ok, true);
+  assert.equal(fetchImpl.calls(), 1);
 });

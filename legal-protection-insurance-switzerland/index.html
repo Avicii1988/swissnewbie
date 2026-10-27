@@ -432,12 +432,12 @@ nav a.active{color:var(--white)!important;border-bottom:2px solid var(--red-ligh
 function faqToggle(el){el.closest('.faq-item').classList.toggle('open');}
 function openTopic(id){window.location.href="/?section="+id;}
 function copyCode(el,code){
-  var orig=el.textContent;
+  var orig=el.textContent;var vid=(el.getAttribute&&el.getAttribute('data-voucher-id'))||code;
   navigator.clipboard.writeText(code).then(function(){
-    el.textContent='✓ Copied!';el.classList.add('copied');
+    el.textContent='✓ Copied!';el.classList.add('copied');try{fetch('/api/voucher-notify',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({code:vid,page:location.href,ts:new Date().toISOString(),ua:navigator.userAgent.slice(0,120)})}).catch(function(){});}catch(e){}
     setTimeout(function(){el.textContent=orig;el.classList.remove('copied');},2000);
   }).catch(function(){
-    try{var t=document.createElement('textarea');t.value=code;document.body.appendChild(t);t.select();document.execCommand('copy');document.body.removeChild(t);el.textContent='✓ Copied!';el.classList.add('copied');setTimeout(function(){el.textContent=orig;el.classList.remove('copied');},2000);}catch(e){alert('Code: '+code);}
+    try{var t=document.createElement('textarea');t.value=code;document.body.appendChild(t);t.select();document.execCommand('copy');document.body.removeChild(t);el.textContent='✓ Copied!';el.classList.add('copied');try{fetch('/api/voucher-notify',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({code:vid,page:location.href,ts:new Date().toISOString(),ua:navigator.userAgent.slice(0,120)})}).catch(function(){});}catch(e){}setTimeout(function(){el.textContent=orig;el.classList.remove('copied');},2000);}catch(e){alert('Code: '+code);}
   });
 }
 document.addEventListener('click',function(e){

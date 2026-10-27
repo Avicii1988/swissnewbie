@@ -213,12 +213,12 @@ nav a.active{color:var(--white)!important;border-bottom:2px solid var(--red-ligh
 function faqToggle(el){el.closest('.faq-item').classList.toggle('open');}
 function openTopic(id){window.location.href="/de/?section="+id;}
 function copyCode(el,code){
-  var orig=el.textContent;
+  var orig=el.textContent;var vid=(el.getAttribute&&el.getAttribute('data-voucher-id'))||code;
   navigator.clipboard.writeText(code).then(function(){
-    el.textContent='✓ Kopiert!';el.classList.add('copied');
+    el.textContent='✓ Kopiert!';el.classList.add('copied');try{fetch('/api/voucher-notify',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({code:vid,page:location.href,ts:new Date().toISOString(),ua:navigator.userAgent.slice(0,120)})}).catch(function(){});}catch(e){}
     setTimeout(function(){el.textContent=orig;el.classList.remove('copied');},2000);
   }).catch(function(){
-    try{var t=document.createElement('textarea');t.value=code;document.body.appendChild(t);t.select();document.execCommand('copy');document.body.removeChild(t);el.textContent='✓ Kopiert!';el.classList.add('copied');setTimeout(function(){el.textContent=orig;el.classList.remove('copied');},2000);}catch(e){alert('Code: '+code);}
+    try{var t=document.createElement('textarea');t.value=code;document.body.appendChild(t);t.select();document.execCommand('copy');document.body.removeChild(t);el.textContent='✓ Kopiert!';el.classList.add('copied');try{fetch('/api/voucher-notify',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({code:vid,page:location.href,ts:new Date().toISOString(),ua:navigator.userAgent.slice(0,120)})}).catch(function(){});}catch(e){}setTimeout(function(){el.textContent=orig;el.classList.remove('copied');},2000);}catch(e){alert('Code: '+code);}
   });
 }
 document.addEventListener('click',function(e){
@@ -264,14 +264,15 @@ document.addEventListener('click',function(e){
 (function(){
   var KEY='sn_voucher_clicks';
   function getC(){try{return JSON.parse(localStorage.getItem(KEY)||'{}');}catch(e){return{};}}
+  function cssqIsExternal(href){if(!href)return false;try{var u=new URL(href,location.href);var h=u.hostname.replace(/^www\./,'');return h!=='swissnewbie.ch';}catch(e){return false;}}
   document.addEventListener('click',function(e){
     var el=e.target.closest('[data-voucher-id]');
-    if(!el){var lnk=e.target.closest('.vg-link,.vg-actions a');if(lnk){var card=lnk.closest('.vg-card');if(card){el=card.querySelector('[data-voucher-id]');if(!el){var nm=card.querySelector('.vg-name');if(nm){try{fetch('/api/voucher-notify',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({code:nm.textContent.trim().replace(/\s+/g,'-').slice(0,20),page:location.href,ts:new Date().toISOString(),ua:navigator.userAgent.slice(0,120)})}).catch(function(){});}catch(er){}return;}}}}}
+    if(!el){var lnk=e.target.closest('.vg-link,.vg-actions a');if(lnk){var card=lnk.closest('.vg-card');if(card){el=card.querySelector('[data-voucher-id]');if(!el){var nm=card.querySelector('.vg-name');if(nm){if(cssqIsExternal(lnk&&lnk.href)){try{fetch('/api/voucher-notify',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({code:nm.textContent.trim().replace(/\s+/g,'-').slice(0,20),page:location.href,ts:new Date().toISOString(),ua:navigator.userAgent.slice(0,120)})}).catch(function(){});}catch(er){}}return;}}}}}
     if(!el)return;
     var code=el.getAttribute('data-voucher-id'),today=new Date().toISOString().slice(0,10);
     var d=getC();if(!d[today])d[today]={};d[today][code]=(d[today][code]||0)+1;
     try{localStorage.setItem(KEY,JSON.stringify(d));}catch(e){}
-    try{fetch('/api/voucher-notify',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({code:code,page:location.href,ts:new Date().toISOString(),ua:navigator.userAgent.slice(0,120)})}).catch(function(){});}catch(er){}
+    var __h=(typeof lnk!=='undefined'&&lnk)?lnk.href:(el.tagName==='A'?el.href:null);if(cssqIsExternal(__h)){try{fetch('/api/voucher-notify',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({code:code,page:location.href,ts:new Date().toISOString(),ua:navigator.userAgent.slice(0,120)})}).catch(function(){});}catch(er){}}
   },true);
 })();
 </script>

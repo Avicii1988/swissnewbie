@@ -17,7 +17,22 @@ export const PRODUCTS = ['home_contents', 'personal_liability', 'travel_annual',
 export const LOCALES = ['en', 'de', 'fr'];
 const MAX_BODY_BYTES = 4 * 1024;
 const RATE_LIMIT_PER_HOUR = 5;
-const SUBMISSION_TTL_SECONDS = 24 * 60 * 60; // matches Resend's own 24h idempotency window
+// Maximum age a submission's formStartedAt may have at the time it is POSTed.
+// A request older than this is rejected outright (expired_submission) — it
+// never reaches the idempotency/send logic, so it can never silently become
+// a "new" send just because its KV record has since expired.
+const MAX_FORM_AGE_SECONDS = 24 * 60 * 60; // 24h
+// Small tolerance for client/server clock drift on a formStartedAt that
+// appears to be in the future.
+const CLOCK_SKEW_TOLERANCE_SECONDS = 5 * 60; // 5 min
+// Invariant: SUBMISSION_TTL_SECONDS must stay strictly greater than
+// MAX_FORM_AGE_SECONDS, with comfortable margin. Any request the server would
+// still accept has age (now - formStartedAt) <= MAX_FORM_AGE_SECONDS, and its
+// KV record was written at or after formStartedAt, so the record is always
+// still alive for the entire window in which a same-identity request could
+// still pass the age check — an expired record and an accepted request can
+// never coexist. The margin below (6h) absorbs processing/retry delay.
+const SUBMISSION_TTL_SECONDS = MAX_FORM_AGE_SECONDS + 6 * 60 * 60; // 30h
 const MAX_SEND_ATTEMPTS = 3;
 const MIN_FILL_SECONDS = 3;
 const KV_PING_TIMEOUT_MS = 3000;
@@ -190,9 +205,28 @@ export function validatePayload(body) {
   if (typeof body.locale !== 'string' || !LOCALES.includes(body.locale)) errors.push('invalid_locale');
   if (body.consent !== true) errors.push('consent_required');
   if (body.honeypot !== undefined && typeof body.honeypot !== 'string') errors.push('invalid_honeypot');
-  if (body.formStartedAt !== undefined && typeof body.formStartedAt !== 'string') errors.push('invalid_timing');
+
+  // formStartedAt is required and must be a real, parseable timestamp — the age-bound
+  // check (expired / future) happens separately in handleCssLeadNotify, after this
+  // type/presence validation, so it can produce its own distinct, honest error.
+  if (typeof body.formStartedAt !== 'string' || Number.isNaN(Date.parse(body.formStartedAt))) {
+    errors.push('invalid_timing');
+  }
 
   return { valid: errors.length === 0, errors };
+}
+
+// Bounds formStartedAt against the current time. Returns 'ok', 'expired' (older than
+// MAX_FORM_AGE_SECONDS) or 'future' (further ahead than the clock-skew tolerance).
+// Residual, by design: a request with a freshly forged formStartedAt (set to "now" by
+// a replaying client) is indistinguishable from a genuine new submission at this check —
+// that case is not an idempotency problem and is instead bounded by the per-IP rate limit.
+export function checkFormAge(formStartedAt, nowMs) {
+  const started = Date.parse(formStartedAt);
+  const ageMs = nowMs - started;
+  if (ageMs > MAX_FORM_AGE_SECONDS * 1000) return 'expired';
+  if (ageMs < -CLOCK_SKEW_TOLERANCE_SECONDS * 1000) return 'future';
+  return 'ok';
 }
 
 export function buildEmailBody({ name, email, phone, productsLabel }) {
@@ -272,8 +306,8 @@ export async function sendCssLeadEmail({ name, email, phone, products, apiKey, t
   return { confirmed: false, error: lastError };
 }
 
-async function checkRateLimit(kv, ipHash) {
-  const bucket = Math.floor(Date.now() / 3600000);
+async function checkRateLimit(kv, ipHash, nowMs) {
+  const bucket = Math.floor(nowMs / 3600000);
   const key = `cssl:rl:${ipHash}:${bucket}`;
   const count = await kv.incr(key);
   if (count === null) return false; // KV error during the count itself: fail closed
@@ -283,9 +317,9 @@ async function checkRateLimit(kv, ipHash) {
 
 // Atomically claims a submissionId so two concurrent/duplicate requests for the
 // same id can never both send. Returns what the caller should do next.
-async function claimSubmission(kv, submissionId, payloadHash) {
+async function claimSubmission(kv, submissionId, payloadHash, nowMs) {
   const key = `cssl:sub:${submissionId}`;
-  const claimed = await kv.setNx(key, JSON.stringify({ state: 'pending', payloadHash, attempts: 1, ts: Date.now() }), SUBMISSION_TTL_SECONDS);
+  const claimed = await kv.setNx(key, JSON.stringify({ state: 'pending', payloadHash, attempts: 1, ts: nowMs }), SUBMISSION_TTL_SECONDS);
   if (claimed) return { action: 'send', attempts: 1 };
 
   const existingRaw = await kv.get(key);
@@ -302,15 +336,15 @@ async function claimSubmission(kv, submissionId, payloadHash) {
   if (existing.state === 'failed') {
     const attempts = (existing.attempts || 0) + 1;
     if (attempts > MAX_SEND_ATTEMPTS) return { action: 'reject', reason: 'too_many_attempts' };
-    await kv.set(key, JSON.stringify({ state: 'pending', payloadHash, attempts, ts: Date.now() }), SUBMISSION_TTL_SECONDS);
+    await kv.set(key, JSON.stringify({ state: 'pending', payloadHash, attempts, ts: nowMs }), SUBMISSION_TTL_SECONDS);
     return { action: 'send', attempts };
   }
   return { action: 'reject', reason: 'conflict' };
 }
 
-async function finalizeSubmission(kv, submissionId, payloadHash, state, attempts) {
+async function finalizeSubmission(kv, submissionId, payloadHash, state, attempts, nowMs) {
   const key = `cssl:sub:${submissionId}`;
-  await kv.set(key, JSON.stringify({ state, payloadHash, attempts, ts: Date.now() }), SUBMISSION_TTL_SECONDS);
+  await kv.set(key, JSON.stringify({ state, payloadHash, attempts, ts: nowMs }), SUBMISSION_TTL_SECONDS);
 }
 
 export async function computeActive({ config, kv } = {}) {
@@ -325,13 +359,18 @@ export async function handleCssLeadNotify(rawBody, options = {}) {
   const config = options.config || getConfig();
   const fetchImpl = options.fetchImpl;
   const clientIp = options.clientIp || 'unknown';
+  const now = options.now || (() => Date.now());
 
   if (rawBody && rawBody.honeypot) {
     return { status: 200, body: { ok: true } };
   }
   if (rawBody && typeof rawBody.formStartedAt === 'string') {
     const started = Date.parse(rawBody.formStartedAt);
-    if (!Number.isNaN(started) && Date.now() - started < MIN_FILL_SECONDS * 1000) {
+    const fillMs = now() - started;
+    // fillMs must also be non-negative: a future-dated formStartedAt produces a
+    // negative diff that would otherwise look like an implausibly fast fill and be
+    // silently discarded here instead of honestly rejected by the age check below.
+    if (!Number.isNaN(started) && fillMs >= 0 && fillMs < MIN_FILL_SECONDS * 1000) {
       return { status: 200, body: { ok: true } };
     }
   }
@@ -339,6 +378,18 @@ export async function handleCssLeadNotify(rawBody, options = {}) {
   const { valid, errors } = validatePayload(rawBody);
   if (!valid) {
     return { status: 400, body: { ok: false, error: 'validation_failed', fields: errors } };
+  }
+
+  // Age bound: a request whose form was started too long ago — or implausibly far in
+  // the future — is rejected outright, before touching idempotency state or sending
+  // anything. See the SUBMISSION_TTL_SECONDS comment for why this makes an expired
+  // KV record and an accepted request mutually exclusive.
+  const ageState = checkFormAge(rawBody.formStartedAt, now());
+  if (ageState === 'expired') {
+    return { status: 410, body: { ok: false, error: 'submission_expired' } };
+  }
+  if (ageState === 'future') {
+    return { status: 400, body: { ok: false, error: 'invalid_timing' } };
   }
 
   if (!config.complete) {
@@ -351,14 +402,15 @@ export async function handleCssLeadNotify(rawBody, options = {}) {
     return { status: 503, body: { ok: false, error: 'storage_unavailable' } };
   }
 
+  const nowMs = now();
   const ipHash = hashIp(clientIp, config.ipHashSecret);
-  const withinLimit = await checkRateLimit(kv, ipHash);
+  const withinLimit = await checkRateLimit(kv, ipHash, nowMs);
   if (!withinLimit) {
     return { status: 429, body: { ok: false, error: 'rate_limited' } };
   }
 
   const payloadHash = hashPayload(rawBody);
-  const claim = await claimSubmission(kv, rawBody.submissionId, payloadHash);
+  const claim = await claimSubmission(kv, rawBody.submissionId, payloadHash, nowMs);
 
   if (claim.action === 'already_sent') {
     return { status: 200, body: { ok: true } };
@@ -387,11 +439,11 @@ export async function handleCssLeadNotify(rawBody, options = {}) {
   });
 
   if (result.confirmed) {
-    await finalizeSubmission(kv, rawBody.submissionId, payloadHash, 'sent', claim.attempts);
+    await finalizeSubmission(kv, rawBody.submissionId, payloadHash, 'sent', claim.attempts, now());
     return { status: 200, body: { ok: true } };
   }
 
-  await finalizeSubmission(kv, rawBody.submissionId, payloadHash, 'failed', claim.attempts);
+  await finalizeSubmission(kv, rawBody.submissionId, payloadHash, 'failed', claim.attempts, now());
   return { status: 502, body: { ok: false, error: 'delivery_failed' } };
 }
 

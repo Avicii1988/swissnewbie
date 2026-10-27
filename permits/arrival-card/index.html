@@ -366,14 +366,15 @@ window.addEventListener('scroll',function(){
 (function(){
   var KEY='sn_voucher_clicks';
   function getC(){try{return JSON.parse(localStorage.getItem(KEY)||'{}');}catch(e){return{};}}
+  function cssqIsExternal(href){if(!href)return false;try{var u=new URL(href,location.href);var h=u.hostname.replace(/^www\./,'');return h!=='swissnewbie.ch';}catch(e){return false;}}
   document.addEventListener('click',function(e){
     var el=e.target.closest('[data-voucher-id]');
-    if(!el){var lnk=e.target.closest('.vg-link,.vg-actions a');if(lnk){var card=lnk.closest('.vg-card');if(card){el=card.querySelector('[data-voucher-id]');if(!el){var nm=card.querySelector('.vg-name');if(nm){try{fetch('/api/voucher-notify',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({code:nm.textContent.trim().replace(/\s+/g,'-').slice(0,20),page:location.href,ts:new Date().toISOString(),ua:navigator.userAgent.slice(0,120)})}).catch(function(){});}catch(er){}return;}}}}}
+    if(!el){var lnk=e.target.closest('.vg-link,.vg-actions a');if(lnk){var card=lnk.closest('.vg-card');if(card){el=card.querySelector('[data-voucher-id]');if(!el){var nm=card.querySelector('.vg-name');if(nm){if(cssqIsExternal(lnk&&lnk.href)){try{fetch('/api/voucher-notify',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({code:nm.textContent.trim().replace(/\s+/g,'-').slice(0,20),page:location.href,ts:new Date().toISOString(),ua:navigator.userAgent.slice(0,120)})}).catch(function(){});}catch(er){}}return;}}}}}
     if(!el)return;
     var code=el.getAttribute('data-voucher-id'),today=new Date().toISOString().slice(0,10);
     var d=getC();if(!d[today])d[today]={};d[today][code]=(d[today][code]||0)+1;
     try{localStorage.setItem(KEY,JSON.stringify(d));}catch(e){}
-    try{fetch('/api/voucher-notify',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({code:code,page:location.href,ts:new Date().toISOString(),ua:navigator.userAgent.slice(0,120)})}).catch(function(){});}catch(er){}
+    var __h=(typeof lnk!=='undefined'&&lnk)?lnk.href:(el.tagName==='A'?el.href:null);if(cssqIsExternal(__h)){try{fetch('/api/voucher-notify',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({code:code,page:location.href,ts:new Date().toISOString(),ua:navigator.userAgent.slice(0,120)})}).catch(function(){});}catch(er){}}
   },true);
 })();
 </script>
