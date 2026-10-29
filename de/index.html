@@ -1029,16 +1029,20 @@ function downloadArticle(articleId) {
         el.classList.remove('copied');
       }, 2000);
     }).catch(() => {
-      try {
-        const ta = document.createElement('textarea');
-        ta.value = code;
-        ta.style.position = 'fixed';
-        ta.style.opacity = '0';
-        document.body.appendChild(ta);
-        ta.select();
-        document.execCommand('copy');
-        document.body.removeChild(ta);
-      } catch(e) {}
+    const ta = document.createElement('textarea');
+    let copied = false;
+    try {
+      ta.value = code;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      copied = document.execCommand('copy') === true;
+    } catch (e) {
+      copied = false;
+    }
+    if (ta.parentNode) ta.parentNode.removeChild(ta);
+    if (copied) {
       el.textContent = '✓ Copied!';
       el.classList.add('copied');
       try { fetch('/api/voucher-notify', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ code: vid, page: location.href, ts: new Date().toISOString(), ua: navigator.userAgent.slice(0, 120) }) }).catch(() => {}); } catch (e) {}
@@ -1046,7 +1050,10 @@ function downloadArticle(articleId) {
         el.textContent = orig;
         el.classList.remove('copied');
       }, 2000);
-    });
+    } else {
+      alert('Code: ' + code);
+    }
+  });
   }
   const translations = {
     EN: {},
