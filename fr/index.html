@@ -1020,40 +1020,52 @@ function downloadArticle(articleId) {
   function copyCode(el, code) {
     const orig = el.textContent;
     const vid = (el.getAttribute && el.getAttribute('data-voucher-id')) || code;
-    navigator.clipboard.writeText(code).then(() => {
-      el.textContent = '✓ Copied!';
-      el.classList.add('copied');
-      try { fetch('/api/voucher-notify', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ code: vid, page: location.href, ts: new Date().toISOString(), ua: navigator.userAgent.slice(0, 120) }) }).catch(() => {}); } catch (e) {}
-      setTimeout(() => {
-        el.textContent = orig;
-        el.classList.remove('copied');
-      }, 2000);
-    }).catch(() => {
-    const ta = document.createElement('textarea');
-    let copied = false;
-    try {
-      ta.value = code;
-      ta.style.position = 'fixed';
-      ta.style.opacity = '0';
-      document.body.appendChild(ta);
-      ta.select();
-      copied = document.execCommand('copy') === true;
-    } catch (e) {
-      copied = false;
-    }
-    if (ta.parentNode) ta.parentNode.removeChild(ta);
-    if (copied) {
-      el.textContent = '✓ Copied!';
-      el.classList.add('copied');
-      try { fetch('/api/voucher-notify', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ code: vid, page: location.href, ts: new Date().toISOString(), ua: navigator.userAgent.slice(0, 120) }) }).catch(() => {}); } catch (e) {}
-      setTimeout(() => {
-        el.textContent = orig;
-        el.classList.remove('copied');
-      }, 2000);
+
+    const onCopied = () => {
+      try {
+        el.textContent = '✓ Copied!';
+        el.classList.add('copied');
+        try { fetch('/api/voucher-notify', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ code: vid, page: location.href, ts: new Date().toISOString(), ua: navigator.userAgent.slice(0, 120) }) }).catch(() => {}); } catch (e) {}
+        setTimeout(() => {
+          el.textContent = orig;
+          el.classList.remove('copied');
+        }, 2000);
+      } catch (e) {}
+    };
+
+    const fallbackCopy = () => {
+      const ta = document.createElement('textarea');
+      let copied = false;
+      try {
+        ta.value = code;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        copied = document.execCommand('copy') === true;
+      } catch (e) {
+        copied = false;
+      }
+      if (ta.parentNode) ta.parentNode.removeChild(ta);
+      if (copied) {
+        onCopied();
+      } else {
+        alert('Code : ' + code);
+      }
+    };
+
+    const hasClipboard = !!(navigator.clipboard && typeof navigator.clipboard.writeText === 'function');
+    if (hasClipboard) {
+      let p;
+      try { p = navigator.clipboard.writeText(code); } catch (e) { p = null; }
+      if (p && typeof p.then === 'function') {
+        p.then(onCopied, fallbackCopy);
+      } else {
+        fallbackCopy();
+      }
     } else {
-      alert('Code : ' + code);
+      fallbackCopy();
     }
-  });
   }
   const translations = {
     EN: {},

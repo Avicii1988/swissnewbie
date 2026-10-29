@@ -252,22 +252,31 @@ function faqToggle(el){el.closest('.faq-item').classList.toggle('open');}
 function openTopic(id){window.location.href="/?section="+id;}
 function copyCode(el,code){
   var orig=el.textContent;var vid=(el.getAttribute&&el.getAttribute('data-voucher-id'))||code;
-  navigator.clipboard.writeText(code).then(function(){
-    el.textContent='✓ Copied!';el.classList.add('copied');try{fetch('/api/voucher-notify',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({code:vid,page:location.href,ts:new Date().toISOString(),ua:navigator.userAgent.slice(0,120)})}).catch(function(){});}catch(e){}
-    setTimeout(function(){el.textContent=orig;el.classList.remove('copied');},2000);
-  }).catch(function(){
-    var __ta=document.createElement('textarea');var __copied=false;
-    try{__ta.value=code;document.body.appendChild(__ta);__ta.select();__copied=(document.execCommand('copy')===true);}catch(e){__copied=false;}
-    if(__ta.parentNode)__ta.parentNode.removeChild(__ta);
-    if(__copied){
+
+  function __onCopied(){
+    try{
       el.textContent='✓ Copied!';el.classList.add('copied');
       try{fetch('/api/voucher-notify',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({code:vid,page:location.href,ts:new Date().toISOString(),ua:navigator.userAgent.slice(0,120)})}).catch(function(){});}catch(e){}
       setTimeout(function(){el.textContent=orig;el.classList.remove('copied');},2000);
-    }else{
-      alert('Code: '+code);
-    }
-  });
-}
+    }catch(e){}
+  }
+
+  function __fallbackCopy(){
+    var __ta=document.createElement('textarea');var __copied=false;
+    try{__ta.value=code;document.body.appendChild(__ta);__ta.select();__copied=(document.execCommand('copy')===true);}catch(e){__copied=false;}
+    if(__ta.parentNode)__ta.parentNode.removeChild(__ta);
+    if(__copied){__onCopied();}else{alert('Code: '+code);}
+  }
+
+  var __hasClipboard=!!(navigator.clipboard&&typeof navigator.clipboard.writeText==='function');
+  if(__hasClipboard){
+    var __p;
+    try{__p=navigator.clipboard.writeText(code);}catch(e){__p=null;}
+    if(__p&&typeof __p.then==='function'){__p.then(__onCopied,__fallbackCopy);}else{__fallbackCopy();}
+  }else{
+    __fallbackCopy();
+  }
+  }
 document.addEventListener('click',function(e){
   if(!e.target.closest('.nav-dd-wrap')){
     document.querySelectorAll('.nav-dd-wrap.open').forEach(function(w){w.classList.remove('open');});
