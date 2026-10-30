@@ -503,7 +503,7 @@
       "benefitSourceUrl": "https://www.frankly.ch/de/empfehlung?code=refjf7c46",
       "_benefitNote": "CHF 35 fee voucher verified via referral code refjf7c46 in active dashboard. 48-hour new-customer code condition applies.",
       "referrerReward": {
-        "text": "CHF 35 fee voucher",
+        "text": "Rewarded referral — disclosed via footer/referral-policy, not per card",
         "verifiedAsOf": "2026-09-19"
       },
       "visitorBenefit": {
@@ -550,7 +550,7 @@
       "benefitSourceUrl": "https://www.ubs.com/ch/en/services/private/referrals.html",
       "_benefitNote": "Verified 5 Oct 2026 against the current code-based referral program at /services/private/referrals.html (participation and promotion terms valid from 23 September 2026) — NOT the old /services/private/recommend.html or the KeyClub collecting-rules pages, which still describe the superseded flat-50-point program. Reward depends on the UBS credit card actually issued to the new customer, not just the package selected: 40 points each (referrer and newcomer) with no UBS credit card (prepaid/none — even if a higher package was selected), 80 each with Classic, 100 each with Gold, 150 each with Platinum. 1 KeyClub point = CHF 1 redemption value in the KeyClub eStore only — no cash payout. Eligibility: newcomer generally has no UBS banking relationship in the previous 24 months (exceptions listed in the terms), is at least 15, resides in Switzerland; at least a UBS Personal Account required; both participants need active Digital Banking and digital KeyClub accounts; selected products must be activated. Code is entered and redeemed AFTER onboarding, within 30 calendar days — not during account opening. Reward level depends on the onboarding date. Referral-code sharing is restricted to personal contacts; public sharing on websites/forums/social media is classified as misuse and can lead to exclusion and reward clawback — do not present the publicly listed code XXOJWZ as guaranteed valid or guaranteed to earn a reward. No separate pension/3a bonus exists.",
       "referrerReward": {
-        "text": "Same as the newcomer: 40 points with no UBS credit card issued, 80 with Classic, 100 with Gold, 150 with Platinum; 1 point = CHF 1 in the KeyClub eStore, not cash",
+        "text": "Rewarded referral — disclosed via footer/referral-policy, not per card",
         "verifiedAsOf": "2026-10-05"
       },
       "visitorBenefit": {
@@ -689,7 +689,7 @@
       "benefitSourceUrl": "https://app.smile-insurances.ch/rewards/jan533a2",
       "_benefitNote": "Verified: each party receives 3,400 points worth CHF 40 after an eligible contract via personal invitation link/code JAN533A2. Prefer 'CHF 40 for you' to 'up to CHF 40'; do not state the referrer's share anywhere on the page.",
       "referrerReward": {
-        "text": "3,400 Smile points = CHF 40 value, per eligible contract",
+        "text": "Rewarded referral — disclosed via footer/referral-policy, not per card",
         "verifiedAsOf": "2026-09-19"
       },
       "visitorBenefit": {
@@ -735,7 +735,7 @@
       "benefitVerifiedAsOf": "2026-09-19",
       "benefitSourceUrl": "https://app.smile-insurances.ch/rewards/jan533a2",
       "referrerReward": {
-        "text": "3,400 Smile points = CHF 40 value, per eligible contract",
+        "text": "Rewarded referral — disclosed via footer/referral-policy, not per card",
         "verifiedAsOf": "2026-09-19"
       },
       "visitorBenefit": {
