@@ -17,7 +17,7 @@
     "offerEligibility": [
       {
         "offerId": "ibkr-investing",
-        "benefitPerEligiblePerson": "Up to USD 1,000 in IBKR shares per IBKR's own refer-a-friend terms; amount and eligibility set by IBKR, not guaranteed. The USD 200 flat reward belongs to SwissNewbie as the referrer and is NOT a household/visitor benefit — excluded from this family's guaranteed total.",
+        "benefitPerEligiblePerson": "Up to USD 1,000 in IBKR shares per IBKR's own refer-a-friend terms; amount and eligibility set by IBKR, not guaranteed — excluded from this family's guaranteed total.",
         "maxEligiblePerHousehold": 2,
         "adultOnly": true,
         "minorEligible": false,
@@ -116,18 +116,18 @@
         "maxEligiblePerHousehold": 4,
         "adultOnly": false,
         "minorEligible": true,
-        "conditions": "Via SWICA referral link to the Generalagentur Rapperswil-Jona consultation request page; saving reflects realistic benefit from choosing a suitable model and deductible — not a direct cash referral benefit and not tied to the consultation itself. Telmed/GP model: 12–20% lower premium vs standard. Depends on canton, age and cover. Methodology: Priminfo comparison.",
+        "conditions": "Via SWICA referral link to the SWICA consultation request page; saving reflects realistic benefit from choosing a suitable model and deductible — not a direct cash referral benefit and not tied to the consultation itself. Telmed/GP model: 12–20% lower premium vs standard. Depends on canton, age and cover. Methodology: Priminfo comparison.",
         "stacksPerPerson": true,
         "scope": "per-person",
         "year1ChfConservativeEstimate": { "per_adult": 375, "per_child": 75 }
       },
       {
         "offerId": "mobility-carsharing",
-        "benefitPerEligiblePerson": "CHF 20 driving credit for the eligible referrer",
+        "benefitPerEligiblePerson": "Visitor benefit shown by Mobility — not included in basket",
         "maxEligiblePerHousehold": 1,
         "adultOnly": true,
         "minorEligible": false,
-        "conditions": "CHF 20 driving credit verified for referrer per public Mobility terms; visitor benefit shown by provider — not included in basket",
+        "conditions": "Visitor benefit shown by provider — not included in basket",
         "stacksPerPerson": false,
         "scope": "per-household"
       }
@@ -158,8 +158,8 @@
         "description": "Established resident family: existing Sunrise subscription qualifies for Family Benefit, each adult deposits USD 10,000+ at IBKR (held 1 year), both own a car, full pension/banking offers activated",
         "year1TotalChf": 1774,
         "items": [
-          { "item": "IBKR shares — Adult A (USD 10k+ deposit, 1yr hold → flat USD 200 ≈ CHF 192)", "offerId": "ibkr-investing", "eligiblePersons": 1, "chfPerPerson": 192, "chf": 192 },
-          { "item": "IBKR shares — Adult B (USD 10k+ deposit, 1yr hold → flat USD 200 ≈ CHF 192)", "offerId": "ibkr-investing", "eligiblePersons": 1, "chfPerPerson": 192, "chf": 192 },
+          { "item": "IBKR shares — Adult A (USD 10k+ deposit, 1yr hold, ≈ CHF 192)", "offerId": "ibkr-investing", "eligiblePersons": 1, "chfPerPerson": 192, "chf": 192 },
+          { "item": "IBKR shares — Adult B (USD 10k+ deposit, 1yr hold, ≈ CHF 192)", "offerId": "ibkr-investing", "eligiblePersons": 1, "chfPerPerson": 192, "chf": 192 },
           { "item": "Sunrise Family Benefit — Adult A (50% off Swiss Connect M × 12 mo = CHF 210)", "offerId": "sunrise-mobile-family", "eligiblePersons": 1, "chfPerPerson": 210, "chf": 210 },
           { "item": "Sunrise Family Benefit — Adult B (50% off Swiss Connect M × 12 mo = CHF 210)", "offerId": "sunrise-mobile-family", "eligiblePersons": 1, "chfPerPerson": 210, "chf": 210 },
           { "item": "yallo internet — household", "offerId": "yallo-internet", "eligiblePersons": 1, "chfPerPerson": 100, "chf": 100 },
@@ -178,8 +178,8 @@
         "description": "Both adults deposit USD 10,000+ at IBKR (held 1 year, subject to the 15-referral program cap), both have Sunrise Family Benefit qualifying subscriptions, both own a car, full pension/banking offers, family switches to optimal health insurance model",
         "year1TotalChf": 2074,
         "items": [
-          { "item": "IBKR shares — Adult A (USD 10k+ deposit, 1yr hold → flat USD 200 ≈ CHF 192)", "offerId": "ibkr-investing", "eligiblePersons": 1, "chfPerPerson": 192, "chf": 192 },
-          { "item": "IBKR shares — Adult B (USD 10k+ deposit, 1yr hold → flat USD 200 ≈ CHF 192)", "offerId": "ibkr-investing", "eligiblePersons": 1, "chfPerPerson": 192, "chf": 192 },
+          { "item": "IBKR shares — Adult A (USD 10k+ deposit, 1yr hold, ≈ CHF 192)", "offerId": "ibkr-investing", "eligiblePersons": 1, "chfPerPerson": 192, "chf": 192 },
+          { "item": "IBKR shares — Adult B (USD 10k+ deposit, 1yr hold, ≈ CHF 192)", "offerId": "ibkr-investing", "eligiblePersons": 1, "chfPerPerson": 192, "chf": 192 },
           { "item": "Sunrise Family Benefit — Adult A (50% off Swiss Connect M × 12 mo = CHF 210)", "offerId": "sunrise-mobile-family", "eligiblePersons": 1, "chfPerPerson": 210, "chf": 210 },
           { "item": "Sunrise Family Benefit — Adult B (50% off Swiss Connect M × 12 mo = CHF 210)", "offerId": "sunrise-mobile-family", "eligiblePersons": 1, "chfPerPerson": 210, "chf": 210 },
           { "item": "yallo internet — household", "offerId": "yallo-internet", "eligiblePersons": 1, "chfPerPerson": 100, "chf": 100 },
@@ -195,7 +195,7 @@
         ]
       }
     ],
-    "_note": "Headline 'CHF 2,000+' total first-year value was supported by a 'maximum' scenario of CHF 2,074, which included CHF 384 (2 adults x CHF 192) from IBKR. CORRECTION (6 Oct 2026): that CHF 192/adult figure wrongly counted IBKR's referrer-only USD 200 reward as a visitor/household benefit — the USD 200 belongs to SwissNewbie as the referrer, not to the family. IBKR's actual visitor benefit (up to USD 1,000 in IBKR shares, amount and eligibility set by IBKR) is variable and not guaranteed, so it is now excluded from this guaranteed-total calculation (year1ChfByDeposit set to 0 in the ibkr-investing entry above). This means the 'maximum' scenario is now CHF ~1,690, below the CHF 2,000+ headline — the headline, headlineClaim and this family4PersonMatrix's totals have NOT yet been re-verified against this change and should be re-audited/re-written before being treated as current. UBS banking is counted at the conservative CHF 40 (lowest/Easy-package) tier of the real CHF 40-150 refer-a-friend range; the previous UBS 3a/pension KeyClub line item was removed in Oct 2026 because that bonus does not exist (UBS confirms CHF 250 only for mortgage referrals, not pension/3a). Health insurance entries document realistic savings from suitable product selection (not a direct cash referral benefit). Review annually or when any provider terms change."
+    "_note": "IBKR's visitor benefit (up to USD 1,000 in IBKR shares, amount and eligibility set by IBKR) is variable and not guaranteed, so it is excluded from the per-offer eligibility total (year1ChfByDeposit set to 0 in the ibkr-investing entry above). The IBKR line items in the 'strong' and 'maximum' scenarios and the CHF 2,000+ headline have not yet been re-verified against this and should be re-audited before being treated as current. UBS banking is counted at the conservative CHF 40 (lowest/Easy-package) tier of the real CHF 40-150 refer-a-friend range; the previous UBS 3a/pension KeyClub line item was removed in Oct 2026 because that bonus does not exist (UBS confirms CHF 250 only for mortgage referrals, not pension/3a). Health insurance entries document realistic savings from suitable product selection (not a direct cash referral benefit). Review annually or when any provider terms change."
   },
 
   "globalDisclosurePolicy": {
@@ -595,16 +595,16 @@
       },
       "benefitVerifiedAsOf": "2026-10-06",
       "benefitSourceUrl": "https://ibkr.com/referral/jan354",
-      "_benefitNote": "The USD 200 referral reward goes to the REFERRER (SwissNewbie) only and must never be shown as a visitor/newcomer bonus. The visitor (newcomer who signs up via the link) is eligible for up to USD 1,000 in IBKR stock under IBKR's own refer-a-friend program; the exact amount and eligibility are determined by IBKR at activation, not by SwissNewbie — do not state a flat/guaranteed dollar figure for the visitor. Corrected 6 Oct 2026 after the card copy incorrectly presented the referrer's USD 200 as a visitor-facing bonus.",
+      "_benefitNote": "The visitor (newcomer who signs up via the link) is eligible for up to USD 1,000 in IBKR stock under IBKR's own refer-a-friend program; the exact amount and eligibility are determined by IBKR at activation, not by SwissNewbie — do not state a flat/guaranteed dollar figure for the visitor.",
       "referrerReward": {
-        "text": "USD 200 — paid to SwissNewbie as the referrer, not to the visitor",
+        "text": "Rewarded referral — disclosed via footer/referral-policy, not per card",
         "verifiedAsOf": "2026-10-06"
       },
       "visitorBenefit": {
         "text": "Up to USD 1,000 in IBKR shares — terms on IBKR.com",
         "verifiedAsOf": "2026-10-06"
       },
-      "activationConditions": "New IBKR account via referral link. Visitor's share reward (up to USD 1,000) and its conditions are set by IBKR and shown on ibkr.com — not a flat guaranteed figure. The USD 200 referrer reward belongs to SwissNewbie and is not part of the visitor's benefit.",
+      "activationConditions": "New IBKR account via referral link. Visitor's share reward (up to USD 1,000) and its conditions are set by IBKR and shown on ibkr.com — not a flat guaranteed figure.",
       "minimumTerm": "IBKR terms apply — shares vest over time",
       "providerUrl": {
         "en": "https://ibkr.com/referral/jan354",
@@ -635,22 +635,22 @@
       "claimStatus": "conditional",
       "benefitType": "consultation",
       "benefitText": {
-        "en": "Personal health insurance consultation request with the SWICA Generalagentur Rapperswil-Jona",
-        "de": "Persönliche Krankenversicherungsberatung bei der SWICA Generalagentur Rapperswil-Jona anfragen",
-        "fr": "Demande de conseil personnalisé en assurance maladie auprès de l'agence générale SWICA Rapperswil-Jona"
+        "en": "Personal health insurance consultation request with SWICA",
+        "de": "Persönliche Krankenversicherungsberatung bei SWICA anfragen",
+        "fr": "Demande de conseil personnalisé en assurance maladie auprès de SWICA"
       },
       "benefitVerifiedAsOf": "2026-10-30",
       "benefitSourceUrl": "https://www.swica.ch/swissnewbie",
-      "_benefitNote": "SWICA leadvermittlervertrag (signed Oct 2026) replaced the old crmstudio.swica.ch customer-get-customer referral link with https://www.swica.ch/swissnewbie — a consultation-request landing page for the SWICA Generalagentur Rapperswil-Jona. That page does not state the consultation is free, so do not claim 'free'/'gratis'/'kostenlos'/'gratuit' anywhere for this offer. No confirmed monetary benefit from SWICA — do not state a CHF amount or promise a gift code anywhere on the site. Never present SWICA as the cheapest insurer or as a 'best deal' — only as top-rated for expats (Comparis 2025 satisfaction rating is supportable) if used elsewhere, not as part of this offer's own claim.",
+      "_benefitNote": "Editorial rule: do not describe this consultation as free ('free'/'gratis'/'kostenlos'/'gratuit'), do not state a CHF amount or promise a gift code, and never present SWICA as the cheapest insurer or as a 'best deal'.",
       "referrerReward": {
         "text": "Rewarded referral — disclosed via footer/referral-policy, not per card",
         "verifiedAsOf": "2026-10-30"
       },
       "visitorBenefit": {
-        "text": "Personal consultation request with the SWICA Generalagentur Rapperswil-Jona. No confirmed monetary benefit.",
+        "text": "Personal consultation request with SWICA. No confirmed monetary benefit.",
         "verifiedAsOf": "2026-10-30"
       },
-      "activationConditions": "Via SWICA referral link to the Generalagentur Rapperswil-Jona consultation request page. Insurance contract terms per SWICA.",
+      "activationConditions": "Via SWICA referral link to the SWICA consultation request page. Insurance contract terms per SWICA.",
       "minimumTerm": null,
       "providerUrl": {
         "en": "https://www.swica.ch/swissnewbie",
@@ -774,22 +774,22 @@
       "claimStatus": "conditional",
       "benefitType": "driving_credit",
       "benefitText": {
-        "en": "CHF 20 driving credit for the eligible referrer — visitor benefit shown by Mobility",
-        "de": "CHF 20 Fahrguthaben für den berechtigten Empfehler — Besucher-Vorteil wird von Mobility angezeigt",
-        "fr": "CHF 20 de crédit de conduite pour le parrain éligible — avantage visiteur indiqué par Mobility"
+        "en": "Visitor benefit shown by Mobility",
+        "de": "Besucher-Vorteil wird von Mobility angezeigt",
+        "fr": "Avantage visiteur indiqué par Mobility"
       },
       "benefitVerifiedAsOf": "2026-09-19",
       "benefitSourceUrl": "https://www.mobility.ch/de/download-mobility-app",
-      "_benefitNote": "Public terms verify CHF 20 driving credit for the eligible REFERRER. Visitor benefit is NOT confirmed — do not promise visitors CHF 20 unless the linked journey proves it.",
+      "_benefitNote": "Visitor benefit is NOT confirmed — do not promise visitors a CHF amount unless the linked journey proves it.",
       "referrerReward": {
-        "text": "CHF 20 driving credit (verified in public terms for eligible referrer)",
+        "text": "Rewarded referral — disclosed via footer/referral-policy, not per card",
         "verifiedAsOf": "2026-09-19"
       },
       "visitorBenefit": {
         "text": "Benefit shown by provider — check Mobility app for current offer",
         "verifiedAsOf": "2026-09-19"
       },
-      "activationConditions": "Via Mobility referral link. Referrer reward: CHF 20 driving credit per Mobility public terms. Visitor benefit: check Mobility app.",
+      "activationConditions": "Via Mobility referral link. Visitor benefit: check Mobility app.",
       "minimumTerm": null,
       "providerUrl": {
         "en": "https://www.mobility.ch/en/download-mobility-app",
@@ -876,14 +876,14 @@
     {
       "provider": "Mobility",
       "offerId": "mobility-carsharing",
-      "fieldsNeeded": ["Visitor welcome credit: confirm amount and attribution mechanism via linked journey", "Referral credit confirmation: CHF 20 for referrer per public terms"],
+      "fieldsNeeded": ["Visitor welcome credit: confirm amount and attribution mechanism via linked journey", "Referral terms current per Mobility public terms"],
       "source": "Mobility referral landing page / public terms"
     },
     {
       "provider": "SWICA",
       "offerId": "swica-health",
-      "fieldsNeeded": ["Confirm no exclusive visitor cash benefit", "Referrer reward amount and condition"],
-      "source": "SWICA leadvermittlervertrag (signed Oct 2026); SwissNewbie-specific landing page confirmed: https://www.swica.ch/swissnewbie"
+      "fieldsNeeded": ["Confirm no exclusive visitor cash benefit", "Referral terms current"],
+      "source": "SwissNewbie-specific landing page confirmed: https://www.swica.ch/swissnewbie"
     },
     {
       "provider": "Wise",

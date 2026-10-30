@@ -167,7 +167,7 @@ if (scanHtml) {
     { pattern: /\/private\/recommendation\.html/i, description: 'Old UBS URL (should be /services/private/referrals.html)' },
     { pattern: /\/services\/private\/recommend\.html/i, description: 'Superseded UBS URL — the old 50-point recommend.html page; the current code-based program is at /services/private/referrals.html' },
     { pattern: /UBS key4 Banking/i, description: 'Stale UBS banking-referral card title — the verified reward is for the UBS Banking offering, not a key4-specific promise; use "UBS Banking"' },
-    { pattern: /crmstudio\.swica\.ch/i, description: 'Old SWICA customer-get-customer referral URL — replaced by https://www.swica.ch/swissnewbie (SWICA Generalagentur Rapperswil-Jona leadvermittlervertrag, Oct 2026)' },
+    { pattern: /crmstudio\.swica\.ch/i, description: 'Old SWICA customer-get-customer referral URL — replaced by https://www.swica.ch/swissnewbie (Oct 2026)' },
   ];
 
   // Footer global disclosure check: every page must contain referral-policy link
