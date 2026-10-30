@@ -112,11 +112,11 @@
       },
       {
         "offerId": "swica-health",
-        "benefitPerEligiblePerson": "Free consultation; realistic saving from selecting suitable health insurance model and deductible",
+        "benefitPerEligiblePerson": "Consultation request; realistic saving from selecting suitable health insurance model and deductible",
         "maxEligiblePerHousehold": 4,
         "adultOnly": false,
         "minorEligible": true,
-        "conditions": "Via SWICA referral link; consultation is free; saving reflects realistic benefit from choosing a suitable model and deductible — not a direct cash referral benefit. Telmed/GP model: 12–20% lower premium vs standard. Depends on canton, age and cover. Methodology: Priminfo comparison.",
+        "conditions": "Via SWICA referral link to the Generalagentur Rapperswil-Jona consultation request page; saving reflects realistic benefit from choosing a suitable model and deductible — not a direct cash referral benefit and not tied to the consultation itself. Telmed/GP model: 12–20% lower premium vs standard. Depends on canton, age and cover. Methodology: Priminfo comparison.",
         "stacksPerPerson": true,
         "scope": "per-person",
         "year1ChfConservativeEstimate": { "per_adult": 375, "per_child": 75 }
@@ -635,32 +635,32 @@
       "claimStatus": "conditional",
       "benefitType": "consultation",
       "benefitText": {
-        "en": "Free, non-binding consultation and comparison of your health insurance options with SWICA",
-        "de": "Kostenlose, unverbindliche Beratung und Vergleich deiner Krankenversicherungsoptionen bei SWICA",
-        "fr": "Consultation gratuite et sans engagement pour comparer tes options d'assurance maladie chez SWICA"
+        "en": "Personal health insurance consultation request with the SWICA Generalagentur Rapperswil-Jona",
+        "de": "Persönliche Krankenversicherungsberatung bei der SWICA Generalagentur Rapperswil-Jona anfragen",
+        "fr": "Demande de conseil personnalisé en assurance maladie auprès de l'agence générale SWICA Rapperswil-Jona"
       },
-      "benefitVerifiedAsOf": "2026-10-04",
-      "benefitSourceUrl": "https://crmstudio.swica.ch/public/e/l/empfehlung?id=de83f6e0-0700-4dee-92ff-d499423a6918",
-      "_benefitNote": "No confirmed monetary benefit from SWICA — do not state a CHF amount or promise a gift code anywhere on the site. The only confirmed benefit is the free, non-binding consultation itself. Never present SWICA as the cheapest insurer — only as top-rated for expats (Comparis 2025 satisfaction rating is supportable). Remove 'Best deal for expats via SwissNewbie' exclusivity and 'Get best deal' CTA.",
+      "benefitVerifiedAsOf": "2026-10-30",
+      "benefitSourceUrl": "https://www.swica.ch/swissnewbie",
+      "_benefitNote": "SWICA leadvermittlervertrag (signed Oct 2026) replaced the old crmstudio.swica.ch customer-get-customer referral link with https://www.swica.ch/swissnewbie — a consultation-request landing page for the SWICA Generalagentur Rapperswil-Jona. That page does not state the consultation is free, so do not claim 'free'/'gratis'/'kostenlos'/'gratuit' anywhere for this offer. No confirmed monetary benefit from SWICA — do not state a CHF amount or promise a gift code anywhere on the site. Never present SWICA as the cheapest insurer or as a 'best deal' — only as top-rated for expats (Comparis 2025 satisfaction rating is supportable) if used elsewhere, not as part of this offer's own claim.",
       "referrerReward": {
-        "text": "Rewarded referral — disclosed on card",
-        "verifiedAsOf": "2026-10-04"
+        "text": "Rewarded referral — disclosed via footer/referral-policy, not per card",
+        "verifiedAsOf": "2026-10-30"
       },
       "visitorBenefit": {
-        "text": "Free, non-binding personalised consultation. No confirmed monetary benefit.",
-        "verifiedAsOf": "2026-10-04"
+        "text": "Personal consultation request with the SWICA Generalagentur Rapperswil-Jona. No confirmed monetary benefit.",
+        "verifiedAsOf": "2026-10-30"
       },
-      "activationConditions": "Via SWICA referral link. Consultation is free and non-binding. Insurance contract terms per SWICA.",
+      "activationConditions": "Via SWICA referral link to the Generalagentur Rapperswil-Jona consultation request page. Insurance contract terms per SWICA.",
       "minimumTerm": null,
       "providerUrl": {
-        "en": "https://crmstudio.swica.ch/public/e/l/empfehlung?id=de83f6e0-0700-4dee-92ff-d499423a6918",
-        "de": "https://crmstudio.swica.ch/public/e/l/empfehlung?id=de83f6e0-0700-4dee-92ff-d499423a6918",
-        "fr": "https://crmstudio.swica.ch/public/e/l/empfehlung?id=de83f6e0-0700-4dee-92ff-d499423a6918"
+        "en": "https://www.swica.ch/swissnewbie",
+        "de": "https://www.swica.ch/swissnewbie",
+        "fr": "https://www.swica.ch/swissnewbie"
       },
       "ctaText": {
-        "en": "Get SWICA consultation →",
-        "de": "SWICA-Beratung erhalten →",
-        "fr": "Obtenir une consultation SWICA →"
+        "en": "Request advice →",
+        "de": "Beratung anfordern →",
+        "fr": "Demander conseil →"
       },
       "commercialRelationship": "referral",
       "disclosure": {
@@ -670,7 +670,7 @@
       },
       "analyticsOfferId": "swica-health-referral",
       "placements": ["health-insurance", "health-insurance-switch", "vouchers", "homepage-overlay-health"],
-      "lastReviewed": "2026-10-04"
+      "lastReviewed": "2026-10-30"
     },
 
     {
@@ -882,8 +882,8 @@
     {
       "provider": "SWICA",
       "offerId": "swica-health",
-      "fieldsNeeded": ["Confirm no exclusive visitor cash benefit", "Referrer reward amount and condition", "SwissNewbie-specific landing page if any"],
-      "source": "SWICA partner portal"
+      "fieldsNeeded": ["Confirm no exclusive visitor cash benefit", "Referrer reward amount and condition"],
+      "source": "SWICA leadvermittlervertrag (signed Oct 2026); SwissNewbie-specific landing page confirmed: https://www.swica.ch/swissnewbie"
     },
     {
       "provider": "Wise",
