@@ -317,16 +317,17 @@ document.addEventListener('click',function(e){
 (function(){
   var KEY='sn_voucher_clicks';
   function getC(){try{return JSON.parse(localStorage.getItem(KEY)||'{}');}catch(e){return{};}}
+  function slotOf(el){try{var c=el&&(el.closest?el.closest('[data-voucher-slot]'):null);if(!c){var card=el&&(el.closest?el.closest('.vg-card,.dc-card'):null);c=card?card.querySelector('[data-voucher-slot]'):null;}if(c)return c.getAttribute('data-voucher-slot');var all=[].slice.call(document.querySelectorAll('[data-voucher-id]'));var i=all.indexOf(el);if(i<0){var card2=el&&(el.closest?el.closest('.vg-card,.dc-card'):null);var idel=card2?card2.querySelector('[data-voucher-id]'):null;i=idel?all.indexOf(idel):-1;}if(i>=0)return 'idx:'+(i+1)+'/'+all.length;}catch(e){}return '';}
   function cssqIsExternal(href){if(!href)return false;try{var u=new URL(href,location.href);var h=u.hostname.replace(/^www\./,'');return h!=='swissnewbie.ch';}catch(e){return false;}}
   document.addEventListener('click',function(e){
     var el=e.target.closest('[data-voucher-id]');
-    if(!el){var lnk=e.target.closest('.vg-link,.vg-actions a');if(lnk){var card=lnk.closest('.vg-card');if(card){el=card.querySelector('[data-voucher-id]');if(!el){var nm=card.querySelector('.vg-name');if(nm){if(cssqIsExternal(lnk&&lnk.href)){try{fetch('/api/voucher-notify',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({code:nm.textContent.trim().replace(/\s+/g,'-').slice(0,20),page:location.href,ts:new Date().toISOString(),ua:navigator.userAgent.slice(0,120)})}).catch(function(){});}catch(er){}}try{window.va&&window.va('event',{name:'voucher_click',data:{code:nm.textContent.trim().replace(/\s+/g,'-').slice(0,20),page:location.pathname}});}catch(e){}return;}}}}}
+    if(!el){var lnk=e.target.closest('.vg-link,.vg-actions a');if(lnk){var card=lnk.closest('.vg-card');if(card){el=card.querySelector('[data-voucher-id]');if(!el){var nm=card.querySelector('.vg-name');if(nm){if(cssqIsExternal(lnk&&lnk.href)){try{fetch('/api/voucher-notify',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({code:nm.textContent.trim().replace(/\s+/g,'-').slice(0,20),page:location.href,slot:slotOf(lnk),ts:new Date().toISOString(),ua:navigator.userAgent.slice(0,120)})}).catch(function(){});}catch(er){}}try{window.va&&window.va('event',{name:'voucher_click',data:{code:nm.textContent.trim().replace(/\s+/g,'-').slice(0,20),page:location.pathname,slot:slotOf(lnk)}});}catch(e){}return;}}}}}
     if(!el)return;
     var code=el.getAttribute('data-voucher-id'),today=new Date().toISOString().slice(0,10);
     var d=getC();if(!d[today])d[today]={};d[today][code]=(d[today][code]||0)+1;
     try{localStorage.setItem(KEY,JSON.stringify(d));}catch(e){}
-    var __h=(typeof lnk!=='undefined'&&lnk)?lnk.href:(el.tagName==='A'?el.href:null);if(cssqIsExternal(__h)){try{fetch('/api/voucher-notify',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({code:code,page:location.href,ts:new Date().toISOString(),ua:navigator.userAgent.slice(0,120)})}).catch(function(){});}catch(er){}}
-    try{window.va&&window.va('event',{name:'voucher_click',data:{code:code,page:location.pathname}});}catch(e){}
+    var __h=(typeof lnk!=='undefined'&&lnk)?lnk.href:(el.tagName==='A'?el.href:null);if(cssqIsExternal(__h)){try{fetch('/api/voucher-notify',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({code:code,page:location.href,slot:slotOf(el),ts:new Date().toISOString(),ua:navigator.userAgent.slice(0,120)})}).catch(function(){});}catch(er){}}
+    try{window.va&&window.va('event',{name:'voucher_click',data:{code:code,page:location.pathname,slot:slotOf(el)}});}catch(e){}
   },true);
 })();</script>
 <script>
