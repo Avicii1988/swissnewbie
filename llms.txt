@@ -22,6 +22,7 @@ The site also lists verified referral/voucher codes for Swiss providers (banking
 - [Swiss health insurance guide](https://www.swissnewbie.ch/health-insurance/): How mandatory basic insurance (LAMal/KVG) works, premiums, franchise, claims.
 - [Switch health insurance for 2027](https://www.swissnewbie.ch/health-insurance-switch/): How and when to switch insurer; cancellation deadline is 30 November 2026 for 2027 coverage; includes a cancellation letter template and a premium comparison link to priminfo.admin.ch.
 - [Premium subsidy (Prämienverbilligung/IPV)](https://www.swissnewbie.ch/health-insurance-subsidy-switzerland/): Cantonal income-based subsidy toward premiums; ~30% of residents receive one; rules are set per canton, not nationally.
+- [Health insurance for expats in Switzerland (2027)](https://www.swissnewbie.ch/health-insurance-expats-switzerland/): Mandatory basic insurance for residents, registration within three months of moving, retroactive cover, cost-sharing basics, switching for 2027 and comparing premiums on priminfo.admin.ch. German: https://www.swissnewbie.ch/de/krankenkasse-expats-schweiz/ · French: https://www.swissnewbie.ch/fr/assurance-maladie-expats-suisse/
 
 ## Finance and insurance
 

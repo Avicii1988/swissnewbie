@@ -5,7 +5,7 @@
   <!-- English (default) -->
   <url>
     <loc>https://www.swissnewbie.ch/</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en"        href="https://www.swissnewbie.ch/"/>
@@ -15,7 +15,7 @@
   </url>
   <url>
     <loc>https://www.swissnewbie.ch/health-insurance/</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en"        href="https://www.swissnewbie.ch/health-insurance/"/>
@@ -97,7 +97,7 @@
   <!-- German (DE) -->
   <url>
     <loc>https://www.swissnewbie.ch/de/</loc>
-    <lastmod>2026-09-19</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en"        href="https://www.swissnewbie.ch/"/>
@@ -107,7 +107,7 @@
   </url>
   <url>
     <loc>https://www.swissnewbie.ch/de/health-insurance/</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en"        href="https://www.swissnewbie.ch/health-insurance/"/>
@@ -189,7 +189,7 @@
   <!-- French (FR) -->
   <url>
     <loc>https://www.swissnewbie.ch/fr/</loc>
-    <lastmod>2026-09-19</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en"        href="https://www.swissnewbie.ch/"/>
@@ -199,7 +199,7 @@
   </url>
   <url>
     <loc>https://www.swissnewbie.ch/fr/health-insurance/</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en"        href="https://www.swissnewbie.ch/health-insurance/"/>
@@ -289,7 +289,7 @@
   <!-- ── NEW HUB PAGES ──────────────────────────────────────────────────── -->
   <url>
     <loc>https://www.swissnewbie.ch/moving-to-switzerland/</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en"        href="https://www.swissnewbie.ch/moving-to-switzerland/"/>
@@ -299,7 +299,7 @@
   </url>
   <url>
     <loc>https://www.swissnewbie.ch/de/umzug-schweiz/</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en"        href="https://www.swissnewbie.ch/moving-to-switzerland/"/>
@@ -309,7 +309,7 @@
   </url>
   <url>
     <loc>https://www.swissnewbie.ch/fr/sinstaller-en-suisse/</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en"        href="https://www.swissnewbie.ch/moving-to-switzerland/"/>
@@ -441,7 +441,7 @@
   </url>
   <url>
     <loc>https://www.swissnewbie.ch/first-90-days-switzerland/</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en"        href="https://www.swissnewbie.ch/first-90-days-switzerland/"/>
@@ -451,7 +451,7 @@
   </url>
   <url>
     <loc>https://www.swissnewbie.ch/de/erste-90-tage-schweiz/</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en"        href="https://www.swissnewbie.ch/first-90-days-switzerland/"/>
@@ -461,7 +461,7 @@
   </url>
   <url>
     <loc>https://www.swissnewbie.ch/fr/premiers-90-jours-suisse/</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en"        href="https://www.swissnewbie.ch/first-90-days-switzerland/"/>
@@ -622,7 +622,7 @@
 
   <url>
     <loc>https://www.swissnewbie.ch/health-insurance-switch/</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en"        href="https://www.swissnewbie.ch/health-insurance-switch/"/>
@@ -632,7 +632,7 @@
   </url>
   <url>
     <loc>https://www.swissnewbie.ch/de/health-insurance-switch/</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en"        href="https://www.swissnewbie.ch/health-insurance-switch/"/>
@@ -642,7 +642,7 @@
   </url>
   <url>
     <loc>https://www.swissnewbie.ch/fr/health-insurance-switch/</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en"        href="https://www.swissnewbie.ch/health-insurance-switch/"/>
@@ -804,6 +804,36 @@
     <xhtml:link rel="alternate" hreflang="de"        href="https://www.swissnewbie.ch/de/praemienverbilligung-schweiz/"/>
     <xhtml:link rel="alternate" hreflang="fr"        href="https://www.swissnewbie.ch/fr/reduction-prime-maladie-suisse/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.swissnewbie.ch/health-insurance-subsidy-switzerland/"/>
+  </url>
+  <url>
+    <loc>https://www.swissnewbie.ch/health-insurance-expats-switzerland/</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.swissnewbie.ch/health-insurance-expats-switzerland/"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://www.swissnewbie.ch/de/krankenkasse-expats-schweiz/"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://www.swissnewbie.ch/fr/assurance-maladie-expats-suisse/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.swissnewbie.ch/health-insurance-expats-switzerland/"/>
+  </url>
+  <url>
+    <loc>https://www.swissnewbie.ch/de/krankenkasse-expats-schweiz/</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.swissnewbie.ch/health-insurance-expats-switzerland/"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://www.swissnewbie.ch/de/krankenkasse-expats-schweiz/"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://www.swissnewbie.ch/fr/assurance-maladie-expats-suisse/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.swissnewbie.ch/health-insurance-expats-switzerland/"/>
+  </url>
+  <url>
+    <loc>https://www.swissnewbie.ch/fr/assurance-maladie-expats-suisse/</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.swissnewbie.ch/health-insurance-expats-switzerland/"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://www.swissnewbie.ch/de/krankenkasse-expats-schweiz/"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://www.swissnewbie.ch/fr/assurance-maladie-expats-suisse/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.swissnewbie.ch/health-insurance-expats-switzerland/"/>
   </url>
 
   <url>
