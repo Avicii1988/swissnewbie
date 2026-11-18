@@ -26,6 +26,13 @@ const head = (url) => {
 
 for (const e of entries) {
   test(`hreflang set is complete and reciprocal: ${e.loc}`, () => {
+    if (Object.keys(e.alts).length === 0) {
+      // single-language page (e.g. DE-only pilot): no alternates anywhere, self-canonical
+      const h0 = head(e.loc);
+      assert.doesNotMatch(h0, /hreflang=/, 'page without sitemap alternates carries no hreflang');
+      assert.strictEqual((h0.match(/<link rel="canonical" href="([^"]+)">/) || [])[1], e.loc, 'self-canonical');
+      return;
+    }
     assert.ok(e.alts.en, 'sitemap entry has an en alternate');
     assert.strictEqual(e.alts['x-default'], e.alts.en, 'x-default is the English page');
     assert.ok(Object.values(e.alts).includes(e.loc), 'the page lists itself');

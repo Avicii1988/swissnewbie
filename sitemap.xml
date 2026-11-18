@@ -107,7 +107,7 @@
   </url>
   <url>
     <loc>https://www.swissnewbie.ch/de/health-insurance/</loc>
-    <lastmod>2026-11-13</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en"        href="https://www.swissnewbie.ch/health-insurance/"/>
@@ -834,6 +834,42 @@
     <xhtml:link rel="alternate" hreflang="de"        href="https://www.swissnewbie.ch/de/krankenkasse-expats-schweiz/"/>
     <xhtml:link rel="alternate" hreflang="fr"        href="https://www.swissnewbie.ch/fr/assurance-maladie-expats-suisse/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.swissnewbie.ch/health-insurance-expats-switzerland/"/>
+  </url>
+  <url>
+    <loc>https://www.swissnewbie.ch/de/krankenkassen-praemien-2027/</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.swissnewbie.ch/de/krankenkassen-praemien-2027/zuerich/</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.swissnewbie.ch/de/krankenkassen-praemien-2027/genf/</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.swissnewbie.ch/de/krankenkassen-praemien-2027/waadt/</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.swissnewbie.ch/de/krankenkassen-praemien-2027/basel-stadt/</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.swissnewbie.ch/de/krankenkassen-praemien-2027/bern/</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 
   <url>
