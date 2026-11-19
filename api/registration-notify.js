@@ -2,6 +2,8 @@
 // Setup: add RESEND_API_KEY to your Vercel environment variables
 // Get a free API key at https://resend.com (100 emails/day free)
 
+import { isAllowedOrigin, setCors, getClientIp, checkIpRateLimit, readJsonBody } from './_guard.js';
+
 const FORBIDDEN_FIELD_PATTERN = /pass/i;
 
 // Recursively strips any key matching /pass/i at any depth, so a password
@@ -79,15 +81,31 @@ export async function handleRegistrationNotify(body, { apiKey, fetchImpl } = {})
     const resData = await r.json();
     return { ok: true, data: resData };
   } catch (e) {
+    console.error('registration-notify: mail request failed:', e && e.name);
     return { ok: false, error: e.message };
   }
 }
 
-export default async function handler(req, res) {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  if (req.method === 'OPTIONS') return res.status(200).end();
-  if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
+// Hardening (B2/B5): same-site origins only, per-IP rate limit in KV (fails closed),
+// and the browser only ever gets { ok: true } / { ok: false } — never provider data
+// or error text (those stay inside handleRegistrationNotify for tests/logs).
+const MAX_BODY_BYTES = 8 * 1024;
+export const RATE_LIMIT_PER_HOUR = 5;
 
-  const result = await handleRegistrationNotify(req.body);
-  return res.status(200).json(result);
+export default async function handler(req, res) {
+  const origin = req.headers.origin;
+  setCors(res, origin);
+  if (req.method === 'OPTIONS') return res.status(204).end();
+  if (req.method !== 'POST') return res.status(405).json({ ok: false });
+  if (!isAllowedOrigin(origin)) return res.status(403).json({ ok: false });
+
+  const body = readJsonBody(req, MAX_BODY_BYTES);
+  if (!body) return res.status(400).json({ ok: false });
+
+  const limit = await checkIpRateLimit({ scope: 'rn', limit: RATE_LIMIT_PER_HOUR, clientIp: getClientIp(req) });
+  if (limit === 'unavailable') return res.status(503).json({ ok: false });
+  if (limit === 'limited') return res.status(429).json({ ok: false });
+
+  const result = await handleRegistrationNotify(body);
+  return res.status(result.ok ? 200 : 502).json({ ok: !!result.ok });
 }
