@@ -9,6 +9,7 @@
 // - the browser only ever gets { ok: true } / { ok: false }
 
 import { isAllowedOrigin, setCors, getClientIp, checkIpRateLimit, readJsonBody } from './_guard.js';
+import { countClick } from './_clicks.js';
 
 const MAX_BODY_BYTES = 4 * 1024;
 export const RATE_LIMIT_PER_HOUR = 60;
@@ -76,11 +77,14 @@ export function buildVoucherEmail(raw) {
 }
 
 // Validates and sends. Returns { status, ok }. Never returns provider data or error text.
-export async function handleVoucherNotify(body, { apiKey, fetchImpl } = {}) {
+export async function handleVoucherNotify(body, { apiKey, fetchImpl, kvFetchImpl } = {}) {
   const key = apiKey !== undefined ? apiKey : process.env.RESEND_API_KEY;
   const doFetch = fetchImpl || fetch;
   const { code, subject, html } = buildVoucherEmail(body || {});
   if (!ALLOWED_CODES.has(code)) return { status: 400, ok: false };
+  // Aggregate counters (provider x language x day), independent of the mail. Fail-soft:
+  // countClick never throws, so storage problems never affect the mail flow.
+  await countClick({ provider: body && body.provider, lang: body && body.lang }, { fetchImpl: kvFetchImpl });
   if (!key) return { status: 200, ok: true }; // not configured: stay silent, as before
 
   try {
