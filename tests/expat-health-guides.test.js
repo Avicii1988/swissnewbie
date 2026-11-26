@@ -48,7 +48,8 @@ for (const [lang, g] of Object.entries(GUIDES)) {
     const html = read(g.path);
     const main = html.slice(html.indexOf('<main>'), html.indexOf('</main>'));
     for (const s of SOURCES) assert.ok(main.includes(`href="${s}"`), `source ${s}`);
-    assert.match(main, /13 (November|novembre) 2026|13\. November 2026/);
+    // review date comes from scripts/review-date.json (see tests/review-date.test.js)
+    assert.match(main, /(Last reviewed|Zuletzt überprüft|Dernière vérification)[^<]*(November|novembre) 2026/);
     assert.doesNotMatch(html, /swica/i);
     assert.doesNotMatch(main, /data-voucher|vg-card|class="vg-|bonus/i);
     assert.doesNotMatch(main, /15\. Dezember|15 December|15 décembre/);
