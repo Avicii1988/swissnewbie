@@ -840,36 +840,60 @@
     <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.swissnewbie.ch/health-insurance-premiums-2027/"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://www.swissnewbie.ch/de/krankenkassen-praemien-2027/"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://www.swissnewbie.ch/fr/primes-maladie-2027/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.swissnewbie.ch/health-insurance-premiums-2027/"/>
   </url>
   <url>
     <loc>https://www.swissnewbie.ch/de/krankenkassen-praemien-2027/zuerich/</loc>
     <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.swissnewbie.ch/health-insurance-premiums-2027/zurich/"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://www.swissnewbie.ch/de/krankenkassen-praemien-2027/zuerich/"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://www.swissnewbie.ch/fr/primes-maladie-2027/zurich/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.swissnewbie.ch/health-insurance-premiums-2027/zurich/"/>
   </url>
   <url>
     <loc>https://www.swissnewbie.ch/de/krankenkassen-praemien-2027/genf/</loc>
     <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.swissnewbie.ch/health-insurance-premiums-2027/geneva/"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://www.swissnewbie.ch/de/krankenkassen-praemien-2027/genf/"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://www.swissnewbie.ch/fr/primes-maladie-2027/geneve/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.swissnewbie.ch/health-insurance-premiums-2027/geneva/"/>
   </url>
   <url>
     <loc>https://www.swissnewbie.ch/de/krankenkassen-praemien-2027/waadt/</loc>
     <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.swissnewbie.ch/health-insurance-premiums-2027/vaud/"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://www.swissnewbie.ch/de/krankenkassen-praemien-2027/waadt/"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://www.swissnewbie.ch/fr/primes-maladie-2027/vaud/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.swissnewbie.ch/health-insurance-premiums-2027/vaud/"/>
   </url>
   <url>
     <loc>https://www.swissnewbie.ch/de/krankenkassen-praemien-2027/basel-stadt/</loc>
     <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.swissnewbie.ch/health-insurance-premiums-2027/basel-city/"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://www.swissnewbie.ch/de/krankenkassen-praemien-2027/basel-stadt/"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://www.swissnewbie.ch/fr/primes-maladie-2027/bale-ville/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.swissnewbie.ch/health-insurance-premiums-2027/basel-city/"/>
   </url>
   <url>
     <loc>https://www.swissnewbie.ch/de/krankenkassen-praemien-2027/bern/</loc>
     <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.swissnewbie.ch/health-insurance-premiums-2027/bern/"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://www.swissnewbie.ch/de/krankenkassen-praemien-2027/bern/"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://www.swissnewbie.ch/fr/primes-maladie-2027/berne/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.swissnewbie.ch/health-insurance-premiums-2027/bern/"/>
   </url>
   <url>
     <loc>https://www.swissnewbie.ch/de/fremdlenkerversicherung/</loc>
@@ -1149,6 +1173,127 @@
     <xhtml:link rel="alternate" hreflang="de"        href="https://www.swissnewbie.ch/de/kreditkarten-schweiz/"/>
     <xhtml:link rel="alternate" hreflang="fr"        href="https://www.swissnewbie.ch/fr/cartes-credit-suisse/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.swissnewbie.ch/credit-cards-switzerland/"/>
+  </url>
+
+  <url>
+    <loc>https://www.swissnewbie.ch/health-insurance-premiums-2027/</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.swissnewbie.ch/health-insurance-premiums-2027/"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://www.swissnewbie.ch/de/krankenkassen-praemien-2027/"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://www.swissnewbie.ch/fr/primes-maladie-2027/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.swissnewbie.ch/health-insurance-premiums-2027/"/>
+  </url>
+  <url>
+    <loc>https://www.swissnewbie.ch/fr/primes-maladie-2027/</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.swissnewbie.ch/health-insurance-premiums-2027/"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://www.swissnewbie.ch/de/krankenkassen-praemien-2027/"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://www.swissnewbie.ch/fr/primes-maladie-2027/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.swissnewbie.ch/health-insurance-premiums-2027/"/>
+  </url>
+  <url>
+    <loc>https://www.swissnewbie.ch/health-insurance-premiums-2027/zurich/</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.swissnewbie.ch/health-insurance-premiums-2027/zurich/"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://www.swissnewbie.ch/de/krankenkassen-praemien-2027/zuerich/"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://www.swissnewbie.ch/fr/primes-maladie-2027/zurich/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.swissnewbie.ch/health-insurance-premiums-2027/zurich/"/>
+  </url>
+  <url>
+    <loc>https://www.swissnewbie.ch/fr/primes-maladie-2027/zurich/</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.swissnewbie.ch/health-insurance-premiums-2027/zurich/"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://www.swissnewbie.ch/de/krankenkassen-praemien-2027/zuerich/"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://www.swissnewbie.ch/fr/primes-maladie-2027/zurich/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.swissnewbie.ch/health-insurance-premiums-2027/zurich/"/>
+  </url>
+  <url>
+    <loc>https://www.swissnewbie.ch/health-insurance-premiums-2027/geneva/</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.swissnewbie.ch/health-insurance-premiums-2027/geneva/"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://www.swissnewbie.ch/de/krankenkassen-praemien-2027/genf/"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://www.swissnewbie.ch/fr/primes-maladie-2027/geneve/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.swissnewbie.ch/health-insurance-premiums-2027/geneva/"/>
+  </url>
+  <url>
+    <loc>https://www.swissnewbie.ch/fr/primes-maladie-2027/geneve/</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.swissnewbie.ch/health-insurance-premiums-2027/geneva/"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://www.swissnewbie.ch/de/krankenkassen-praemien-2027/genf/"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://www.swissnewbie.ch/fr/primes-maladie-2027/geneve/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.swissnewbie.ch/health-insurance-premiums-2027/geneva/"/>
+  </url>
+  <url>
+    <loc>https://www.swissnewbie.ch/health-insurance-premiums-2027/vaud/</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.swissnewbie.ch/health-insurance-premiums-2027/vaud/"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://www.swissnewbie.ch/de/krankenkassen-praemien-2027/waadt/"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://www.swissnewbie.ch/fr/primes-maladie-2027/vaud/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.swissnewbie.ch/health-insurance-premiums-2027/vaud/"/>
+  </url>
+  <url>
+    <loc>https://www.swissnewbie.ch/fr/primes-maladie-2027/vaud/</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.swissnewbie.ch/health-insurance-premiums-2027/vaud/"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://www.swissnewbie.ch/de/krankenkassen-praemien-2027/waadt/"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://www.swissnewbie.ch/fr/primes-maladie-2027/vaud/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.swissnewbie.ch/health-insurance-premiums-2027/vaud/"/>
+  </url>
+  <url>
+    <loc>https://www.swissnewbie.ch/health-insurance-premiums-2027/basel-city/</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.swissnewbie.ch/health-insurance-premiums-2027/basel-city/"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://www.swissnewbie.ch/de/krankenkassen-praemien-2027/basel-stadt/"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://www.swissnewbie.ch/fr/primes-maladie-2027/bale-ville/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.swissnewbie.ch/health-insurance-premiums-2027/basel-city/"/>
+  </url>
+  <url>
+    <loc>https://www.swissnewbie.ch/fr/primes-maladie-2027/bale-ville/</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.swissnewbie.ch/health-insurance-premiums-2027/basel-city/"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://www.swissnewbie.ch/de/krankenkassen-praemien-2027/basel-stadt/"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://www.swissnewbie.ch/fr/primes-maladie-2027/bale-ville/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.swissnewbie.ch/health-insurance-premiums-2027/basel-city/"/>
+  </url>
+  <url>
+    <loc>https://www.swissnewbie.ch/health-insurance-premiums-2027/bern/</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.swissnewbie.ch/health-insurance-premiums-2027/bern/"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://www.swissnewbie.ch/de/krankenkassen-praemien-2027/bern/"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://www.swissnewbie.ch/fr/primes-maladie-2027/berne/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.swissnewbie.ch/health-insurance-premiums-2027/bern/"/>
+  </url>
+  <url>
+    <loc>https://www.swissnewbie.ch/fr/primes-maladie-2027/berne/</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.swissnewbie.ch/health-insurance-premiums-2027/bern/"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://www.swissnewbie.ch/de/krankenkassen-praemien-2027/bern/"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://www.swissnewbie.ch/fr/primes-maladie-2027/berne/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.swissnewbie.ch/health-insurance-premiums-2027/bern/"/>
   </url>
 
 </urlset>

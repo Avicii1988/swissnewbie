@@ -25,11 +25,11 @@ const SWICA_CARD = (() => {
 })();
 
 for (const p of PAGES) {
-  test(`${p}: DE, self-canonical, no hreflang, only allowed external links`, () => {
+  test(`${p}: DE, self-canonical, EN/FR alternates, only allowed external links`, () => {
     const h = read(p);
     assert.match(h, /<html lang="de">/);
     assert.match(h, new RegExp(`<link rel="canonical" href="https://www.swissnewbie.ch${p.replace(/\//g, '\\/')}">`));
-    assert.doesNotMatch(h, /hreflang=/);
+    assert.deepStrictEqual([...h.matchAll(/hreflang="([^"]+)"/g)].map((m) => m[1]), ['en', 'de', 'fr', 'x-default']);
     assert.doesNotMatch(h, /sunrise|ibkr|interactive brokers|aklam/i);
     const body = h.slice(h.indexOf('<body'));
     for (const m of body.matchAll(/href="(https?:\/\/[^"]+)"/g)) {
@@ -84,3 +84,48 @@ for (const c of CANTONS) {
 test('existing DE health insurance guide links to the overview', () => {
   assert.ok(read('/de/health-insurance/').includes(`href="${OV}"`));
 });
+
+// EN/FR versions (Nov 2026): same pages, same figures, only the language changes.
+const LANG_PAGES = {
+  en: { ov: '/health-insurance-premiums-2027/', cantons: ['zurich', 'geneva', 'vaud', 'basel-city', 'bern'], hi: '/health-insurance/', ad: 'Ad' },
+  fr: { ov: '/fr/primes-maladie-2027/', cantons: ['zurich', 'geneve', 'vaud', 'bale-ville', 'berne'], hi: '/fr/health-insurance/', ad: 'Annonce' },
+};
+const numbers = (h) => {
+  const m = mainOf(h).replace(/<div class="vg-card">[\s\S]*?<div class="vg-disclosure">[^<]*<\/div><\/div>/g, '');
+  return (text(m).match(/\d+(?:\.\d+)?/g) || []).sort();
+};
+for (const [lang, cfg] of Object.entries(LANG_PAGES)) {
+  const card = (() => {
+    const s = read(cfg.hi);
+    return s.match(new RegExp(`<div class="vg-card"><div class="vg-top">(?:(?!<div class="vg-card">)[\\s\\S])*?data-voucher-slot="inline-mid"[\\s\\S]*?<div class="vg-disclosure">${cfg.ad}<\\/div><\\/div>`))[0];
+  })();
+  const list = [[cfg.ov, OV], ...cfg.cantons.map((c, i) => [`${cfg.ov}${c}/`, `${OV}${CANTONS[i]}/`])];
+  for (const [p, de] of list) {
+    test(`${p}: ${lang}, self-canonical, full hreflang set, title with 2027, only allowed external links`, () => {
+      const h = read(p);
+      assert.match(h, new RegExp(`<html lang="${lang}">`));
+      assert.match(h, new RegExp(`<link rel="canonical" href="https://www.swissnewbie.ch${p.replace(/\//g, '\\/')}">`));
+      assert.match(h, /<title>[^<]*2027[^<]*<\/title>/);
+      if (lang === 'en') assert.match(h, /<title>[^<]*for Expats<\/title>/);
+      assert.ok(h.includes(`hreflang="de" href="https://www.swissnewbie.ch${de}"`), 'links the DE original');
+      const body = h.slice(h.indexOf('<body'));
+      for (const m of body.matchAll(/href="(https?:\/\/[^"]+)"/g)) {
+        const u = m[1];
+        if (u.startsWith('https://www.swissnewbie.ch')) continue;
+        assert.ok(ALLOWED_EXT.has(u) || u === 'https://www.swica.ch/swissnewbie', `external link ${u}`);
+      }
+      assert.doesNotMatch(mainOf(h), /href="\/de\//, 'no links back into the German pages from the content');
+    });
+    test(`${p}: same figures as ${de}; FAQPage mirrors the visible FAQ`, () => {
+      const h = read(p);
+      assert.deepStrictEqual(numbers(h), numbers(read(de)));
+      const ld = JSON.parse(h.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
+      assert.strictEqual(ld['@type'], 'FAQPage');
+      const visible = [...h.matchAll(/<div class="faq-q"[^>]*>([\s\S]*?) <span class="faq-chevron">▾<\/span><\/div>\s*<div class="faq-a"><p>([\s\S]*?)<\/p><\/div>/g)].map((m) => [text(m[1]), text(m[2])]);
+      assert.deepStrictEqual(ld.mainEntity.map((q) => [q.name, q.acceptedAnswer.text]), visible);
+      assert.match(mainOf(h), lang === 'en' ? /All figures rounded\. Source:/ : /Tous les chiffres sont arrondis\. Source :/);
+      if (p !== cfg.ov) assert.strictEqual(mainOf(h).split(card).length - 1, 1, 'SWICA card in the page language exactly once');
+      if (lang === 'fr') assert.doesNotMatch(text(mainOf(h)), /\b(tu|ton|ta|tes|toi)\b/, 'FR uses vous');
+    });
+  }
+}
