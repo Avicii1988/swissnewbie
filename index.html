@@ -1036,7 +1036,7 @@ function downloadArticle(articleId) {
       try {
         el.textContent = '✓ Copied!';
         el.classList.add('copied');
-        try { fetch('/api/voucher-notify', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ code: vid, page: location.href, ts: new Date().toISOString(), ua: navigator.userAgent.slice(0, 120) }) }).catch(() => {}); } catch (e) {}
+        try { fetch('/api/voucher-notify', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ code: vid, page: location.href, ts: new Date().toISOString(), ua: navigator.userAgent.slice(0, 120), lang: location.pathname.indexOf('/de/') === 0 ? 'de' : location.pathname.indexOf('/fr/') === 0 ? 'fr' : 'en', provider: (window.snTracking ? window.snTracking.providerOf(el) : undefined) }) }).catch(() => {}); } catch (e) {}
         setTimeout(() => {
           el.textContent = orig;
           el.classList.remove('copied');
@@ -1549,21 +1549,26 @@ function downloadArticle(articleId) {
   });
   function getC(){try{return JSON.parse(localStorage.getItem(KEY)||'{}');}catch(e){return{};}}
   function cssqIsExternal(href){if(!href)return false;try{var u=new URL(href,location.href);var h=u.hostname.replace(/^www\./,'');return h!=='swissnewbie.ch';}catch(e){return false;}}
-  function trackClick(code,notify){
+  var LANG=location.pathname.indexOf('/de/')===0?'de':location.pathname.indexOf('/fr/')===0?'fr':'en';
+  function slotOf(el){try{var c=el&&(el.closest?el.closest('[data-voucher-slot]'):null);if(!c){var card=el&&(el.closest?el.closest('.vg-card,.dc-card'):null);c=card?card.querySelector('[data-voucher-slot]'):null;}if(c)return c.getAttribute('data-voucher-slot');var all=[].slice.call(document.querySelectorAll('[data-voucher-id]'));var i=all.indexOf(el);if(i<0){var card2=el&&(el.closest?el.closest('.vg-card,.dc-card'):null);var idel=card2?card2.querySelector('[data-voucher-id]'):null;i=idel?all.indexOf(idel):-1;}if(i>=0)return 'idx:'+(i+1)+'/'+all.length;}catch(e){}return '';}
+  function providerOf(el){try{return window.snTracking?window.snTracking.providerOf(el):'';}catch(e){return '';}}
+  function offerOf(el){try{return window.snTracking?window.snTracking.offerOf(el):'';}catch(e){return '';}}
+  function trackClick(code,notify,src){
     if(!code)return;
+    var provider=providerOf(src),offer=offerOf(src),slot=slotOf(src);
     var d=getC(),today=new Date().toISOString().slice(0,10);
     if(!d[today])d[today]={};
     d[today][code]=(d[today][code]||0)+1;
     try{localStorage.setItem(KEY,JSON.stringify(d));}catch(e){}
     try{var sv=getSavings()+(SAVINGS_MAP[code]||0);localStorage.setItem(SAVINGS_KEY,sv);updateSavingsWidget();}catch(e){}
     /* Background email notification */
-    if(notify){try{fetch('/api/voucher-notify',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({code:code,page:location.href,ts:new Date().toISOString(),ua:navigator.userAgent.slice(0,120)})}).catch(function(){});}catch(e){}}
-    try{window.va&&window.va('event',{name:'voucher_click',data:{code:code,page:location.pathname}});}catch(e){}
+    if(notify){try{fetch('/api/voucher-notify',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({code:code,page:location.href,slot:slot,ts:new Date().toISOString(),ua:navigator.userAgent.slice(0,120),lang:LANG,provider:provider})}).catch(function(){});}catch(e){}}
+    try{window.va&&window.va('event',{name:'voucher_click',data:{code:code,provider:provider,offer:offer,page:location.pathname,slot:slot,lang:LANG}});}catch(e){}
   }
   document.addEventListener('click',function(e){
     var el=e.target.closest('[data-voucher-id]');
-    if(!el){var lnk=e.target.closest('.vg-link,.vg-actions a');if(lnk){var card=lnk.closest('.vg-card');if(card){el=card.querySelector('[data-voucher-id]');if(!el){var nm=card.querySelector('.vg-name');if(nm)trackClick(nm.textContent.trim().replace(/\s+/g,'-').slice(0,20),cssqIsExternal(lnk&&lnk.href));return;}}}}
-    if(el){var __lnkHref=(typeof lnk!=='undefined'&&lnk)?lnk.href:(el.tagName==='A'?el.href:null);trackClick(el.getAttribute('data-voucher-id'),cssqIsExternal(__lnkHref));}
+    if(!el){var lnk=e.target.closest('.vg-link,.vg-actions a');if(lnk){var card=lnk.closest('.vg-card');if(card){el=card.querySelector('[data-voucher-id]');if(!el){var nm=card.querySelector('.vg-name');if(nm)trackClick(nm.textContent.trim().replace(/\s+/g,'-').slice(0,20),cssqIsExternal(lnk&&lnk.href),lnk);return;}}}}
+    if(el){var __lnkHref=(typeof lnk!=='undefined'&&lnk)?lnk.href:(el.tagName==='A'?el.href:null);trackClick(el.getAttribute('data-voucher-id'),cssqIsExternal(__lnkHref),el);}
   },true);
   function ccToFlag(cc){if(!cc||cc.length!==2)return'';return String.fromCodePoint(...cc.toUpperCase().split('').map(function(c){return 0x1F1E6+c.charCodeAt(0)-65}));}
   var _lvCountry='';
