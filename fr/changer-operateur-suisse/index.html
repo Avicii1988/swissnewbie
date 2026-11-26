@@ -260,6 +260,7 @@ function openTopic(id){window.location.href="/?section="+id;}
 document.addEventListener('click',function(e){if(!e.target.closest('.nav-dd-wrap')){document.querySelectorAll('.nav-dd-wrap.open').forEach(function(w){w.classList.remove('open');});}});
 </script>
 <script>window.addEventListener('scroll',function(){var btn=document.getElementById('backToTop');if(btn)btn.classList.toggle('visible',window.scrollY>300);},{passive:true});</script>
+<script src="/js/tracking.js" defer></script>
 <script src="/js/footer.js" defer></script>
 </body>
 </html>

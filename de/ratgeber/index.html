@@ -311,7 +311,7 @@ function copyCode(el,code){
   function __onCopied(){
     try{
       el.textContent='✓ Kopiert!';el.classList.add('copied');
-      try{fetch('/api/voucher-notify',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({code:vid,page:location.href,ts:new Date().toISOString(),ua:navigator.userAgent.slice(0,120)})}).catch(function(){});}catch(e){}
+      try{fetch('/api/voucher-notify',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({code:vid,page:location.href,lang:(window.snTracking?window.snTracking.lang:undefined),provider:(window.snTracking?window.snTracking.providerOf(el):undefined),ts:new Date().toISOString(),ua:navigator.userAgent.slice(0,120)})}).catch(function(){});}catch(e){}
       setTimeout(function(){el.textContent=orig;el.classList.remove('copied');},2000);
     }catch(e){}
   }
@@ -344,6 +344,7 @@ window.addEventListener('scroll',function(){
   if(btn)btn.classList.toggle('visible',window.scrollY>300);
 },{passive:true});
 </script>
+<script src="/js/tracking.js" defer></script>
 <script src="/js/footer.js" defer></script>
 </body>
 </html>

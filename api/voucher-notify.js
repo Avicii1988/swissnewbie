@@ -14,6 +14,9 @@ const MAX_BODY_BYTES = 4 * 1024;
 export const RATE_LIMIT_PER_HOUR = 60;
 export const FIELD_LIMITS = { code: 60, page: 300, ts: 40, ua: 200 };
 const SUBJECT_MAX = 100;
+// Optional fields from /js/tracking.js; anything not matching the pattern is dropped.
+const PROVIDER_RE = /^[a-z0-9-]{1,40}$/;
+const LANGS = new Set(['en', 'de', 'fr']);
 
 // Every value the site's pages can send as `code` (derived from the HTML):
 // data-voucher-id attributes, copyCode() literals, and the fallback the click
@@ -50,12 +53,20 @@ export function buildVoucherEmail(raw) {
   const page = cleanText(raw && raw.page, FIELD_LIMITS.page);
   const ts = cleanText(raw && raw.ts, FIELD_LIMITS.ts);
   const ua = cleanText(raw && raw.ua, FIELD_LIMITS.ua);
-  const subject = cleanText(`🏷️ ${code} clicked on SwissNewbie`, SUBJECT_MAX);
+  const providerRaw = cleanText(raw && raw.provider, 40);
+  const provider = PROVIDER_RE.test(providerRaw) ? providerRaw : '';
+  const langRaw = cleanText(raw && raw.lang, 2);
+  const lang = LANGS.has(langRaw) ? langRaw : '';
+  const extra = (provider ? ` · ${provider}` : '') + (lang ? ` · ${lang.toUpperCase()}` : '');
+  const subject = cleanText(`🏷️ ${code} clicked on SwissNewbie${extra}`, SUBJECT_MAX);
+  const extraRows =
+    (provider ? `\n        <tr><td style="padding:6px 12px;background:#f5f5f5;font-weight:600;">Provider</td><td style="padding:6px 12px;">${esc(provider)}</td></tr>` : '') +
+    (lang ? `\n        <tr><td style="padding:6px 12px;background:#f5f5f5;font-weight:600;">Language</td><td style="padding:6px 12px;">${esc(lang)}</td></tr>` : '');
   const html = `
     <div style="font-family:sans-serif;max-width:500px;margin:0 auto;">
       <h2 style="color:#D0021B;">🏷️ Voucher clicked: <strong>${esc(code)}</strong></h2>
       <table style="border-collapse:collapse;width:100%;font-size:14px;">
-        <tr><td style="padding:6px 12px;background:#f5f5f5;font-weight:600;">Code</td><td style="padding:6px 12px;">${esc(code)}</td></tr>
+        <tr><td style="padding:6px 12px;background:#f5f5f5;font-weight:600;">Code</td><td style="padding:6px 12px;">${esc(code)}</td></tr>${extraRows}
         <tr><td style="padding:6px 12px;background:#f5f5f5;font-weight:600;">Page</td><td style="padding:6px 12px;">${esc(page)}</td></tr>
         <tr><td style="padding:6px 12px;background:#f5f5f5;font-weight:600;">Time</td><td style="padding:6px 12px;">${esc(ts)}</td></tr>
         <tr><td style="padding:6px 12px;background:#f5f5f5;font-weight:600;">Browser</td><td style="padding:6px 12px;font-size:11px;color:#666;">${esc(ua)}</td></tr>
