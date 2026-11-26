@@ -65,6 +65,16 @@ export async function checkIpRateLimit({ scope, limit, clientIp, kv, config, now
   return count <= limit ? 'ok' : 'limited';
 }
 
+// Visitor country: Vercel's geo header first, then the region of the browser language
+// (e.g. "de-CH" -> CH). Returns { code, source } with code '' when neither is usable.
+export function countryFromRequest(req, browserLang) {
+  const h = req && req.headers ? req.headers['x-vercel-ip-country'] : undefined;
+  if (typeof h === 'string' && /^[A-Za-z]{2}$/.test(h.trim())) return { code: h.trim().toUpperCase(), source: 'ip' };
+  const m = typeof browserLang === 'string' ? browserLang.trim().match(/^[A-Za-z]{2,3}[-_]([A-Za-z]{2})\b/) : null;
+  if (m) return { code: m[1].toUpperCase(), source: 'browser language' };
+  return { code: '', source: '' };
+}
+
 // Parses req.body (object or JSON string) with a byte limit. Returns the object or null.
 export function readJsonBody(req, maxBytes) {
   let body = req.body;

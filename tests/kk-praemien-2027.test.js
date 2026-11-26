@@ -63,10 +63,11 @@ test('overview links to all canton pages and the DE health insurance guide, no a
   for (const c of CANTONS) assert.ok(m.includes(`href="${OV}${c}/"`), c);
   assert.ok(m.includes('href="/de/health-insurance/"'));
   assert.doesNotMatch(m, /vg-card|data-voucher|swica/i);
-  for (const [k, v, d] of [['zuerich', '477.0', '5.7'], ['genf', '610.6', '4.3'], ['waadt', '543.5', '3.2'], ['basel-stadt', '570.6', '4.5'], ['bern', '494.4', '5.0']]) {
+  for (const [k, v, d] of [['zuerich', '477', '5.7'], ['genf', '611', '4.3'], ['waadt', '544', '3.2'], ['basel-stadt', '571', '4.5'], ['bern', '494', '5.0']]) {
     assert.ok(m.includes(`<a href="${OV}${k}/">CHF ${v}</a>`) && m.includes(`+${d} %`), k);
   }
-  assert.match(m, /CHF 487\.6<\/td><td data-label="Veränderung">\+4\.9 %/);
+  assert.match(m, /CHF 488<\/td><td data-label="Veränderung">\+4\.9 %/);
+  assert.doesNotMatch(m, /CHF \d+\.\d/, 'whole francs only');
 });
 
 for (const c of CANTONS) {

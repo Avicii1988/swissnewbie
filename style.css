@@ -243,3 +243,10 @@ a.nav-deals-btn:focus-visible,.mnd-deals-btn:focus-visible,.topic-topbar-deals:f
 .site-footer a:focus-visible{outline:2px solid #fff;outline-offset:2px;border-radius:2px;}
 @media (max-width:960px){.site-footer .footer-grid{grid-template-columns:1fr 1fr;gap:28px;}.site-footer .footer-brand{grid-column:1 / -1;}}
 @media (max-width:600px){.site-footer{padding:36px 5vw 24px;}.site-footer .footer-grid{grid-template-columns:1fr;gap:24px;}.site-footer .footer-bottom{flex-direction:column;align-items:flex-start;text-align:left;}.site-footer .footer-links{justify-content:flex-start;}}
+/* Comparison tables (e.g. KK premiums 2027): links in site red, underline on hover only */
+.provider-table td a{color:var(--red);text-decoration:none;font-weight:inherit;}.provider-table td a:hover{text-decoration:underline;}
+/* Voucher buttons: label and arrow stay on one line; if space runs out the whole button moves below the code,
+   and only labels too long even for a full row wrap (balanced, so the arrow never ends up alone) */
+.vg-actions{flex-wrap:wrap;}.vg-link{flex:1 0 auto;max-width:100%;text-wrap:balance;}
+/* Savings banners: button styled like the voucher-card buttons */
+.sb-btn{border-radius:6px;font-weight:600;}

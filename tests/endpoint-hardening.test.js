@@ -94,7 +94,7 @@ test('origin allowlist: production domains only in production; preview and local
 
 for (const [name, handler, body] of [
   ['voucher-notify', voucherHandler, okVoucher],
-  ['registration-notify', registrationHandler, { name: 'Test User', ts: '2026-11-19T10:00:00.000Z' }],
+  ['registration-notify', registrationHandler, { name: 'Test User', email: 'test@example.com', ts: '2026-11-19T10:00:00.000Z' }],
   ['community-stats', statsHandler, { action: 'pageview' }],
 ]) {
   test(`${name}: allowed origin gets ACAO echo; foreign origin is rejected with 403 and no side effects`, async () => {
@@ -141,7 +141,7 @@ test('voucher-notify: rate limit per hashed IP, other IPs unaffected', async () 
 });
 
 test('registration-notify: rate limit', async () => {
-  const body = { name: 'Test User', ts: '2026-11-19T10:00:00.000Z' };
+  const body = { name: 'Test User', email: 'test@example.com', ts: '2026-11-19T10:00:00.000Z' };
   for (let i = 0; i < RN_LIMIT; i++) assert.equal((await call(registrationHandler, { body })).statusCode, 200);
   assert.equal((await call(registrationHandler, { body })).statusCode, 429);
   assert.equal(mails.length, RN_LIMIT);
@@ -230,14 +230,14 @@ test('community-stats: only whole positive amounts up to the cap', async () => {
 test('voucher-notify and registration-notify return only {ok} — never provider data or error text', async () => {
   const v = await call(voucherHandler, { body: okVoucher });
   assert.deepEqual(v.payload, { ok: true });
-  const r = await call(registrationHandler, { body: { name: 'Test User' } });
+  const r = await call(registrationHandler, { body: { name: 'Test User', email: 'test@example.com', ts: '2026-11-19T10:00:00.000Z' } });
   assert.deepEqual(r.payload, { ok: true });
   mailStatus = 500;
   const vf = await call(voucherHandler, { body: okVoucher });
   assert.deepEqual(vf.payload, { ok: false });
   const mock = globalThis.fetch; // in-memory mock, never the real fetch
   globalThis.fetch = async (url, opts) => { if (url === MAIL) throw new Error('secret-ish provider failure'); return mock(url, opts); };
-  const rf = await call(registrationHandler, { body: { name: 'Test User' } });
+  const rf = await call(registrationHandler, { body: { name: 'Test User', email: 'test@example.com', ts: '2026-11-19T10:00:00.000Z' } });
   assert.equal(rf.statusCode, 502);
   assert.deepEqual(rf.payload, { ok: false });
   assert.ok(logged.every((l) => !l.includes('secret-ish')), 'error text not logged');
