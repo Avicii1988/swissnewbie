@@ -1296,4 +1296,65 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.swissnewbie.ch/health-insurance-premiums-2027/bern/"/>
   </url>
 
+  <url>
+    <loc>https://www.swissnewbie.ch/public-holidays-switzerland-2027/</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.swissnewbie.ch/public-holidays-switzerland-2027/"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://www.swissnewbie.ch/de/feiertage-schulferien-2027/"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://www.swissnewbie.ch/fr/jours-feries-suisse-2027/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.swissnewbie.ch/public-holidays-switzerland-2027/"/>
+  </url>
+  <url>
+    <loc>https://www.swissnewbie.ch/de/feiertage-schulferien-2027/</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.swissnewbie.ch/public-holidays-switzerland-2027/"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://www.swissnewbie.ch/de/feiertage-schulferien-2027/"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://www.swissnewbie.ch/fr/jours-feries-suisse-2027/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.swissnewbie.ch/public-holidays-switzerland-2027/"/>
+  </url>
+  <url>
+    <loc>https://www.swissnewbie.ch/fr/jours-feries-suisse-2027/</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.swissnewbie.ch/public-holidays-switzerland-2027/"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://www.swissnewbie.ch/de/feiertage-schulferien-2027/"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://www.swissnewbie.ch/fr/jours-feries-suisse-2027/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.swissnewbie.ch/public-holidays-switzerland-2027/"/>
+  </url>
+  <url>
+    <loc>https://www.swissnewbie.ch/driving-switzerland/</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.swissnewbie.ch/driving-switzerland/"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://www.swissnewbie.ch/de/autofahren-schweiz/"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://www.swissnewbie.ch/fr/conduire-suisse/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.swissnewbie.ch/driving-switzerland/"/>
+  </url>
+  <url>
+    <loc>https://www.swissnewbie.ch/de/autofahren-schweiz/</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.swissnewbie.ch/driving-switzerland/"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://www.swissnewbie.ch/de/autofahren-schweiz/"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://www.swissnewbie.ch/fr/conduire-suisse/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.swissnewbie.ch/driving-switzerland/"/>
+  </url>
+  <url>
+    <loc>https://www.swissnewbie.ch/fr/conduire-suisse/</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.swissnewbie.ch/driving-switzerland/"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://www.swissnewbie.ch/de/autofahren-schweiz/"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://www.swissnewbie.ch/fr/conduire-suisse/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.swissnewbie.ch/driving-switzerland/"/>
+  </url>
+
 </urlset>
