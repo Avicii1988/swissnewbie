@@ -53,3 +53,14 @@ test('sitemap lastmod equals the constant for every URL', () => {
   assert.strictEqual(lastmods.length, urls, 'one lastmod per URL');
   assert.deepStrictEqual([...new Set(lastmods)], [reviewDate]);
 });
+
+test('every hub/overview page shows exactly one review label, in all three languages', () => {
+  const { HUB_PAGES, visibleLabels } = require('../scripts/apply-review-date.js');
+  const wrong = [];
+  for (const p of HUB_PAGES) {
+    const n = visibleLabels(fs.readFileSync(path.join(ROOT, p, 'index.html'), 'utf8')).length;
+    if (n !== 1) wrong.push(`${p}: ${n}`);
+  }
+  assert.strictEqual(HUB_PAGES.length, 30);
+  assert.deepStrictEqual(wrong, []);
+});
