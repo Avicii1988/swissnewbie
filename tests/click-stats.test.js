@@ -3,6 +3,7 @@
 // answers both single commands (REST path) and MGET (POST body).
 import { test, beforeEach, afterEach } from 'node:test';
 import assert from 'node:assert/strict';
+import crypto from 'node:crypto';
 
 import { countClick, readClickStats, normalizeProvider, normalizeLang, clickKeys, DAYS } from '../api/_clicks.js';
 import voucherHandler, { handleVoucherNotify } from '../api/voucher-notify.js';
@@ -11,7 +12,9 @@ import clickStatsHandler from '../api/click-stats.js';
 const KV = 'https://kv.test.invalid';
 const MAIL = 'https://api.resend.com/emails';
 const ENV_KEYS = ['KV_REST_API_URL', 'KV_REST_API_TOKEN', 'UPSTASH_REDIS_REST_URL', 'UPSTASH_REDIS_REST_TOKEN',
-  'CSS_LEAD_IP_HASH_SECRET', 'RESEND_API_KEY', 'VERCEL_ENV'];
+  'CSS_LEAD_IP_HASH_SECRET', 'RESEND_API_KEY', 'VERCEL_ENV', 'CLICK_STATS_TOKEN'];
+// dummy stats token, generated at runtime only (never a real value)
+const STATS_TOKEN = 'test-' + crypto.randomBytes(16).toString('hex');
 const DAY = 86400000;
 const T0 = Date.parse('2026-11-26T12:00:00Z');
 let store, mails, mailStatus, kvDown, savedEnv, savedFetch, savedError;
@@ -37,7 +40,7 @@ beforeEach(() => {
   store = new Map(); mails = []; mailStatus = 200; kvDown = false;
   savedEnv = Object.fromEntries(ENV_KEYS.map((k) => [k, process.env[k]]));
   for (const k of ENV_KEYS) delete process.env[k];
-  Object.assign(process.env, { KV_REST_API_URL: KV, KV_REST_API_TOKEN: 't', CSS_LEAD_IP_HASH_SECRET: 's', RESEND_API_KEY: 'k', VERCEL_ENV: 'production' });
+  Object.assign(process.env, { KV_REST_API_URL: KV, KV_REST_API_TOKEN: 't', CSS_LEAD_IP_HASH_SECRET: 's', RESEND_API_KEY: 'k', VERCEL_ENV: 'production', CLICK_STATS_TOKEN: STATS_TOKEN });
   savedFetch = globalThis.fetch; savedError = console.error; console.error = () => {};
   globalThis.fetch = async (url, opts = {}) => {
     if (url === MAIL) { mails.push(JSON.parse(opts.body)); return { ok: mailStatus < 300, status: mailStatus, json: async () => ({ id: 'm' }) }; }
@@ -55,8 +58,12 @@ function mockRes() {
     setHeader(k, v) { this.headers[k.toLowerCase()] = v; }, status(c) { this.statusCode = c; return this; },
     json(b) { this.payload = b; return this; }, end() { return this; } };
 }
-async function call(handler, { method = 'POST', body, origin = 'https://www.swissnewbie.ch', ip = '203.0.113.20' } = {}, extra) {
-  const req = { method, headers: { origin, 'x-forwarded-for': ip }, body };
+// GET requests to the stats endpoint carry the dummy token unless `auth` says otherwise
+async function call(handler, { method = 'POST', body, origin = 'https://www.swissnewbie.ch', ip = '203.0.113.20', auth, url } = {}, extra) {
+  const headers = { origin, 'x-forwarded-for': ip };
+  const authorization = auth === undefined ? (method === 'GET' ? `Bearer ${STATS_TOKEN}` : undefined) : auth;
+  if (authorization) headers.authorization = authorization;
+  const req = { method, headers, body, url };
   const res = mockRes(); await handler(req, res, extra); return res;
 }
 const click = (o = {}) => ({ code: 'sunrise-mobile-family-referral', page: 'https://www.swissnewbie.ch/de/', ts: '2026-11-26T10:00:00.000Z', ua: 'Mozilla/5.0', provider: 'sunrise', lang: 'de', ...o });
@@ -187,4 +194,57 @@ test('click-stats endpoint: rate limited per IP', async () => {
   const r = await call(clickStatsHandler, { method: 'GET' }, { limitImpl: async () => 'limited' });
   assert.equal(r.statusCode, 429);
   assert.equal(r.payload.ok, false);
+});
+
+// ---------- token protection ----------
+test('click-stats: no Authorization header -> 401 unauthorized, no data, no-store', async () => {
+  await call(voucherHandler, { body: click() });
+  const r = await call(clickStatsHandler, { method: 'GET', auth: null });
+  assert.equal(r.statusCode, 401);
+  assert.deepEqual(r.payload, { ok: false, error: 'unauthorized' });
+  assert.equal(r.headers['cache-control'], 'no-store');
+});
+
+test('click-stats: wrong token, other schemes and tokens in the URL are rejected', async () => {
+  const wrong = [`Bearer ${STATS_TOKEN}x`, `Bearer ${STATS_TOKEN.slice(0, -1)}`, `Bearer x${STATS_TOKEN.slice(1)}`, 'Bearer ',
+    `Basic ${STATS_TOKEN}`, STATS_TOKEN, `bearer${STATS_TOKEN}`, `Bearer ${STATS_TOKEN} extra`];
+  for (const auth of wrong) {
+    const r = await call(clickStatsHandler, { method: 'GET', auth });
+    assert.equal(r.statusCode, 401, auth);
+    assert.deepEqual(r.payload, { ok: false, error: 'unauthorized' });
+    assert.equal(r.headers['cache-control'], 'no-store');
+  }
+  // a token in the query string is never accepted
+  const q = await call(clickStatsHandler, { method: 'GET', auth: null, url: `/api/click-stats?token=${STATS_TOKEN}` });
+  assert.equal(q.statusCode, 401);
+  assert.equal(store.size, 0, 'rejected requests do not touch storage');
+});
+
+test('click-stats: closed when CLICK_STATS_TOKEN is not set (no fallback), even with a header', async () => {
+  for (const v of [undefined, '']) {
+    if (v === undefined) delete process.env.CLICK_STATS_TOKEN; else process.env.CLICK_STATS_TOKEN = v;
+    for (const auth of [null, `Bearer ${STATS_TOKEN}`, 'Bearer ', 'Bearer undefined']) {
+      const r = await call(clickStatsHandler, { method: 'GET', auth });
+      assert.ok([401, 503].includes(r.statusCode), String(r.statusCode));
+      assert.deepEqual(r.payload, { ok: false, error: 'unauthorized' });
+      assert.equal(r.headers['cache-control'], 'no-store');
+    }
+  }
+});
+
+test('click-stats: correct token -> 200 with the unchanged response format', async () => {
+  await call(voucherHandler, { body: click() });
+  const r = await call(clickStatsHandler, { method: 'GET', auth: `Bearer ${STATS_TOKEN}` });
+  assert.equal(r.statusCode, 200);
+  assert.deepEqual(Object.keys(r.payload).sort(), ['days', 'ok', 'since', 'totals']);
+  assert.deepEqual(Object.keys(r.payload.totals).sort(), ['per_lang', 'per_provider', 'per_provider_lang', 'total']);
+  assert.equal(r.payload.totals.total, 1);
+  assert.equal(r.payload.days.length, DAYS);
+});
+
+test('click tracking (voucher-notify) needs no token', async () => {
+  delete process.env.CLICK_STATS_TOKEN;
+  const r = await call(voucherHandler, { body: click() });
+  assert.equal(r.statusCode, 200);
+  assert.equal(counters()['clicks:total'], 1);
 });
